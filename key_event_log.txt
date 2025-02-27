@@ -1,0 +1,2312 @@
+2025-02-27 23:04:04,889 - Key event detected: t - Event type: down
+2025-02-27 23:04:04,889 - Added 't' to buffered word. Current buffered word: t
+2025-02-27 23:04:04,894 - Predicted language probability: 0.7678236961364746 for word: t
+2025-02-27 23:04:04,977 - Key event detected: h - Event type: down
+2025-02-27 23:04:04,977 - Added 'h' to buffered word. Current buffered word: th
+2025-02-27 23:04:04,978 - Predicted language probability: 0.4170488119125366 for word: th
+2025-02-27 23:04:05,033 - Key event detected: t - Event type: up
+2025-02-27 23:04:05,057 - Key event detected: i - Event type: down
+2025-02-27 23:04:05,068 - Added 'i' to buffered word. Current buffered word: thi
+2025-02-27 23:04:05,068 - Predicted language probability: 0.5103066563606262 for word: thi
+2025-02-27 23:04:05,105 - Key event detected: h - Event type: up
+2025-02-27 23:04:05,209 - Key event detected: i - Event type: up
+2025-02-27 23:04:05,217 - Key event detected: s - Event type: down
+2025-02-27 23:04:05,217 - Added 's' to buffered word. Current buffered word: this
+2025-02-27 23:04:05,218 - Predicted language probability: 0.9778954386711121 for word: this
+2025-02-27 23:04:05,297 - Key event detected: s - Event type: up
+2025-02-27 23:04:05,385 - Key event detected: space - Event type: down
+2025-02-27 23:04:05,385 - Added 'space' to buffered word. Current buffered word: thisspace
+2025-02-27 23:04:05,386 - Predicted language probability: 0.9999942779541016 for word: thisspace
+2025-02-27 23:04:05,433 - Key event detected: space - Event type: up
+2025-02-27 23:04:05,601 - Key event detected: backspace - Event type: down
+2025-02-27 23:04:05,601 - Backspace pressed. Buffered word: thisspac
+2025-02-27 23:04:05,657 - Key event detected: backspace - Event type: up
+2025-02-27 23:04:05,729 - Key event detected: backspace - Event type: down
+2025-02-27 23:04:05,729 - Backspace pressed. Buffered word: thisspa
+2025-02-27 23:04:05,793 - Key event detected: backspace - Event type: up
+2025-02-27 23:04:05,865 - Key event detected: backspace - Event type: down
+2025-02-27 23:04:05,865 - Backspace pressed. Buffered word: thissp
+2025-02-27 23:04:05,921 - Key event detected: backspace - Event type: up
+2025-02-27 23:04:05,993 - Key event detected: backspace - Event type: down
+2025-02-27 23:04:05,993 - Backspace pressed. Buffered word: thiss
+2025-02-27 23:04:06,121 - Key event detected: hangeul - Event type: down
+2025-02-27 23:04:06,121 - Added 'hangeul' to buffered word. Current buffered word: thisshangeul
+2025-02-27 23:04:06,123 - Predicted language probability: 0.9999896287918091 for word: thisshangeul
+2025-02-27 23:04:06,145 - Key event detected: backspace - Event type: up
+2025-02-27 23:04:06,273 - Key event detected: t - Event type: down
+2025-02-27 23:04:06,273 - Added 't' to buffered word. Current buffered word: thisshangeult
+2025-02-27 23:04:06,274 - Predicted language probability: 0.9999992847442627 for word: thisshangeult
+2025-02-27 23:04:06,345 - Key event detected: h - Event type: down
+2025-02-27 23:04:06,345 - Added 'h' to buffered word. Current buffered word: thisshangeulth
+2025-02-27 23:04:06,346 - Predicted language probability: 0.9999974966049194 for word: thisshangeulth
+2025-02-27 23:04:06,401 - Key event detected: t - Event type: up
+2025-02-27 23:04:06,417 - Key event detected: i - Event type: down
+2025-02-27 23:04:06,417 - Added 'i' to buffered word. Current buffered word: thisshangeulthi
+2025-02-27 23:04:06,418 - Predicted language probability: 0.9999997615814209 for word: thisshangeulthi
+2025-02-27 23:04:06,481 - Key event detected: h - Event type: up
+2025-02-27 23:04:06,505 - Key event detected: s - Event type: down
+2025-02-27 23:04:06,505 - Added 's' to buffered word. Current buffered word: thisshangeulthis
+2025-02-27 23:04:06,506 - Predicted language probability: 1.0 for word: thisshangeulthis
+2025-02-27 23:04:06,513 - Key event detected: i - Event type: up
+2025-02-27 23:04:06,593 - Key event detected: space - Event type: down
+2025-02-27 23:04:06,593 - Added 'space' to buffered word. Current buffered word: thisshangeulthisspace
+2025-02-27 23:04:06,595 - Predicted language probability: 1.0 for word: thisshangeulthisspace
+2025-02-27 23:04:06,633 - Key event detected: s - Event type: up
+2025-02-27 23:04:06,697 - Key event detected: space - Event type: up
+2025-02-27 23:04:06,769 - Key event detected: i - Event type: down
+2025-02-27 23:04:06,769 - Added 'i' to buffered word. Current buffered word: thisshangeulthisspacei
+2025-02-27 23:04:06,771 - Predicted language probability: 1.0 for word: thisshangeulthisspacei
+2025-02-27 23:04:06,873 - Key event detected: i - Event type: up
+2025-02-27 23:04:06,913 - Key event detected: s - Event type: down
+2025-02-27 23:04:06,913 - Added 's' to buffered word. Current buffered word: thisshangeulthisspaceis
+2025-02-27 23:04:06,915 - Predicted language probability: 1.0 for word: thisshangeulthisspaceis
+2025-02-27 23:04:06,961 - Key event detected: space - Event type: down
+2025-02-27 23:04:06,961 - Added 'space' to buffered word. Current buffered word: thisshangeulthisspaceisspace
+2025-02-27 23:04:06,963 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspace
+2025-02-27 23:04:07,001 - Key event detected: s - Event type: up
+2025-02-27 23:04:07,089 - Key event detected: space - Event type: up
+2025-02-27 23:04:07,209 - Key event detected: t - Event type: down
+2025-02-27 23:04:07,209 - Added 't' to buffered word. Current buffered word: thisshangeulthisspaceisspacet
+2025-02-27 23:04:07,211 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacet
+2025-02-27 23:04:07,297 - Key event detected: t - Event type: up
+2025-02-27 23:04:07,385 - Key event detected: y - Event type: down
+2025-02-27 23:04:07,385 - Added 'y' to buffered word. Current buffered word: thisshangeulthisspaceisspacety
+2025-02-27 23:04:07,387 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacety
+2025-02-27 23:04:07,489 - Key event detected: p - Event type: down
+2025-02-27 23:04:07,494 - Added 'p' to buffered word. Current buffered word: thisshangeulthisspaceisspacetyp
+2025-02-27 23:04:07,495 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetyp
+2025-02-27 23:04:07,513 - Key event detected: y - Event type: up
+2025-02-27 23:04:07,561 - Key event detected: p - Event type: up
+2025-02-27 23:04:07,649 - Key event detected: i - Event type: down
+2025-02-27 23:04:07,649 - Added 'i' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypi
+2025-02-27 23:04:07,651 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypi
+2025-02-27 23:04:07,729 - Key event detected: n - Event type: down
+2025-02-27 23:04:07,729 - Added 'n' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypin
+2025-02-27 23:04:07,732 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypin
+2025-02-27 23:04:07,801 - Key event detected: i - Event type: up
+2025-02-27 23:04:07,833 - Key event detected: g - Event type: down
+2025-02-27 23:04:07,833 - Added 'g' to buffered word. Current buffered word: thisshangeulthisspaceisspacetyping
+2025-02-27 23:04:07,835 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetyping
+2025-02-27 23:04:07,849 - Key event detected: n - Event type: up
+2025-02-27 23:04:07,929 - Key event detected: space - Event type: down
+2025-02-27 23:04:07,929 - Added 'space' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspace
+2025-02-27 23:04:07,932 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspace
+2025-02-27 23:04:07,961 - Key event detected: g - Event type: up
+2025-02-27 23:04:08,001 - Key event detected: space - Event type: up
+2025-02-27 23:04:08,081 - Key event detected: i - Event type: down
+2025-02-27 23:04:08,081 - Added 'i' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspacei
+2025-02-27 23:04:08,083 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspacei
+2025-02-27 23:04:08,169 - Key event detected: n - Event type: down
+2025-02-27 23:04:08,169 - Added 'n' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspacein
+2025-02-27 23:04:08,171 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspacein
+2025-02-27 23:04:08,209 - Key event detected: i - Event type: up
+2025-02-27 23:04:08,257 - Key event detected: space - Event type: down
+2025-02-27 23:04:08,257 - Added 'space' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspace
+2025-02-27 23:04:08,259 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspace
+2025-02-27 23:04:08,305 - Key event detected: n - Event type: up
+2025-02-27 23:04:08,353 - Key event detected: space - Event type: up
+2025-02-27 23:04:08,497 - Key event detected: e - Event type: down
+2025-02-27 23:04:08,497 - Added 'e' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspacee
+2025-02-27 23:04:08,500 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspacee
+2025-02-27 23:04:08,577 - Key event detected: n - Event type: down
+2025-02-27 23:04:08,577 - Added 'n' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceen
+2025-02-27 23:04:08,580 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceen
+2025-02-27 23:04:08,609 - Key event detected: e - Event type: up
+2025-02-27 23:04:08,673 - Key event detected: n - Event type: up
+2025-02-27 23:04:08,697 - Key event detected: g - Event type: down
+2025-02-27 23:04:08,697 - Added 'g' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceeng
+2025-02-27 23:04:08,700 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceeng
+2025-02-27 23:04:08,761 - Key event detected: l - Event type: down
+2025-02-27 23:04:08,761 - Added 'l' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceengl
+2025-02-27 23:04:08,764 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceengl
+2025-02-27 23:04:08,833 - Key event detected: g - Event type: up
+2025-02-27 23:04:08,849 - Key event detected: l - Event type: up
+2025-02-27 23:04:08,905 - Key event detected: i - Event type: down
+2025-02-27 23:04:08,905 - Added 'i' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceengli
+2025-02-27 23:04:08,908 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceengli
+2025-02-27 23:04:09,001 - Key event detected: i - Event type: up
+2025-02-27 23:04:09,049 - Key event detected: s - Event type: down
+2025-02-27 23:04:09,049 - Added 's' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceenglis
+2025-02-27 23:04:09,052 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceenglis
+2025-02-27 23:04:09,073 - Key event detected: h - Event type: down
+2025-02-27 23:04:09,073 - Added 'h' to buffered word. Current buffered word: thisshangeulthisspaceisspacetypingspaceinspaceenglish
+2025-02-27 23:04:09,076 - Predicted language probability: 1.0 for word: thisshangeulthisspaceisspacetypingspaceinspaceenglish
+2025-02-27 23:04:09,137 - Key event detected: s - Event type: up
+2025-02-27 23:04:09,161 - Key event detected: h - Event type: up
+2025-02-27 23:04:09,273 - Key event detected: . - Event type: down
+2025-02-27 23:04:09,273 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:04:09,385 - Key event detected: space - Event type: down
+2025-02-27 23:04:09,385 - Added 'space' to buffered word. Current buffered word: space
+2025-02-27 23:04:09,386 - Predicted language probability: 0.995873749256134 for word: space
+2025-02-27 23:04:09,409 - Key event detected: . - Event type: up
+2025-02-27 23:04:09,473 - Key event detected: space - Event type: up
+2025-02-27 23:04:10,753 - Key event detected: d - Event type: down
+2025-02-27 23:04:10,753 - Added 'd' to buffered word. Current buffered word: spaced
+2025-02-27 23:04:10,754 - Predicted language probability: 0.9858236312866211 for word: spaced
+2025-02-27 23:04:10,825 - Key event detected: l - Event type: down
+2025-02-27 23:04:10,825 - Added 'l' to buffered word. Current buffered word: spacedl
+2025-02-27 23:04:10,826 - Predicted language probability: 0.936232328414917 for word: spacedl
+2025-02-27 23:04:10,873 - Key event detected: d - Event type: up
+2025-02-27 23:04:10,913 - Key event detected: l - Event type: up
+2025-02-27 23:04:10,985 - Key event detected: r - Event type: down
+2025-02-27 23:04:10,985 - Added 'r' to buffered word. Current buffered word: spacedlr
+2025-02-27 23:04:10,986 - Predicted language probability: 0.9073448181152344 for word: spacedlr
+2025-02-27 23:04:11,049 - Key event detected: j - Event type: down
+2025-02-27 23:04:11,049 - Added 'j' to buffered word. Current buffered word: spacedlrj
+2025-02-27 23:04:11,050 - Predicted language probability: 0.5813885927200317 for word: spacedlrj
+2025-02-27 23:04:11,089 - Key event detected: r - Event type: up
+2025-02-27 23:04:11,129 - Key event detected: j - Event type: up
+2025-02-27 23:04:11,137 - Key event detected: s - Event type: down
+2025-02-27 23:04:11,137 - Added 's' to buffered word. Current buffered word: spacedlrjs
+2025-02-27 23:04:11,138 - Predicted language probability: 0.8350108861923218 for word: spacedlrjs
+2025-02-27 23:04:11,249 - Key event detected: s - Event type: up
+2025-02-27 23:04:11,273 - Key event detected: space - Event type: down
+2025-02-27 23:04:11,273 - Added 'space' to buffered word. Current buffered word: spacedlrjsspace
+2025-02-27 23:04:11,274 - Predicted language probability: 0.9999053478240967 for word: spacedlrjsspace
+2025-02-27 23:04:11,377 - Key event detected: space - Event type: up
+2025-02-27 23:04:11,425 - Key event detected: g - Event type: down
+2025-02-27 23:04:11,425 - Added 'g' to buffered word. Current buffered word: spacedlrjsspaceg
+2025-02-27 23:04:11,426 - Predicted language probability: 0.9998455047607422 for word: spacedlrjsspaceg
+2025-02-27 23:04:11,473 - Key event detected: k - Event type: down
+2025-02-27 23:04:11,473 - Added 'k' to buffered word. Current buffered word: spacedlrjsspacegk
+2025-02-27 23:04:11,474 - Predicted language probability: 0.9936226010322571 for word: spacedlrjsspacegk
+2025-02-27 23:04:11,513 - Key event detected: g - Event type: up
+2025-02-27 23:04:11,577 - Key event detected: k - Event type: up
+2025-02-27 23:04:11,585 - Key event detected: s - Event type: down
+2025-02-27 23:04:11,585 - Added 's' to buffered word. Current buffered word: spacedlrjsspacegks
+2025-02-27 23:04:11,586 - Predicted language probability: 0.9999600648880005 for word: spacedlrjsspacegks
+2025-02-27 23:04:11,689 - Key event detected: s - Event type: up
+2025-02-27 23:04:11,777 - Key event detected: r - Event type: down
+2025-02-27 23:04:11,777 - Added 'r' to buffered word. Current buffered word: spacedlrjsspacegksr
+2025-02-27 23:04:11,778 - Predicted language probability: 0.9999973773956299 for word: spacedlrjsspacegksr
+2025-02-27 23:04:11,841 - Key event detected: r - Event type: up
+2025-02-27 23:04:11,849 - Key event detected: m - Event type: down
+2025-02-27 23:04:11,849 - Added 'm' to buffered word. Current buffered word: spacedlrjsspacegksrm
+2025-02-27 23:04:11,851 - Predicted language probability: 0.9999985694885254 for word: spacedlrjsspacegksrm
+2025-02-27 23:04:11,929 - Key event detected: m - Event type: up
+2025-02-27 23:04:11,969 - Key event detected: f - Event type: down
+2025-02-27 23:04:11,969 - Added 'f' to buffered word. Current buffered word: spacedlrjsspacegksrmf
+2025-02-27 23:04:11,971 - Predicted language probability: 0.9999963045120239 for word: spacedlrjsspacegksrmf
+2025-02-27 23:04:12,025 - Key event detected: f - Event type: up
+2025-02-27 23:04:12,121 - Key event detected: f - Event type: down
+2025-02-27 23:04:12,121 - Added 'f' to buffered word. Current buffered word: spacedlrjsspacegksrmff
+2025-02-27 23:04:12,123 - Predicted language probability: 0.9999985694885254 for word: spacedlrjsspacegksrmff
+2025-02-27 23:04:12,185 - Key event detected: h - Event type: down
+2025-02-27 23:04:12,185 - Added 'h' to buffered word. Current buffered word: spacedlrjsspacegksrmffh
+2025-02-27 23:04:12,187 - Predicted language probability: 0.9999997615814209 for word: spacedlrjsspacegksrmffh
+2025-02-27 23:04:12,241 - Key event detected: f - Event type: up
+2025-02-27 23:04:12,265 - Key event detected: space - Event type: down
+2025-02-27 23:04:12,265 - Added 'space' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspace
+2025-02-27 23:04:12,267 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspace
+2025-02-27 23:04:12,313 - Key event detected: h - Event type: up
+2025-02-27 23:04:12,353 - Key event detected: space - Event type: up
+2025-02-27 23:04:12,601 - Key event detected: x - Event type: down
+2025-02-27 23:04:12,601 - Added 'x' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacex
+2025-02-27 23:04:12,603 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacex
+2025-02-27 23:04:12,649 - Key event detected: k - Event type: down
+2025-02-27 23:04:12,649 - Added 'k' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexk
+2025-02-27 23:04:12,652 - Predicted language probability: 0.9999996423721313 for word: spacedlrjsspacegksrmffhspacexk
+2025-02-27 23:04:12,705 - Key event detected: x - Event type: up
+2025-02-27 23:04:12,753 - Key event detected: k - Event type: up
+2025-02-27 23:04:12,809 - Key event detected: d - Event type: down
+2025-02-27 23:04:12,809 - Added 'd' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkd
+2025-02-27 23:04:12,811 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkd
+2025-02-27 23:04:12,889 - Key event detected: l - Event type: down
+2025-02-27 23:04:12,889 - Added 'l' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdl
+2025-02-27 23:04:12,891 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdl
+2025-02-27 23:04:12,937 - Key event detected: d - Event type: up
+2025-02-27 23:04:12,953 - Key event detected: l - Event type: up
+2025-02-27 23:04:13,425 - Key event detected: v - Event type: down
+2025-02-27 23:04:13,425 - Added 'v' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlv
+2025-02-27 23:04:13,427 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlv
+2025-02-27 23:04:13,505 - Key event detected: l - Event type: down
+2025-02-27 23:04:13,505 - Added 'l' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvl
+2025-02-27 23:04:13,507 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvl
+2025-02-27 23:04:13,529 - Key event detected: v - Event type: up
+2025-02-27 23:04:13,585 - Key event detected: d - Event type: down
+2025-02-27 23:04:13,585 - Added 'd' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvld
+2025-02-27 23:04:13,587 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvld
+2025-02-27 23:04:13,601 - Key event detected: l - Event type: up
+2025-02-27 23:04:13,665 - Key event detected: space - Event type: down
+2025-02-27 23:04:13,665 - Added 'space' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspace
+2025-02-27 23:04:13,668 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspace
+2025-02-27 23:04:13,673 - Key event detected: d - Event type: up
+2025-02-27 23:04:13,777 - Key event detected: space - Event type: up
+2025-02-27 23:04:13,801 - Key event detected: g - Event type: down
+2025-02-27 23:04:13,801 - Added 'g' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspaceg
+2025-02-27 23:04:13,804 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspaceg
+2025-02-27 23:04:13,873 - Key event detected: k - Event type: down
+2025-02-27 23:04:13,873 - Added 'k' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegk
+2025-02-27 23:04:13,876 - Predicted language probability: 0.9999997615814209 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegk
+2025-02-27 23:04:13,889 - Key event detected: g - Event type: up
+2025-02-27 23:04:13,929 - Key event detected: k - Event type: up
+2025-02-27 23:04:13,961 - Key event detected: s - Event type: down
+2025-02-27 23:04:13,961 - Added 's' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegks
+2025-02-27 23:04:13,964 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegks
+2025-02-27 23:04:14,033 - Key event detected: s - Event type: up
+2025-02-27 23:04:14,041 - Key event detected: m - Event type: down
+2025-02-27 23:04:14,041 - Added 'm' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegksm
+2025-02-27 23:04:14,044 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegksm
+2025-02-27 23:04:14,097 - Key event detected: m - Event type: up
+2025-02-27 23:04:14,105 - Key event detected: s - Event type: down
+2025-02-27 23:04:14,105 - Added 's' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegksms
+2025-02-27 23:04:14,107 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegksms
+2025-02-27 23:04:14,185 - Key event detected: s - Event type: up
+2025-02-27 23:04:14,281 - Key event detected: w - Event type: down
+2025-02-27 23:04:14,281 - Added 'w' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmsw
+2025-02-27 23:04:14,283 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmsw
+2025-02-27 23:04:14,353 - Key event detected: n - Event type: down
+2025-02-27 23:04:14,353 - Added 'n' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmswn
+2025-02-27 23:04:14,356 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmswn
+2025-02-27 23:04:14,361 - Key event detected: w - Event type: up
+2025-02-27 23:04:14,425 - Key event detected: n - Event type: up
+2025-02-27 23:04:14,449 - Key event detected: d - Event type: down
+2025-02-27 23:04:14,449 - Added 'd' to buffered word. Current buffered word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmswnd
+2025-02-27 23:04:14,452 - Predicted language probability: 1.0 for word: spacedlrjsspacegksrmffhspacexkdlvldspacegksmswnd
+2025-02-27 23:04:14,545 - Key event detected: d - Event type: up
+2025-02-27 23:04:14,665 - Key event detected: . - Event type: down
+2025-02-27 23:04:14,665 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:04:14,785 - Key event detected: . - Event type: up
+2025-02-27 23:04:14,841 - Key event detected: space - Event type: down
+2025-02-27 23:04:14,841 - Added 'space' to buffered word. Current buffered word: space
+2025-02-27 23:04:14,842 - Predicted language probability: 0.995873749256134 for word: space
+2025-02-27 23:04:14,913 - Key event detected: space - Event type: up
+2025-02-27 23:04:24,025 - Key event detected: ctrl - Event type: down
+2025-02-27 23:04:24,025 - Added 'ctrl' to buffered word. Current buffered word: spacectrl
+2025-02-27 23:04:24,026 - Predicted language probability: 0.9999464750289917 for word: spacectrl
+2025-02-27 23:04:24,105 - Key event detected: s - Event type: down
+2025-02-27 23:04:24,105 - Added 's' to buffered word. Current buffered word: spacectrls
+2025-02-27 23:04:24,106 - Predicted language probability: 0.9999990463256836 for word: spacectrls
+2025-02-27 23:04:24,217 - Key event detected: ctrl - Event type: up
+2025-02-27 23:04:24,233 - Key event detected: s - Event type: up
+2025-02-27 23:04:37,993 - Key event detected: ctrl - Event type: down
+2025-02-27 23:04:37,993 - Added 'ctrl' to buffered word. Current buffered word: spacectrlsctrl
+2025-02-27 23:04:37,994 - Predicted language probability: 1.0 for word: spacectrlsctrl
+2025-02-27 23:04:38,073 - Key event detected: a - Event type: down
+2025-02-27 23:04:38,073 - Added 'a' to buffered word. Current buffered word: spacectrlsctrla
+2025-02-27 23:04:38,074 - Predicted language probability: 1.0 for word: spacectrlsctrla
+2025-02-27 23:04:38,169 - Key event detected: ctrl - Event type: up
+2025-02-27 23:04:38,193 - Key event detected: a - Event type: up
+2025-02-27 23:04:38,297 - Key event detected: ctrl - Event type: down
+2025-02-27 23:04:38,297 - Added 'ctrl' to buffered word. Current buffered word: spacectrlsctrlactrl
+2025-02-27 23:04:38,298 - Predicted language probability: 1.0 for word: spacectrlsctrlactrl
+2025-02-27 23:04:38,401 - Key event detected: c - Event type: down
+2025-02-27 23:04:38,401 - Added 'c' to buffered word. Current buffered word: spacectrlsctrlactrlc
+2025-02-27 23:04:38,402 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlc
+2025-02-27 23:04:38,473 - Key event detected: ctrl - Event type: up
+2025-02-27 23:04:38,489 - Key event detected: c - Event type: up
+2025-02-27 23:04:59,536 - Key event detected: f - Event type: down
+2025-02-27 23:04:59,536 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcf
+2025-02-27 23:04:59,538 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcf
+2025-02-27 23:04:59,672 - Key event detected: f - Event type: up
+2025-02-27 23:04:59,880 - Key event detected: backspace - Event type: down
+2025-02-27 23:04:59,880 - Backspace pressed. Buffered word: spacectrlsctrlactrlc
+2025-02-27 23:04:59,984 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:01,624 - Key event detected: f - Event type: down
+2025-02-27 23:05:01,624 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcf
+2025-02-27 23:05:01,626 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcf
+2025-02-27 23:05:01,680 - Key event detected: h - Event type: down
+2025-02-27 23:05:01,680 - Added 'h' to buffered word. Current buffered word: spacectrlsctrlactrlcfh
+2025-02-27 23:05:01,681 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfh
+2025-02-27 23:05:01,752 - Key event detected: f - Event type: up
+2025-02-27 23:05:01,768 - Key event detected: h - Event type: up
+2025-02-27 23:05:01,976 - Key event detected: r - Event type: down
+2025-02-27 23:05:01,976 - Added 'r' to buffered word. Current buffered word: spacectrlsctrlactrlcfhr
+2025-02-27 23:05:01,978 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhr
+2025-02-27 23:05:02,056 - Key event detected: m - Event type: down
+2025-02-27 23:05:02,056 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrm
+2025-02-27 23:05:02,058 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrm
+2025-02-27 23:05:02,064 - Key event detected: r - Event type: up
+2025-02-27 23:05:02,112 - Key event detected: m - Event type: up
+2025-02-27 23:05:02,200 - Key event detected: f - Event type: down
+2025-02-27 23:05:02,200 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmf
+2025-02-27 23:05:02,202 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmf
+2025-02-27 23:05:02,256 - Key event detected: m - Event type: down
+2025-02-27 23:05:02,256 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfm
+2025-02-27 23:05:02,258 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfm
+2025-02-27 23:05:02,264 - Key event detected: f - Event type: up
+2025-02-27 23:05:02,328 - Key event detected: m - Event type: up
+2025-02-27 23:05:02,352 - Key event detected: f - Event type: down
+2025-02-27 23:05:02,352 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmf
+2025-02-27 23:05:02,354 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmf
+2025-02-27 23:05:02,408 - Key event detected: space - Event type: down
+2025-02-27 23:05:02,408 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspace
+2025-02-27 23:05:02,410 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspace
+2025-02-27 23:05:02,440 - Key event detected: f - Event type: up
+2025-02-27 23:05:02,504 - Key event detected: space - Event type: up
+2025-02-27 23:05:02,544 - Key event detected: q - Event type: down
+2025-02-27 23:05:02,544 - Added 'q' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceq
+2025-02-27 23:05:02,546 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfhrmfmfspaceq
+2025-02-27 23:05:02,608 - Key event detected: h - Event type: down
+2025-02-27 23:05:02,608 - Added 'h' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqh
+2025-02-27 23:05:02,610 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfhrmfmfspaceqh
+2025-02-27 23:05:02,616 - Key event detected: q - Event type: up
+2025-02-27 23:05:02,672 - Key event detected: h - Event type: up
+2025-02-27 23:05:02,720 - Key event detected: r - Event type: down
+2025-02-27 23:05:02,720 - Added 'r' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhr
+2025-02-27 23:05:02,722 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhr
+2025-02-27 23:05:02,768 - Key event detected: h - Event type: down
+2025-02-27 23:05:02,768 - Added 'h' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrh
+2025-02-27 23:05:02,771 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrh
+2025-02-27 23:05:02,832 - Key event detected: r - Event type: up
+2025-02-27 23:05:02,864 - Key event detected: space - Event type: down
+2025-02-27 23:05:02,864 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspace
+2025-02-27 23:05:02,866 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspace
+2025-02-27 23:05:02,872 - Key event detected: h - Event type: up
+2025-02-27 23:05:02,984 - Key event detected: space - Event type: up
+2025-02-27 23:05:04,768 - Key event detected: z - Event type: down
+2025-02-27 23:05:04,768 - Added 'z' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacez
+2025-02-27 23:05:04,771 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacez
+2025-02-27 23:05:04,832 - Key event detected: l - Event type: down
+2025-02-27 23:05:04,832 - Added 'l' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacezl
+2025-02-27 23:05:04,834 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacezl
+2025-02-27 23:05:04,880 - Key event detected: z - Event type: up
+2025-02-27 23:05:04,920 - Key event detected: l - Event type: up
+2025-02-27 23:05:05,152 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:05,152 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacez
+2025-02-27 23:05:05,208 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:05,288 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:05,288 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspace
+2025-02-27 23:05:05,368 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:05,440 - Key event detected: v - Event type: down
+2025-02-27 23:05:05,440 - Added 'v' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacev
+2025-02-27 23:05:05,442 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacev
+2025-02-27 23:05:05,528 - Key event detected: v - Event type: up
+2025-02-27 23:05:05,536 - Key event detected: m - Event type: down
+2025-02-27 23:05:05,536 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevm
+2025-02-27 23:05:05,539 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevm
+2025-02-27 23:05:05,600 - Key event detected: m - Event type: up
+2025-02-27 23:05:06,096 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:06,096 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacev
+2025-02-27 23:05:06,176 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:06,296 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:06,296 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspace
+2025-02-27 23:05:06,360 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:06,656 - Key event detected: v - Event type: down
+2025-02-27 23:05:06,657 - Added 'v' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacev
+2025-02-27 23:05:06,659 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacev
+2025-02-27 23:05:06,696 - Key event detected: m - Event type: down
+2025-02-27 23:05:06,696 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevm
+2025-02-27 23:05:06,699 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevm
+2025-02-27 23:05:06,704 - Key event detected: v - Event type: up
+2025-02-27 23:05:06,776 - Key event detected: m - Event type: up
+2025-02-27 23:05:06,848 - Key event detected: f - Event type: down
+2025-02-27 23:05:06,848 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmf
+2025-02-27 23:05:06,851 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmf
+2025-02-27 23:05:06,912 - Key event detected: h - Event type: down
+2025-02-27 23:05:06,912 - Added 'h' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfh
+2025-02-27 23:05:06,914 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfh
+2025-02-27 23:05:06,920 - Key event detected: f - Event type: up
+2025-02-27 23:05:06,992 - Key event detected: h - Event type: up
+2025-02-27 23:05:07,064 - Key event detected: r - Event type: down
+2025-02-27 23:05:07,064 - Added 'r' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhr
+2025-02-27 23:05:07,068 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhr
+2025-02-27 23:05:07,136 - Key event detected: r - Event type: up
+2025-02-27 23:05:07,136 - Key event detected: m - Event type: down
+2025-02-27 23:05:07,136 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrm
+2025-02-27 23:05:07,139 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrm
+2025-02-27 23:05:07,216 - Key event detected: m - Event type: up
+2025-02-27 23:05:07,256 - Key event detected: f - Event type: down
+2025-02-27 23:05:07,256 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmf
+2025-02-27 23:05:07,259 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmf
+2025-02-27 23:05:07,336 - Key event detected: f - Event type: up
+2025-02-27 23:05:07,624 - Key event detected: o - Event type: down
+2025-02-27 23:05:07,624 - Added 'o' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfo
+2025-02-27 23:05:07,627 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfo
+2025-02-27 23:05:07,704 - Key event detected: o - Event type: up
+2025-02-27 23:05:07,712 - Key event detected: a - Event type: down
+2025-02-27 23:05:07,712 - Added 'a' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoa
+2025-02-27 23:05:07,714 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoa
+2025-02-27 23:05:07,776 - Key event detected: a - Event type: up
+2025-02-27 23:05:07,800 - Key event detected: space - Event type: down
+2025-02-27 23:05:07,800 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspace
+2025-02-27 23:05:07,804 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspace
+2025-02-27 23:05:07,888 - Key event detected: space - Event type: up
+2025-02-27 23:05:07,993 - Key event detected: a - Event type: down
+2025-02-27 23:05:07,993 - Added 'a' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspacea
+2025-02-27 23:05:07,996 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspacea
+2025-02-27 23:05:08,064 - Key event detected: n - Event type: down
+2025-02-27 23:05:08,064 - Added 'n' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspacean
+2025-02-27 23:05:08,068 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspacean
+2025-02-27 23:05:08,080 - Key event detected: a - Event type: up
+2025-02-27 23:05:08,144 - Key event detected: s - Event type: down
+2025-02-27 23:05:08,144 - Added 's' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceans
+2025-02-27 23:05:08,147 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceans
+2025-02-27 23:05:08,152 - Key event detected: n - Event type: up
+2025-02-27 23:05:08,216 - Key event detected: s - Event type: up
+2025-02-27 23:05:08,320 - Key event detected: w - Event type: down
+2025-02-27 23:05:08,320 - Added 'w' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceansw
+2025-02-27 23:05:08,324 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceansw
+2025-02-27 23:05:08,324 - Key event detected: p - Event type: down
+2025-02-27 23:05:08,324 - Added 'p' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswp
+2025-02-27 23:05:08,327 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswp
+2025-02-27 23:05:08,400 - Key event detected: w - Event type: up
+2025-02-27 23:05:08,440 - Key event detected: p - Event type: up
+2025-02-27 23:05:08,473 - Key event detected: space - Event type: down
+2025-02-27 23:05:08,473 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswpspace
+2025-02-27 23:05:08,476 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswpspace
+2025-02-27 23:05:08,568 - Key event detected: space - Event type: up
+2025-02-27 23:05:08,944 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:08,944 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswpspac
+2025-02-27 23:05:09,000 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,064 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,064 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswpspa
+2025-02-27 23:05:09,128 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,208 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,208 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswpsp
+2025-02-27 23:05:09,264 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,320 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,320 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswps
+2025-02-27 23:05:09,384 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,464 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,464 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanswp
+2025-02-27 23:05:09,512 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,600 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,600 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceansw
+2025-02-27 23:05:09,656 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,752 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,752 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceans
+2025-02-27 23:05:09,776 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:09,864 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:09,864 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspacean
+2025-02-27 23:05:09,944 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:10,224 - Key event detected: z - Event type: down
+2025-02-27 23:05:10,224 - Added 'z' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanz
+2025-02-27 23:05:10,227 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanz
+2025-02-27 23:05:10,304 - Key event detected: h - Event type: down
+2025-02-27 23:05:10,304 - Added 'h' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzh
+2025-02-27 23:05:10,307 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzh
+2025-02-27 23:05:10,312 - Key event detected: z - Event type: up
+2025-02-27 23:05:10,392 - Key event detected: h - Event type: up
+2025-02-27 23:05:10,472 - Key event detected: e - Event type: down
+2025-02-27 23:05:10,472 - Added 'e' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhe
+2025-02-27 23:05:10,476 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhe
+2025-02-27 23:05:10,536 - Key event detected: e - Event type: up
+2025-02-27 23:05:10,544 - Key event detected: m - Event type: down
+2025-02-27 23:05:10,544 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhem
+2025-02-27 23:05:10,548 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhem
+2025-02-27 23:05:10,609 - Key event detected: m - Event type: up
+2025-02-27 23:05:10,721 - Key event detected: d - Event type: down
+2025-02-27 23:05:10,721 - Added 'd' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemd
+2025-02-27 23:05:10,724 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemd
+2025-02-27 23:05:10,816 - Key event detected: d - Event type: up
+2025-02-27 23:05:10,824 - Key event detected: m - Event type: down
+2025-02-27 23:05:10,824 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdm
+2025-02-27 23:05:10,828 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdm
+2025-02-27 23:05:10,944 - Key event detected: l - Event type: down
+2025-02-27 23:05:10,944 - Added 'l' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdml
+2025-02-27 23:05:10,948 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdml
+2025-02-27 23:05:10,992 - Key event detected: m - Event type: up
+2025-02-27 23:05:11,080 - Key event detected: l - Event type: up
+2025-02-27 23:05:11,096 - Key event detected: space - Event type: down
+2025-02-27 23:05:11,096 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspace
+2025-02-27 23:05:11,100 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspace
+2025-02-27 23:05:11,184 - Key event detected: a - Event type: down
+2025-02-27 23:05:11,184 - Added 'a' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspacea
+2025-02-27 23:05:11,188 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspacea
+2025-02-27 23:05:11,192 - Key event detected: space - Event type: up
+2025-02-27 23:05:11,272 - Key event detected: a - Event type: up
+2025-02-27 23:05:11,280 - Key event detected: n - Event type: down
+2025-02-27 23:05:11,280 - Added 'n' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspacean
+2025-02-27 23:05:11,284 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspacean
+2025-02-27 23:05:11,376 - Key event detected: n - Event type: up
+2025-02-27 23:05:11,384 - Key event detected: s - Event type: down
+2025-02-27 23:05:11,384 - Added 's' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceans
+2025-02-27 23:05:11,388 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceans
+2025-02-27 23:05:11,464 - Key event detected: s - Event type: up
+2025-02-27 23:05:11,576 - Key event detected: w - Event type: down
+2025-02-27 23:05:11,576 - Added 'w' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceansw
+2025-02-27 23:05:11,579 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceansw
+2025-02-27 23:05:11,632 - Key event detected: p - Event type: down
+2025-02-27 23:05:11,632 - Added 'p' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswp
+2025-02-27 23:05:11,636 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswp
+2025-02-27 23:05:11,640 - Key event detected: w - Event type: up
+2025-02-27 23:05:11,696 - Key event detected: p - Event type: up
+2025-02-27 23:05:11,792 - Key event detected: w - Event type: down
+2025-02-27 23:05:11,792 - Added 'w' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpw
+2025-02-27 23:05:11,796 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpw
+2025-02-27 23:05:11,848 - Key event detected: j - Event type: down
+2025-02-27 23:05:11,848 - Added 'j' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwj
+2025-02-27 23:05:11,852 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwj
+2025-02-27 23:05:11,864 - Key event detected: w - Event type: up
+2025-02-27 23:05:11,920 - Key event detected: j - Event type: up
+2025-02-27 23:05:11,936 - Key event detected: a - Event type: down
+2025-02-27 23:05:11,936 - Added 'a' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwja
+2025-02-27 23:05:11,940 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwja
+2025-02-27 23:05:12,016 - Key event detected: a - Event type: up
+2025-02-27 23:05:12,088 - Key event detected: d - Event type: down
+2025-02-27 23:05:12,088 - Added 'd' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjad
+2025-02-27 23:05:12,093 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjad
+2025-02-27 23:05:12,104 - Key event detected: m - Event type: down
+2025-02-27 23:05:12,104 - Added 'm' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadm
+2025-02-27 23:05:12,109 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadm
+2025-02-27 23:05:12,176 - Key event detected: m - Event type: up
+2025-02-27 23:05:12,184 - Key event detected: d - Event type: up
+2025-02-27 23:05:12,248 - Key event detected: f - Event type: down
+2025-02-27 23:05:12,248 - Added 'f' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmf
+2025-02-27 23:05:12,253 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmf
+2025-02-27 23:05:12,304 - Key event detected: space - Event type: down
+2025-02-27 23:05:12,304 - Added 'space' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspace
+2025-02-27 23:05:12,308 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspace
+2025-02-27 23:05:12,328 - Key event detected: f - Event type: up
+2025-02-27 23:05:12,400 - Key event detected: space - Event type: up
+2025-02-27 23:05:12,432 - Key event detected: t - Event type: down
+2025-02-27 23:05:12,432 - Added 't' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacet
+2025-02-27 23:05:12,436 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacet
+2025-02-27 23:05:12,488 - Key event detected: n - Event type: down
+2025-02-27 23:05:12,488 - Added 'n' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetn
+2025-02-27 23:05:12,492 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetn
+2025-02-27 23:05:12,528 - Key event detected: t - Event type: up
+2025-02-27 23:05:12,560 - Key event detected: n - Event type: up
+2025-02-27 23:05:12,608 - Key event detected: w - Event type: down
+2025-02-27 23:05:12,608 - Added 'w' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnw
+2025-02-27 23:05:12,613 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnw
+2025-02-27 23:05:12,680 - Key event detected: w - Event type: up
+2025-02-27 23:05:12,696 - Key event detected: j - Event type: down
+2025-02-27 23:05:12,696 - Added 'j' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwj
+2025-02-27 23:05:12,701 - Predicted language probability: 0.9999997615814209 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwj
+2025-02-27 23:05:12,768 - Key event detected: j - Event type: up
+2025-02-27 23:05:12,776 - Key event detected: d - Event type: down
+2025-02-27 23:05:12,776 - Added 'd' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjd
+2025-02-27 23:05:12,782 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjd
+2025-02-27 23:05:12,856 - Key event detected: d - Event type: up
+2025-02-27 23:05:12,920 - Key event detected: g - Event type: down
+2025-02-27 23:05:12,928 - Added 'g' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdg
+2025-02-27 23:05:12,932 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdg
+2025-02-27 23:05:12,984 - Key event detected: o - Event type: down
+2025-02-27 23:05:12,984 - Added 'o' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgo
+2025-02-27 23:05:12,989 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgo
+2025-02-27 23:05:13,008 - Key event detected: g - Event type: up
+2025-02-27 23:05:13,056 - Key event detected: o - Event type: up
+2025-02-27 23:05:13,080 - Key event detected: w - Event type: down
+2025-02-27 23:05:13,080 - Added 'w' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgow
+2025-02-27 23:05:13,085 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgow
+2025-02-27 23:05:13,144 - Key event detected: n - Event type: down
+2025-02-27 23:05:13,144 - Added 'n' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgown
+2025-02-27 23:05:13,149 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgown
+2025-02-27 23:05:13,208 - Key event detected: n - Event type: up
+2025-02-27 23:05:13,232 - Key event detected: w - Event type: up
+2025-02-27 23:05:13,296 - Key event detected: j - Event type: down
+2025-02-27 23:05:13,296 - Added 'j' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownj
+2025-02-27 23:05:13,301 - Predicted language probability: 0.9999998807907104 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownj
+2025-02-27 23:05:13,368 - Key event detected: j - Event type: up
+2025-02-27 23:05:13,424 - Key event detected: shift - Event type: down
+2025-02-27 23:05:13,424 - Added 'shift' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshift
+2025-02-27 23:05:13,429 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshift
+2025-02-27 23:05:13,512 - Key event detected: enter - Event type: down
+2025-02-27 23:05:13,512 - Added 'enter' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshiftenter
+2025-02-27 23:05:13,517 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshiftenter
+2025-02-27 23:05:13,568 - Key event detected: enter - Event type: up
+2025-02-27 23:05:13,912 - Key event detected: shift - Event type: up
+2025-02-27 23:05:14,008 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:14,008 - Backspace pressed. Buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshiftente
+2025-02-27 23:05:14,088 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:14,176 - Key event detected: shift - Event type: down
+2025-02-27 23:05:14,176 - Added 'shift' to buffered word. Current buffered word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshiftenteshift
+2025-02-27 23:05:14,180 - Predicted language probability: 1.0 for word: spacectrlsctrlactrlcfhrmfmfspaceqhrhspacevmfhrmfoaspaceanzhemdmlspaceanswpwjadmfspacetnwjdgownjshiftenteshift
+2025-02-27 23:05:14,488 - Key event detected: : - Event type: down
+2025-02-27 23:05:14,488 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:05:14,560 - Key event detected: : - Event type: up
+2025-02-27 23:05:14,704 - Key event detected: enter - Event type: down
+2025-02-27 23:05:14,704 - Added 'enter' to buffered word. Current buffered word: enter
+2025-02-27 23:05:14,705 - Predicted language probability: 0.9382376074790955 for word: enter
+2025-02-27 23:05:14,768 - Key event detected: enter - Event type: up
+2025-02-27 23:05:14,864 - Key event detected: enter - Event type: down
+2025-02-27 23:05:14,864 - Added 'enter' to buffered word. Current buffered word: enterenter
+2025-02-27 23:05:14,865 - Predicted language probability: 0.9999725818634033 for word: enterenter
+2025-02-27 23:05:14,936 - Key event detected: enter - Event type: up
+2025-02-27 23:05:15,000 - Key event detected: enter - Event type: down
+2025-02-27 23:05:15,000 - Added 'enter' to buffered word. Current buffered word: enterenterenter
+2025-02-27 23:05:15,002 - Predicted language probability: 0.9999998807907104 for word: enterenterenter
+2025-02-27 23:05:15,064 - Key event detected: enter - Event type: up
+2025-02-27 23:05:15,152 - Key event detected: enter - Event type: down
+2025-02-27 23:05:15,152 - Added 'enter' to buffered word. Current buffered word: enterenterenterenter
+2025-02-27 23:05:15,154 - Predicted language probability: 1.0 for word: enterenterenterenter
+2025-02-27 23:05:15,216 - Key event detected: enter - Event type: up
+2025-02-27 23:05:15,272 - Key event detected: shift - Event type: up
+2025-02-27 23:05:15,384 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:15,384 - Added 'ctrl' to buffered word. Current buffered word: enterenterenterenterctrl
+2025-02-27 23:05:15,385 - Predicted language probability: 1.0 for word: enterenterenterenterctrl
+2025-02-27 23:05:15,480 - Key event detected: v - Event type: down
+2025-02-27 23:05:15,480 - Added 'v' to buffered word. Current buffered word: enterenterenterenterctrlv
+2025-02-27 23:05:15,482 - Predicted language probability: 1.0 for word: enterenterenterenterctrlv
+2025-02-27 23:05:15,536 - Key event detected: v - Event type: up
+2025-02-27 23:05:15,544 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:16,000 - Key event detected: shift - Event type: down
+2025-02-27 23:05:16,000 - Added 'shift' to buffered word. Current buffered word: enterenterenterenterctrlvshift
+2025-02-27 23:05:16,002 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshift
+2025-02-27 23:05:16,128 - Key event detected: enter - Event type: down
+2025-02-27 23:05:16,128 - Added 'enter' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenter
+2025-02-27 23:05:16,130 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenter
+2025-02-27 23:05:16,176 - Key event detected: enter - Event type: up
+2025-02-27 23:05:16,264 - Key event detected: enter - Event type: down
+2025-02-27 23:05:16,264 - Added 'enter' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenter
+2025-02-27 23:05:16,266 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenter
+2025-02-27 23:05:16,328 - Key event detected: enter - Event type: up
+2025-02-27 23:05:16,392 - Key event detected: enter - Event type: down
+2025-02-27 23:05:16,392 - Added 'enter' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenter
+2025-02-27 23:05:16,395 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenter
+2025-02-27 23:05:16,464 - Key event detected: enter - Event type: up
+2025-02-27 23:05:16,664 - Key event detected: shift - Event type: up
+2025-02-27 23:05:27,152 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:27,152 - Added 'ctrl' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrl
+2025-02-27 23:05:27,155 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrl
+2025-02-27 23:05:27,208 - Key event detected: a - Event type: down
+2025-02-27 23:05:27,208 - Added 'a' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrla
+2025-02-27 23:05:27,211 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrla
+2025-02-27 23:05:27,280 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:27,312 - Key event detected: a - Event type: up
+2025-02-27 23:05:27,416 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:27,416 - Added 'ctrl' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrl
+2025-02-27 23:05:27,419 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrl
+2025-02-27 23:05:27,488 - Key event detected: c - Event type: down
+2025-02-27 23:05:27,488 - Added 'c' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlc
+2025-02-27 23:05:27,491 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlc
+2025-02-27 23:05:27,552 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:27,584 - Key event detected: c - Event type: up
+2025-02-27 23:05:27,680 - Key event detected: alt - Event type: down
+2025-02-27 23:05:27,680 - Added 'alt' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalt
+2025-02-27 23:05:27,684 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalt
+2025-02-27 23:05:27,712 - Key event detected: tab - Event type: down
+2025-02-27 23:05:27,712 - Added 'tab' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttab
+2025-02-27 23:05:27,717 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttab
+2025-02-27 23:05:27,800 - Key event detected: tab - Event type: up
+2025-02-27 23:05:27,808 - Key event detected: alt - Event type: up
+2025-02-27 23:05:29,376 - Key event detected: c - Event type: down
+2025-02-27 23:05:29,376 - Added 'c' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabc
+2025-02-27 23:05:29,379 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabc
+2025-02-27 23:05:29,488 - Key event detected: c - Event type: up
+2025-02-27 23:05:29,928 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:29,928 - Backspace pressed. Buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttab
+2025-02-27 23:05:29,976 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:30,056 - Key event detected: z - Event type: down
+2025-02-27 23:05:30,056 - Added 'z' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabz
+2025-02-27 23:05:30,059 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabz
+2025-02-27 23:05:30,128 - Key event detected: z - Event type: up
+2025-02-27 23:05:30,192 - Key event detected: h - Event type: down
+2025-02-27 23:05:30,192 - Added 'h' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzh
+2025-02-27 23:05:30,195 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzh
+2025-02-27 23:05:30,272 - Key event detected: h - Event type: up
+2025-02-27 23:05:30,336 - Key event detected: e - Event type: down
+2025-02-27 23:05:30,336 - Added 'e' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhe
+2025-02-27 23:05:30,339 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhe
+2025-02-27 23:05:30,416 - Key event detected: e - Event type: up
+2025-02-27 23:05:30,424 - Key event detected: m - Event type: down
+2025-02-27 23:05:30,424 - Added 'm' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhem
+2025-02-27 23:05:30,428 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhem
+2025-02-27 23:05:30,496 - Key event detected: m - Event type: up
+2025-02-27 23:05:30,520 - Key event detected: space - Event type: down
+2025-02-27 23:05:30,520 - Added 'space' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhemspace
+2025-02-27 23:05:30,524 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhemspace
+2025-02-27 23:05:30,600 - Key event detected: space - Event type: up
+2025-02-27 23:05:30,656 - Key event detected: shift - Event type: down
+2025-02-27 23:05:30,656 - Added 'shift' to buffered word. Current buffered word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhemspaceshift
+2025-02-27 23:05:30,659 - Predicted language probability: 1.0 for word: enterenterenterenterctrlvshiftenterenterenterctrlactrlcalttabzhemspaceshift
+2025-02-27 23:05:30,680 - Key event detected: : - Event type: down
+2025-02-27 23:05:30,680 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:05:30,784 - Key event detected: : - Event type: up
+2025-02-27 23:05:30,912 - Key event detected: enter - Event type: down
+2025-02-27 23:05:30,912 - Added 'enter' to buffered word. Current buffered word: enter
+2025-02-27 23:05:30,913 - Predicted language probability: 0.9382376074790955 for word: enter
+2025-02-27 23:05:30,976 - Key event detected: enter - Event type: up
+2025-02-27 23:05:31,096 - Key event detected: shift - Event type: up
+2025-02-27 23:05:31,216 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:31,216 - Added 'ctrl' to buffered word. Current buffered word: enterctrl
+2025-02-27 23:05:31,217 - Predicted language probability: 0.9997074007987976 for word: enterctrl
+2025-02-27 23:05:31,296 - Key event detected: v - Event type: down
+2025-02-27 23:05:31,296 - Added 'v' to buffered word. Current buffered word: enterctrlv
+2025-02-27 23:05:31,297 - Predicted language probability: 0.9999955892562866 for word: enterctrlv
+2025-02-27 23:05:31,352 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:31,392 - Key event detected: v - Event type: up
+2025-02-27 23:05:31,496 - Key event detected: shift - Event type: down
+2025-02-27 23:05:31,496 - Added 'shift' to buffered word. Current buffered word: enterctrlvshift
+2025-02-27 23:05:31,497 - Predicted language probability: 1.0 for word: enterctrlvshift
+2025-02-27 23:05:31,624 - Key event detected: enter - Event type: down
+2025-02-27 23:05:31,624 - Added 'enter' to buffered word. Current buffered word: enterctrlvshiftenter
+2025-02-27 23:05:31,626 - Predicted language probability: 1.0 for word: enterctrlvshiftenter
+2025-02-27 23:05:31,664 - Key event detected: enter - Event type: up
+2025-02-27 23:05:31,928 - Key event detected: shift - Event type: up
+2025-02-27 23:05:32,880 - Key event detected: alt - Event type: down
+2025-02-27 23:05:32,880 - Added 'alt' to buffered word. Current buffered word: enterctrlvshiftenteralt
+2025-02-27 23:05:32,882 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralt
+2025-02-27 23:05:32,952 - Key event detected: tab - Event type: down
+2025-02-27 23:05:32,952 - Added 'tab' to buffered word. Current buffered word: enterctrlvshiftenteralttab
+2025-02-27 23:05:32,954 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttab
+2025-02-27 23:05:33,008 - Key event detected: alt - Event type: up
+2025-02-27 23:05:33,040 - Key event detected: tab - Event type: up
+2025-02-27 23:05:34,136 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:34,136 - Added 'ctrl' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrl
+2025-02-27 23:05:34,138 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrl
+2025-02-27 23:05:34,192 - Key event detected: a - Event type: down
+2025-02-27 23:05:34,192 - Added 'a' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrla
+2025-02-27 23:05:34,194 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrla
+2025-02-27 23:05:34,264 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:34,272 - Key event detected: a - Event type: up
+2025-02-27 23:05:34,368 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:34,368 - Added 'ctrl' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrl
+2025-02-27 23:05:34,370 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrl
+2025-02-27 23:05:34,432 - Key event detected: c - Event type: down
+2025-02-27 23:05:34,432 - Added 'c' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlc
+2025-02-27 23:05:34,434 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlc
+2025-02-27 23:05:34,496 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:34,504 - Key event detected: c - Event type: up
+2025-02-27 23:05:34,600 - Key event detected: alt - Event type: down
+2025-02-27 23:05:34,600 - Added 'alt' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalt
+2025-02-27 23:05:34,602 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalt
+2025-02-27 23:05:34,640 - Key event detected: tab - Event type: down
+2025-02-27 23:05:34,640 - Added 'tab' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttab
+2025-02-27 23:05:34,643 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttab
+2025-02-27 23:05:34,712 - Key event detected: alt - Event type: up
+2025-02-27 23:05:34,720 - Key event detected: tab - Event type: up
+2025-02-27 23:05:34,976 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:34,976 - Added 'ctrl' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrl
+2025-02-27 23:05:34,978 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrl
+2025-02-27 23:05:35,144 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:35,216 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:35,216 - Added 'ctrl' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrl
+2025-02-27 23:05:35,218 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrl
+2025-02-27 23:05:35,296 - Key event detected: v - Event type: down
+2025-02-27 23:05:35,296 - Added 'v' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlv
+2025-02-27 23:05:35,299 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlv
+2025-02-27 23:05:35,400 - Key event detected: v - Event type: up
+2025-02-27 23:05:35,424 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:37,136 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:37,136 - Backspace pressed. Buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrl
+2025-02-27 23:05:37,216 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:37,352 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:37,352 - Backspace pressed. Buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctr
+2025-02-27 23:05:37,408 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:39,424 - Key event detected: l - Event type: down
+2025-02-27 23:05:39,424 - Added 'l' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrl
+2025-02-27 23:05:39,428 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrl
+2025-02-27 23:05:39,504 - Key event detected: l - Event type: up
+2025-02-27 23:05:39,544 - Key event detected: hangeul - Event type: down
+2025-02-27 23:05:39,544 - Added 'hangeul' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeul
+2025-02-27 23:05:39,548 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeul
+2025-02-27 23:05:40,040 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:40,040 - Backspace pressed. Buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeu
+2025-02-27 23:05:40,128 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:40,232 - Key event detected: hangeul - Event type: down
+2025-02-27 23:05:40,232 - Added 'hangeul' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeul
+2025-02-27 23:05:40,235 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeul
+2025-02-27 23:05:40,408 - Key event detected: f - Event type: down
+2025-02-27 23:05:40,408 - Added 'f' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulf
+2025-02-27 23:05:40,411 - Predicted language probability: 0.9999998807907104 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulf
+2025-02-27 23:05:40,464 - Key event detected: f - Event type: up
+2025-02-27 23:05:40,848 - Key event detected: h - Event type: down
+2025-02-27 23:05:40,848 - Added 'h' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfh
+2025-02-27 23:05:40,852 - Predicted language probability: 0.9999998807907104 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfh
+2025-02-27 23:05:40,920 - Key event detected: h - Event type: up
+2025-02-27 23:05:40,984 - Key event detected: r - Event type: down
+2025-02-27 23:05:40,984 - Added 'r' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhr
+2025-02-27 23:05:40,987 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhr
+2025-02-27 23:05:41,064 - Key event detected: m - Event type: down
+2025-02-27 23:05:41,064 - Added 'm' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrm
+2025-02-27 23:05:41,068 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrm
+2025-02-27 23:05:41,080 - Key event detected: r - Event type: up
+2025-02-27 23:05:41,112 - Key event detected: m - Event type: up
+2025-02-27 23:05:41,176 - Key event detected: space - Event type: down
+2025-02-27 23:05:41,176 - Added 'space' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrmspace
+2025-02-27 23:05:41,180 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrmspace
+2025-02-27 23:05:41,240 - Key event detected: space - Event type: up
+2025-02-27 23:05:41,280 - Key event detected: shift - Event type: down
+2025-02-27 23:05:41,280 - Added 'shift' to buffered word. Current buffered word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrmspaceshift
+2025-02-27 23:05:41,284 - Predicted language probability: 1.0 for word: enterctrlvshiftenteralttabctrlactrlcalttabctrlctrlhangeuhangeulfhrmspaceshift
+2025-02-27 23:05:41,328 - Key event detected: : - Event type: down
+2025-02-27 23:05:41,328 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:05:41,416 - Key event detected: : - Event type: up
+2025-02-27 23:05:41,440 - Key event detected: shift - Event type: up
+2025-02-27 23:05:41,760 - Key event detected: enter - Event type: down
+2025-02-27 23:05:41,760 - Added 'enter' to buffered word. Current buffered word: enter
+2025-02-27 23:05:41,761 - Predicted language probability: 0.9382376074790955 for word: enter
+2025-02-27 23:05:41,824 - Key event detected: enter - Event type: up
+2025-02-27 23:05:48,688 - Key event detected: ctrl - Event type: down
+2025-02-27 23:05:48,688 - Added 'ctrl' to buffered word. Current buffered word: enterctrl
+2025-02-27 23:05:48,689 - Predicted language probability: 0.9997074007987976 for word: enterctrl
+2025-02-27 23:05:48,832 - Key event detected: t - Event type: down
+2025-02-27 23:05:48,832 - Added 't' to buffered word. Current buffered word: enterctrlt
+2025-02-27 23:05:48,833 - Predicted language probability: 0.9999978542327881 for word: enterctrlt
+2025-02-27 23:05:48,912 - Key event detected: ctrl - Event type: up
+2025-02-27 23:05:48,984 - Key event detected: t - Event type: up
+2025-02-27 23:05:49,104 - Key event detected: t - Event type: down
+2025-02-27 23:05:49,104 - Added 't' to buffered word. Current buffered word: enterctrltt
+2025-02-27 23:05:49,105 - Predicted language probability: 0.9999997615814209 for word: enterctrltt
+2025-02-27 23:05:49,216 - Key event detected: l - Event type: down
+2025-02-27 23:05:49,216 - Added 'l' to buffered word. Current buffered word: enterctrlttl
+2025-02-27 23:05:49,217 - Predicted language probability: 0.9999996423721313 for word: enterctrlttl
+2025-02-27 23:05:49,232 - Key event detected: t - Event type: up
+2025-02-27 23:05:49,312 - Key event detected: l - Event type: up
+2025-02-27 23:05:49,392 - Key event detected: a - Event type: down
+2025-02-27 23:05:49,392 - Added 'a' to buffered word. Current buffered word: enterctrlttla
+2025-02-27 23:05:49,393 - Predicted language probability: 0.9999998807907104 for word: enterctrlttla
+2025-02-27 23:05:49,488 - Key event detected: a - Event type: up
+2025-02-27 23:05:49,760 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:49,760 - Backspace pressed. Buffered word: enterctrlttl
+2025-02-27 23:05:49,800 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:49,880 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:49,880 - Backspace pressed. Buffered word: enterctrltt
+2025-02-27 23:05:49,936 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:50,024 - Key event detected: backspace - Event type: down
+2025-02-27 23:05:50,024 - Backspace pressed. Buffered word: enterctrlt
+2025-02-27 23:05:50,088 - Key event detected: backspace - Event type: up
+2025-02-27 23:05:50,112 - Key event detected: e - Event type: down
+2025-02-27 23:05:50,112 - Added 'e' to buffered word. Current buffered word: enterctrlte
+2025-02-27 23:05:50,114 - Predicted language probability: 0.9999997615814209 for word: enterctrlte
+2025-02-27 23:05:50,248 - Key event detected: e - Event type: up
+2025-02-27 23:05:50,264 - Key event detected: l - Event type: down
+2025-02-27 23:05:50,264 - Added 'l' to buffered word. Current buffered word: enterctrltel
+2025-02-27 23:05:50,265 - Predicted language probability: 0.9999996423721313 for word: enterctrltel
+2025-02-27 23:05:50,320 - Key event detected: q - Event type: down
+2025-02-27 23:05:50,320 - Added 'q' to buffered word. Current buffered word: enterctrltelq
+2025-02-27 23:05:50,321 - Predicted language probability: 0.9999994039535522 for word: enterctrltelq
+2025-02-27 23:05:50,336 - Key event detected: l - Event type: up
+2025-02-27 23:05:50,400 - Key event detected: q - Event type: up
+2025-02-27 23:05:50,512 - Key event detected: t - Event type: down
+2025-02-27 23:05:50,512 - Added 't' to buffered word. Current buffered word: enterctrltelqt
+2025-02-27 23:05:50,513 - Predicted language probability: 0.9999998807907104 for word: enterctrltelqt
+2025-02-27 23:05:50,584 - Key event detected: l - Event type: down
+2025-02-27 23:05:50,584 - Added 'l' to buffered word. Current buffered word: enterctrltelqtl
+2025-02-27 23:05:50,586 - Predicted language probability: 1.0 for word: enterctrltelqtl
+2025-02-27 23:05:50,624 - Key event detected: t - Event type: up
+2025-02-27 23:05:50,656 - Key event detected: l - Event type: up
+2025-02-27 23:05:50,760 - Key event detected: z - Event type: down
+2025-02-27 23:05:50,760 - Added 'z' to buffered word. Current buffered word: enterctrltelqtlz
+2025-02-27 23:05:50,761 - Predicted language probability: 1.0 for word: enterctrltelqtlz
+2025-02-27 23:05:50,824 - Key event detected: m - Event type: down
+2025-02-27 23:05:50,824 - Added 'm' to buffered word. Current buffered word: enterctrltelqtlzm
+2025-02-27 23:05:50,825 - Predicted language probability: 1.0 for word: enterctrltelqtlzm
+2025-02-27 23:05:50,840 - Key event detected: z - Event type: up
+2025-02-27 23:05:50,912 - Key event detected: m - Event type: up
+2025-02-27 23:05:50,920 - Key event detected: space - Event type: down
+2025-02-27 23:05:50,920 - Added 'space' to buffered word. Current buffered word: enterctrltelqtlzmspace
+2025-02-27 23:05:50,922 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspace
+2025-02-27 23:05:51,048 - Key event detected: space - Event type: up
+2025-02-27 23:05:51,248 - Key event detected: z - Event type: down
+2025-02-27 23:05:51,248 - Added 'z' to buffered word. Current buffered word: enterctrltelqtlzmspacez
+2025-02-27 23:05:51,250 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacez
+2025-02-27 23:05:51,312 - Key event detected: j - Event type: down
+2025-02-27 23:05:51,312 - Added 'j' to buffered word. Current buffered word: enterctrltelqtlzmspacezj
+2025-02-27 23:05:51,314 - Predicted language probability: 0.9999998807907104 for word: enterctrltelqtlzmspacezj
+2025-02-27 23:05:51,320 - Key event detected: z - Event type: up
+2025-02-27 23:05:51,384 - Key event detected: j - Event type: up
+2025-02-27 23:05:51,448 - Key event detected: a - Event type: down
+2025-02-27 23:05:51,448 - Added 'a' to buffered word. Current buffered word: enterctrltelqtlzmspacezja
+2025-02-27 23:05:51,450 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezja
+2025-02-27 23:05:51,504 - Key event detected: a - Event type: up
+2025-02-27 23:05:51,792 - Key event detected: v - Event type: down
+2025-02-27 23:05:51,792 - Added 'v' to buffered word. Current buffered word: enterctrltelqtlzmspacezjav
+2025-02-27 23:05:51,794 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjav
+2025-02-27 23:05:51,824 - Key event detected: b - Event type: down
+2025-02-27 23:05:51,824 - Added 'b' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavb
+2025-02-27 23:05:51,826 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavb
+2025-02-27 23:05:51,888 - Key event detected: v - Event type: up
+2025-02-27 23:05:51,928 - Key event detected: b - Event type: up
+2025-02-27 23:05:52,184 - Key event detected: x - Event type: down
+2025-02-27 23:05:52,184 - Added 'x' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbx
+2025-02-27 23:05:52,186 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbx
+2025-02-27 23:05:52,232 - Key event detected: j - Event type: down
+2025-02-27 23:05:52,232 - Added 'j' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxj
+2025-02-27 23:05:52,234 - Predicted language probability: 0.9999998807907104 for word: enterctrltelqtlzmspacezjavbxj
+2025-02-27 23:05:52,272 - Key event detected: x - Event type: up
+2025-02-27 23:05:52,328 - Key event detected: j - Event type: up
+2025-02-27 23:05:53,376 - Key event detected: down - Event type: down
+2025-02-27 23:05:53,376 - Added 'down' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdown
+2025-02-27 23:05:53,378 - Predicted language probability: 0.9999998807907104 for word: enterctrltelqtlzmspacezjavbxjdown
+2025-02-27 23:05:53,456 - Key event detected: down - Event type: up
+2025-02-27 23:05:53,528 - Key event detected: down - Event type: down
+2025-02-27 23:05:53,528 - Added 'down' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndown
+2025-02-27 23:05:53,531 - Predicted language probability: 0.9999998807907104 for word: enterctrltelqtlzmspacezjavbxjdowndown
+2025-02-27 23:05:53,592 - Key event detected: down - Event type: up
+2025-02-27 23:05:53,760 - Key event detected: enter - Event type: down
+2025-02-27 23:05:53,760 - Added 'enter' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenter
+2025-02-27 23:05:53,763 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenter
+2025-02-27 23:05:53,832 - Key event detected: enter - Event type: up
+2025-02-27 23:11:25,164 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:25,164 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrl
+2025-02-27 23:11:25,167 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrl
+2025-02-27 23:11:25,228 - Key event detected: a - Event type: down
+2025-02-27 23:11:25,228 - Added 'a' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrla
+2025-02-27 23:11:25,231 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrla
+2025-02-27 23:11:25,324 - Key event detected: a - Event type: up
+2025-02-27 23:11:25,331 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:25,460 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:25,460 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrl
+2025-02-27 23:11:25,462 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrl
+2025-02-27 23:11:25,540 - Key event detected: v - Event type: down
+2025-02-27 23:11:25,540 - Added 'v' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlv
+2025-02-27 23:11:25,543 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlv
+2025-02-27 23:11:25,644 - Key event detected: v - Event type: up
+2025-02-27 23:11:25,652 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:26,524 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:26,524 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrl
+2025-02-27 23:11:26,527 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrl
+2025-02-27 23:11:26,596 - Key event detected: s - Event type: down
+2025-02-27 23:11:26,596 - Added 's' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrls
+2025-02-27 23:11:26,599 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrls
+2025-02-27 23:11:26,716 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:26,748 - Key event detected: s - Event type: up
+2025-02-27 23:11:27,955 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:27,956 - Backspace pressed. Buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrl
+2025-02-27 23:11:28,027 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:28,155 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:28,156 - Backspace pressed. Buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctr
+2025-02-27 23:11:28,219 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:28,844 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:28,844 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrl
+2025-02-27 23:11:28,847 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrl
+2025-02-27 23:11:28,900 - Key event detected: s - Event type: down
+2025-02-27 23:11:28,900 - Added 's' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrls
+2025-02-27 23:11:28,904 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrls
+2025-02-27 23:11:28,996 - Key event detected: s - Event type: up
+2025-02-27 23:11:29,004 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:29,371 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:29,371 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrl
+2025-02-27 23:11:29,374 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrl
+2025-02-27 23:11:29,539 - Key event detected: enter - Event type: down
+2025-02-27 23:11:29,540 - Added 'enter' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenter
+2025-02-27 23:11:29,543 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenter
+2025-02-27 23:11:29,627 - Key event detected: enter - Event type: up
+2025-02-27 23:11:29,708 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:30,972 - Key event detected: ctrl - Event type: down
+2025-02-27 23:11:30,972 - Added 'ctrl' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenterctrl
+2025-02-27 23:11:30,976 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenterctrl
+2025-02-27 23:11:31,140 - Key event detected: enter - Event type: down
+2025-02-27 23:11:31,140 - Added 'enter' to buffered word. Current buffered word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenterctrlenter
+2025-02-27 23:11:31,146 - Predicted language probability: 1.0 for word: enterctrltelqtlzmspacezjavbxjdowndownenterctrlactrlvctrctrlsctrlenterctrlenter
+2025-02-27 23:11:31,228 - Key event detected: enter - Event type: up
+2025-02-27 23:11:31,228 - Key event detected: enter - Event type: up
+2025-02-27 23:11:31,340 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:31,340 - Key event detected: ctrl - Event type: up
+2025-02-27 23:11:33,188 - Key event detected: f10 - Event type: down
+2025-02-27 23:11:33,188 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:33,188 - Key event detected: f10 - Event type: down
+2025-02-27 23:11:33,188 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:33,284 - Key event detected: f10 - Event type: up
+2025-02-27 23:11:33,284 - Key event detected: f10 - Event type: up
+2025-02-27 23:11:34,204 - Key event detected: f10 - Event type: down
+2025-02-27 23:11:34,204 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:34,204 - Key event detected: f10 - Event type: down
+2025-02-27 23:11:34,204 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:34,308 - Key event detected: f10 - Event type: up
+2025-02-27 23:11:34,308 - Key event detected: f10 - Event type: up
+2025-02-27 23:11:37,756 - Key event detected: t - Event type: down
+2025-02-27 23:11:37,756 - Added 't' to buffered word. Current buffered word: t
+2025-02-27 23:11:37,756 - Predicted language probability: 0.7678236961364746 for word: t
+2025-02-27 23:11:37,757 - Key event detected: t - Event type: down
+2025-02-27 23:11:37,757 - Added 't' to buffered word. Current buffered word: tt
+2025-02-27 23:11:37,757 - Predicted language probability: 0.8206244111061096 for word: tt
+2025-02-27 23:11:37,892 - Key event detected: t - Event type: up
+2025-02-27 23:11:37,892 - Key event detected: t - Event type: up
+2025-02-27 23:11:38,435 - Key event detected: h - Event type: down
+2025-02-27 23:11:38,435 - Added 'h' to buffered word. Current buffered word: tth
+2025-02-27 23:11:38,436 - Predicted language probability: 0.18495088815689087 for word: tth
+2025-02-27 23:11:38,436 - Key event detected: h - Event type: down
+2025-02-27 23:11:38,436 - Added 'h' to buffered word. Current buffered word: tthh
+2025-02-27 23:11:38,437 - Predicted language probability: 0.007549766916781664 for word: tthh
+2025-02-27 23:11:38,437 - Switching to Korean layout
+2025-02-27 23:11:38,439 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,439 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:38,439 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,439 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:38,439 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,439 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,508 - Key event detected: i - Event type: down
+2025-02-27 23:11:38,508 - Added 'i' to buffered word. Current buffered word: tthhi
+2025-02-27 23:11:38,509 - Predicted language probability: 0.008799988776445389 for word: tthhi
+2025-02-27 23:11:38,509 - Switching to Korean layout
+2025-02-27 23:11:38,512 - Key event detected: i - Event type: down
+2025-02-27 23:11:38,512 - Added 'i' to buffered word. Current buffered word: tthhii
+2025-02-27 23:11:38,513 - Predicted language probability: 0.15600372850894928 for word: tthhii
+2025-02-27 23:11:38,513 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,513 - Backspace pressed. Buffered word: tthhi
+2025-02-27 23:11:38,513 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,513 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:38,513 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,513 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,580 - Key event detected: h - Event type: up
+2025-02-27 23:11:38,580 - Key event detected: h - Event type: up
+2025-02-27 23:11:38,636 - Key event detected: i - Event type: up
+2025-02-27 23:11:38,636 - Key event detected: i - Event type: up
+2025-02-27 23:11:38,644 - Key event detected: s - Event type: down
+2025-02-27 23:11:38,644 - Added 's' to buffered word. Current buffered word: tthhis
+2025-02-27 23:11:38,645 - Predicted language probability: 0.06256161630153656 for word: tthhis
+2025-02-27 23:11:38,645 - Key event detected: s - Event type: down
+2025-02-27 23:11:38,645 - Added 's' to buffered word. Current buffered word: tthhiss
+2025-02-27 23:11:38,646 - Predicted language probability: 0.07653452455997467 for word: tthhiss
+2025-02-27 23:11:38,708 - Key event detected: s - Event type: up
+2025-02-27 23:11:38,708 - Key event detected: s - Event type: up
+2025-02-27 23:11:38,748 - Key event detected: space - Event type: down
+2025-02-27 23:11:38,748 - Added 'space' to buffered word. Current buffered word: tthhissspace
+2025-02-27 23:11:38,749 - Predicted language probability: 6.683090418846405e-07 for word: tthhissspace
+2025-02-27 23:11:38,749 - Switching to Korean layout
+2025-02-27 23:11:38,753 - Key event detected: space - Event type: down
+2025-02-27 23:11:38,753 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:38,753 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,753 - Backspace pressed. Buffered word: 
+2025-02-27 23:11:38,753 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:38,753 - Backspace pressed. Buffered word: 
+2025-02-27 23:11:38,753 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,753 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:38,852 - Key event detected: space - Event type: up
+2025-02-27 23:11:38,852 - Key event detected: space - Event type: up
+2025-02-27 23:11:40,036 - Key event detected: i - Event type: down
+2025-02-27 23:11:40,036 - Added 'i' to buffered word. Current buffered word: i
+2025-02-27 23:11:40,036 - Predicted language probability: 0.8233676552772522 for word: i
+2025-02-27 23:11:40,036 - Key event detected: i - Event type: down
+2025-02-27 23:11:40,036 - Added 'i' to buffered word. Current buffered word: ii
+2025-02-27 23:11:40,037 - Predicted language probability: 0.9895542860031128 for word: ii
+2025-02-27 23:11:40,156 - Key event detected: i - Event type: up
+2025-02-27 23:11:40,156 - Key event detected: i - Event type: up
+2025-02-27 23:11:40,243 - Key event detected: s - Event type: down
+2025-02-27 23:11:40,244 - Added 's' to buffered word. Current buffered word: iis
+2025-02-27 23:11:40,244 - Predicted language probability: 0.9995613694190979 for word: iis
+2025-02-27 23:11:40,244 - Key event detected: s - Event type: down
+2025-02-27 23:11:40,244 - Added 's' to buffered word. Current buffered word: iiss
+2025-02-27 23:11:40,245 - Predicted language probability: 0.9997503161430359 for word: iiss
+2025-02-27 23:11:40,363 - Key event detected: s - Event type: up
+2025-02-27 23:11:40,364 - Key event detected: s - Event type: up
+2025-02-27 23:11:41,652 - Key event detected: d - Event type: down
+2025-02-27 23:11:41,652 - Added 'd' to buffered word. Current buffered word: iissd
+2025-02-27 23:11:41,653 - Predicted language probability: 0.9992566704750061 for word: iissd
+2025-02-27 23:11:41,653 - Key event detected: d - Event type: down
+2025-02-27 23:11:41,653 - Added 'd' to buffered word. Current buffered word: iissdd
+2025-02-27 23:11:41,653 - Predicted language probability: 0.9996246099472046 for word: iissdd
+2025-02-27 23:11:41,748 - Key event detected: l - Event type: down
+2025-02-27 23:11:41,748 - Added 'l' to buffered word. Current buffered word: iissddl
+2025-02-27 23:11:41,749 - Predicted language probability: 0.9999635219573975 for word: iissddl
+2025-02-27 23:11:41,749 - Key event detected: l - Event type: down
+2025-02-27 23:11:41,749 - Added 'l' to buffered word. Current buffered word: iissddll
+2025-02-27 23:11:41,750 - Predicted language probability: 0.9999943971633911 for word: iissddll
+2025-02-27 23:11:41,764 - Key event detected: d - Event type: up
+2025-02-27 23:11:41,764 - Key event detected: d - Event type: up
+2025-02-27 23:11:41,836 - Key event detected: l - Event type: up
+2025-02-27 23:11:41,836 - Key event detected: l - Event type: up
+2025-02-27 23:11:41,932 - Key event detected: d - Event type: down
+2025-02-27 23:11:41,932 - Added 'd' to buffered word. Current buffered word: iissddlld
+2025-02-27 23:11:41,933 - Predicted language probability: 0.9999979734420776 for word: iissddlld
+2025-02-27 23:11:41,933 - Key event detected: d - Event type: down
+2025-02-27 23:11:41,933 - Added 'd' to buffered word. Current buffered word: iissddlldd
+2025-02-27 23:11:41,934 - Predicted language probability: 0.9999991655349731 for word: iissddlldd
+2025-02-27 23:11:42,012 - Key event detected: d - Event type: up
+2025-02-27 23:11:42,012 - Key event detected: d - Event type: up
+2025-02-27 23:11:42,316 - Key event detected: e - Event type: down
+2025-02-27 23:11:42,316 - Added 'e' to buffered word. Current buffered word: iissddlldde
+2025-02-27 23:11:42,317 - Predicted language probability: 0.9999998807907104 for word: iissddlldde
+2025-02-27 23:11:42,317 - Key event detected: e - Event type: down
+2025-02-27 23:11:42,317 - Added 'e' to buffered word. Current buffered word: iissddllddee
+2025-02-27 23:11:42,318 - Predicted language probability: 0.9999998807907104 for word: iissddllddee
+2025-02-27 23:11:42,348 - Key event detected: m - Event type: down
+2025-02-27 23:11:42,348 - Added 'm' to buffered word. Current buffered word: iissddllddeem
+2025-02-27 23:11:42,349 - Predicted language probability: 0.9999997615814209 for word: iissddllddeem
+2025-02-27 23:11:42,349 - Key event detected: m - Event type: down
+2025-02-27 23:11:42,349 - Added 'm' to buffered word. Current buffered word: iissddllddeemm
+2025-02-27 23:11:42,350 - Predicted language probability: 0.9999998807907104 for word: iissddllddeemm
+2025-02-27 23:11:42,388 - Key event detected: e - Event type: up
+2025-02-27 23:11:42,388 - Key event detected: e - Event type: up
+2025-02-27 23:11:42,452 - Key event detected: m - Event type: up
+2025-02-27 23:11:42,452 - Key event detected: m - Event type: up
+2025-02-27 23:11:42,756 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:42,756 - Backspace pressed. Buffered word: iissddllddeem
+2025-02-27 23:11:42,756 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:42,756 - Backspace pressed. Buffered word: iissddllddee
+2025-02-27 23:11:42,819 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:42,820 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:42,900 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:42,900 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:42,900 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:42,900 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:42,964 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:42,964 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:43,036 - Key event detected: r - Event type: down
+2025-02-27 23:11:43,036 - Added 'r' to buffered word. Current buffered word: iissddllddeer
+2025-02-27 23:11:43,037 - Predicted language probability: 0.9999997615814209 for word: iissddllddeer
+2025-02-27 23:11:43,037 - Key event detected: r - Event type: down
+2025-02-27 23:11:43,037 - Added 'r' to buffered word. Current buffered word: iissddllddeerr
+2025-02-27 23:11:43,039 - Predicted language probability: 0.9999998807907104 for word: iissddllddeerr
+2025-02-27 23:11:43,092 - Key event detected: m - Event type: down
+2025-02-27 23:11:43,092 - Added 'm' to buffered word. Current buffered word: iissddllddeerrm
+2025-02-27 23:11:43,094 - Predicted language probability: 1.0 for word: iissddllddeerrm
+2025-02-27 23:11:43,094 - Key event detected: m - Event type: down
+2025-02-27 23:11:43,094 - Added 'm' to buffered word. Current buffered word: iissddllddeerrmm
+2025-02-27 23:11:43,095 - Predicted language probability: 1.0 for word: iissddllddeerrmm
+2025-02-27 23:11:43,116 - Key event detected: r - Event type: up
+2025-02-27 23:11:43,116 - Key event detected: r - Event type: up
+2025-02-27 23:11:43,163 - Key event detected: m - Event type: up
+2025-02-27 23:11:43,163 - Key event detected: m - Event type: up
+2025-02-27 23:11:43,236 - Key event detected: f - Event type: down
+2025-02-27 23:11:43,236 - Added 'f' to buffered word. Current buffered word: iissddllddeerrmmf
+2025-02-27 23:11:43,237 - Predicted language probability: 0.9999998807907104 for word: iissddllddeerrmmf
+2025-02-27 23:11:43,237 - Key event detected: f - Event type: down
+2025-02-27 23:11:43,237 - Added 'f' to buffered word. Current buffered word: iissddllddeerrmmff
+2025-02-27 23:11:43,239 - Predicted language probability: 0.9999998807907104 for word: iissddllddeerrmmff
+2025-02-27 23:11:43,292 - Key event detected: f - Event type: up
+2025-02-27 23:11:43,292 - Key event detected: f - Event type: up
+2025-02-27 23:11:43,396 - Key event detected: f - Event type: down
+2025-02-27 23:11:43,396 - Added 'f' to buffered word. Current buffered word: iissddllddeerrmmfff
+2025-02-27 23:11:43,397 - Predicted language probability: 0.9999998807907104 for word: iissddllddeerrmmfff
+2025-02-27 23:11:43,397 - Key event detected: f - Event type: down
+2025-02-27 23:11:43,398 - Added 'f' to buffered word. Current buffered word: iissddllddeerrmmffff
+2025-02-27 23:11:43,399 - Predicted language probability: 0.9999998807907104 for word: iissddllddeerrmmffff
+2025-02-27 23:11:43,452 - Key event detected: l - Event type: down
+2025-02-27 23:11:43,452 - Added 'l' to buffered word. Current buffered word: iissddllddeerrmmffffl
+2025-02-27 23:11:43,453 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffl
+2025-02-27 23:11:43,453 - Key event detected: l - Event type: down
+2025-02-27 23:11:43,453 - Added 'l' to buffered word. Current buffered word: iissddllddeerrmmffffll
+2025-02-27 23:11:43,455 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffll
+2025-02-27 23:11:43,460 - Key event detected: f - Event type: up
+2025-02-27 23:11:43,460 - Key event detected: f - Event type: up
+2025-02-27 23:11:43,508 - Key event detected: l - Event type: up
+2025-02-27 23:11:43,508 - Key event detected: l - Event type: up
+2025-02-27 23:11:43,612 - Key event detected: t - Event type: down
+2025-02-27 23:11:43,612 - Added 't' to buffered word. Current buffered word: iissddllddeerrmmffffllt
+2025-02-27 23:11:43,613 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffllt
+2025-02-27 23:11:43,613 - Key event detected: t - Event type: down
+2025-02-27 23:11:43,614 - Added 't' to buffered word. Current buffered word: iissddllddeerrmmfffflltt
+2025-02-27 23:11:43,615 - Predicted language probability: 1.0 for word: iissddllddeerrmmfffflltt
+2025-02-27 23:11:43,644 - Key event detected: l - Event type: down
+2025-02-27 23:11:43,644 - Added 'l' to buffered word. Current buffered word: iissddllddeerrmmffffllttl
+2025-02-27 23:11:43,646 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffllttl
+2025-02-27 23:11:43,646 - Key event detected: l - Event type: down
+2025-02-27 23:11:43,646 - Added 'l' to buffered word. Current buffered word: iissddllddeerrmmffffllttll
+2025-02-27 23:11:43,647 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffllttll
+2025-02-27 23:11:43,716 - Key event detected: t - Event type: up
+2025-02-27 23:11:43,716 - Key event detected: t - Event type: up
+2025-02-27 23:11:43,724 - Key event detected: space - Event type: down
+2025-02-27 23:11:43,724 - Added 'space' to buffered word. Current buffered word: iissddllddeerrmmffffllttllspace
+2025-02-27 23:11:43,726 - Predicted language probability: 1.0 for word: iissddllddeerrmmffffllttllspace
+2025-02-27 23:11:43,726 - Key event detected: space - Event type: down
+2025-02-27 23:11:43,726 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:43,732 - Key event detected: l - Event type: up
+2025-02-27 23:11:43,732 - Key event detected: l - Event type: up
+2025-02-27 23:11:43,844 - Key event detected: space - Event type: up
+2025-02-27 23:11:43,844 - Key event detected: space - Event type: up
+2025-02-27 23:11:44,708 - Key event detected: t - Event type: down
+2025-02-27 23:11:44,708 - Added 't' to buffered word. Current buffered word: t
+2025-02-27 23:11:44,708 - Predicted language probability: 0.7678236961364746 for word: t
+2025-02-27 23:11:44,709 - Key event detected: t - Event type: down
+2025-02-27 23:11:44,709 - Added 't' to buffered word. Current buffered word: tt
+2025-02-27 23:11:44,709 - Predicted language probability: 0.8206244111061096 for word: tt
+2025-02-27 23:11:44,724 - Key event detected: h - Event type: down
+2025-02-27 23:11:44,724 - Added 'h' to buffered word. Current buffered word: tth
+2025-02-27 23:11:44,725 - Predicted language probability: 0.18495088815689087 for word: tth
+2025-02-27 23:11:44,725 - Key event detected: h - Event type: down
+2025-02-27 23:11:44,725 - Added 'h' to buffered word. Current buffered word: tthh
+2025-02-27 23:11:44,725 - Predicted language probability: 0.007549766916781664 for word: tthh
+2025-02-27 23:11:44,725 - Switching to Korean layout
+2025-02-27 23:11:44,727 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:44,727 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:44,727 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:44,727 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:44,727 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:44,727 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:44,788 - Key event detected: i - Event type: down
+2025-02-27 23:11:44,788 - Added 'i' to buffered word. Current buffered word: tthhi
+2025-02-27 23:11:44,789 - Predicted language probability: 0.008799988776445389 for word: tthhi
+2025-02-27 23:11:44,789 - Switching to Korean layout
+2025-02-27 23:11:44,791 - Key event detected: i - Event type: down
+2025-02-27 23:11:44,791 - Added 'i' to buffered word. Current buffered word: tthhii
+2025-02-27 23:11:44,792 - Predicted language probability: 0.15600372850894928 for word: tthhii
+2025-02-27 23:11:44,792 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:44,793 - Backspace pressed. Buffered word: tthhi
+2025-02-27 23:11:44,793 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:44,793 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:44,793 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:44,793 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:44,820 - Key event detected: t - Event type: up
+2025-02-27 23:11:44,820 - Key event detected: t - Event type: up
+2025-02-27 23:11:44,860 - Key event detected: h - Event type: up
+2025-02-27 23:11:44,860 - Key event detected: h - Event type: up
+2025-02-27 23:11:44,900 - Key event detected: s - Event type: down
+2025-02-27 23:11:44,900 - Added 's' to buffered word. Current buffered word: tthhis
+2025-02-27 23:11:44,901 - Predicted language probability: 0.06256161630153656 for word: tthhis
+2025-02-27 23:11:44,901 - Key event detected: s - Event type: down
+2025-02-27 23:11:44,901 - Added 's' to buffered word. Current buffered word: tthhiss
+2025-02-27 23:11:44,902 - Predicted language probability: 0.07653452455997467 for word: tthhiss
+2025-02-27 23:11:44,908 - Key event detected: i - Event type: up
+2025-02-27 23:11:44,908 - Key event detected: i - Event type: up
+2025-02-27 23:11:45,044 - Key event detected: s - Event type: up
+2025-02-27 23:11:45,044 - Key event detected: s - Event type: up
+2025-02-27 23:11:45,268 - Key event detected: i - Event type: down
+2025-02-27 23:11:45,268 - Added 'i' to buffered word. Current buffered word: tthhissi
+2025-02-27 23:11:45,269 - Predicted language probability: 0.02720324881374836 for word: tthhissi
+2025-02-27 23:11:45,269 - Key event detected: i - Event type: down
+2025-02-27 23:11:45,269 - Added 'i' to buffered word. Current buffered word: tthhissii
+2025-02-27 23:11:45,270 - Predicted language probability: 0.03157930448651314 for word: tthhissii
+2025-02-27 23:11:45,428 - Key event detected: i - Event type: up
+2025-02-27 23:11:45,428 - Key event detected: i - Event type: up
+2025-02-27 23:11:45,596 - Key event detected: s - Event type: down
+2025-02-27 23:11:45,596 - Added 's' to buffered word. Current buffered word: tthhissiis
+2025-02-27 23:11:45,597 - Predicted language probability: 0.16317424178123474 for word: tthhissiis
+2025-02-27 23:11:45,597 - Key event detected: s - Event type: down
+2025-02-27 23:11:45,597 - Added 's' to buffered word. Current buffered word: tthhissiiss
+2025-02-27 23:11:45,598 - Predicted language probability: 0.3913857638835907 for word: tthhissiiss
+2025-02-27 23:11:45,684 - Key event detected: i - Event type: down
+2025-02-27 23:11:45,684 - Added 'i' to buffered word. Current buffered word: tthhissiissi
+2025-02-27 23:11:45,685 - Predicted language probability: 0.6014625430107117 for word: tthhissiissi
+2025-02-27 23:11:45,685 - Key event detected: i - Event type: down
+2025-02-27 23:11:45,685 - Added 'i' to buffered word. Current buffered word: tthhissiissii
+2025-02-27 23:11:45,686 - Predicted language probability: 0.9617261290550232 for word: tthhissiissii
+2025-02-27 23:11:45,740 - Key event detected: s - Event type: up
+2025-02-27 23:11:45,740 - Key event detected: s - Event type: up
+2025-02-27 23:11:45,828 - Key event detected: i - Event type: up
+2025-02-27 23:11:45,828 - Key event detected: i - Event type: up
+2025-02-27 23:11:47,164 - Key event detected: e - Event type: down
+2025-02-27 23:11:47,164 - Added 'e' to buffered word. Current buffered word: tthhissiissiie
+2025-02-27 23:11:47,165 - Predicted language probability: 0.9993352293968201 for word: tthhissiissiie
+2025-02-27 23:11:47,165 - Key event detected: e - Event type: down
+2025-02-27 23:11:47,165 - Added 'e' to buffered word. Current buffered word: tthhissiissiiee
+2025-02-27 23:11:47,166 - Predicted language probability: 0.9997543692588806 for word: tthhissiissiiee
+2025-02-27 23:11:47,244 - Key event detected: e - Event type: up
+2025-02-27 23:11:47,244 - Key event detected: e - Event type: up
+2025-02-27 23:11:47,252 - Key event detected: n - Event type: down
+2025-02-27 23:11:47,252 - Added 'n' to buffered word. Current buffered word: tthhissiissiieen
+2025-02-27 23:11:47,253 - Predicted language probability: 0.9991254210472107 for word: tthhissiissiieen
+2025-02-27 23:11:47,253 - Key event detected: n - Event type: down
+2025-02-27 23:11:47,253 - Added 'n' to buffered word. Current buffered word: tthhissiissiieenn
+2025-02-27 23:11:47,254 - Predicted language probability: 0.9992445707321167 for word: tthhissiissiieenn
+2025-02-27 23:11:47,364 - Key event detected: n - Event type: up
+2025-02-27 23:11:47,364 - Key event detected: n - Event type: up
+2025-02-27 23:11:47,388 - Key event detected: g - Event type: down
+2025-02-27 23:11:47,388 - Added 'g' to buffered word. Current buffered word: tthhissiissiieenng
+2025-02-27 23:11:47,389 - Predicted language probability: 0.9999676942825317 for word: tthhissiissiieenng
+2025-02-27 23:11:47,389 - Key event detected: g - Event type: down
+2025-02-27 23:11:47,389 - Added 'g' to buffered word. Current buffered word: tthhissiissiieenngg
+2025-02-27 23:11:47,391 - Predicted language probability: 0.9999974966049194 for word: tthhissiissiieenngg
+2025-02-27 23:11:47,444 - Key event detected: l - Event type: down
+2025-02-27 23:11:47,444 - Added 'l' to buffered word. Current buffered word: tthhissiissiieennggl
+2025-02-27 23:11:47,446 - Predicted language probability: 0.999997615814209 for word: tthhissiissiieennggl
+2025-02-27 23:11:47,446 - Key event detected: l - Event type: down
+2025-02-27 23:11:47,446 - Added 'l' to buffered word. Current buffered word: tthhissiissiieennggll
+2025-02-27 23:11:47,448 - Predicted language probability: 0.9999992847442627 for word: tthhissiissiieennggll
+2025-02-27 23:11:47,500 - Key event detected: g - Event type: up
+2025-02-27 23:11:47,500 - Key event detected: g - Event type: up
+2025-02-27 23:11:47,532 - Key event detected: i - Event type: down
+2025-02-27 23:11:47,532 - Added 'i' to buffered word. Current buffered word: tthhissiissiieenngglli
+2025-02-27 23:11:47,533 - Predicted language probability: 0.9999998807907104 for word: tthhissiissiieenngglli
+2025-02-27 23:11:47,533 - Key event detected: i - Event type: down
+2025-02-27 23:11:47,533 - Added 'i' to buffered word. Current buffered word: tthhissiissiieennggllii
+2025-02-27 23:11:47,535 - Predicted language probability: 1.0 for word: tthhissiissiieennggllii
+2025-02-27 23:11:47,612 - Key event detected: l - Event type: up
+2025-02-27 23:11:47,612 - Key event detected: l - Event type: up
+2025-02-27 23:11:47,644 - Key event detected: i - Event type: up
+2025-02-27 23:11:47,644 - Key event detected: i - Event type: up
+2025-02-27 23:11:47,676 - Key event detected: s - Event type: down
+2025-02-27 23:11:47,676 - Added 's' to buffered word. Current buffered word: tthhissiissiieenngglliis
+2025-02-27 23:11:47,678 - Predicted language probability: 1.0 for word: tthhissiissiieenngglliis
+2025-02-27 23:11:47,678 - Key event detected: s - Event type: down
+2025-02-27 23:11:47,678 - Added 's' to buffered word. Current buffered word: tthhissiissiieenngglliiss
+2025-02-27 23:11:47,679 - Predicted language probability: 1.0 for word: tthhissiissiieenngglliiss
+2025-02-27 23:11:47,724 - Key event detected: h - Event type: down
+2025-02-27 23:11:47,724 - Added 'h' to buffered word. Current buffered word: tthhissiissiieenngglliissh
+2025-02-27 23:11:47,726 - Predicted language probability: 0.9999998807907104 for word: tthhissiissiieenngglliissh
+2025-02-27 23:11:47,726 - Key event detected: h - Event type: down
+2025-02-27 23:11:47,726 - Added 'h' to buffered word. Current buffered word: tthhissiissiieenngglliisshh
+2025-02-27 23:11:47,728 - Predicted language probability: 0.9999998807907104 for word: tthhissiissiieenngglliisshh
+2025-02-27 23:11:47,764 - Key event detected: s - Event type: up
+2025-02-27 23:11:47,764 - Key event detected: s - Event type: up
+2025-02-27 23:11:47,820 - Key event detected: space - Event type: down
+2025-02-27 23:11:47,820 - Added 'space' to buffered word. Current buffered word: tthhissiissiieenngglliisshhspace
+2025-02-27 23:11:47,822 - Predicted language probability: 1.0 for word: tthhissiissiieenngglliisshhspace
+2025-02-27 23:11:47,822 - Key event detected: space - Event type: down
+2025-02-27 23:11:47,822 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:11:47,844 - Key event detected: h - Event type: up
+2025-02-27 23:11:47,844 - Key event detected: h - Event type: up
+2025-02-27 23:11:47,964 - Key event detected: space - Event type: up
+2025-02-27 23:11:47,964 - Key event detected: space - Event type: up
+2025-02-27 23:11:49,068 - Key event detected: t - Event type: down
+2025-02-27 23:11:49,068 - Added 't' to buffered word. Current buffered word: t
+2025-02-27 23:11:49,068 - Predicted language probability: 0.7678236961364746 for word: t
+2025-02-27 23:11:49,069 - Key event detected: t - Event type: down
+2025-02-27 23:11:49,069 - Added 't' to buffered word. Current buffered word: tt
+2025-02-27 23:11:49,069 - Predicted language probability: 0.8206244111061096 for word: tt
+2025-02-27 23:11:49,092 - Key event detected: h - Event type: down
+2025-02-27 23:11:49,092 - Added 'h' to buffered word. Current buffered word: tth
+2025-02-27 23:11:49,093 - Predicted language probability: 0.18495088815689087 for word: tth
+2025-02-27 23:11:49,093 - Key event detected: h - Event type: down
+2025-02-27 23:11:49,093 - Added 'h' to buffered word. Current buffered word: tthh
+2025-02-27 23:11:49,093 - Predicted language probability: 0.007549766916781664 for word: tthh
+2025-02-27 23:11:49,094 - Switching to Korean layout
+2025-02-27 23:11:49,095 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:49,095 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:49,095 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:49,095 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:49,095 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:49,095 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:49,180 - Key event detected: i - Event type: down
+2025-02-27 23:11:49,180 - Added 'i' to buffered word. Current buffered word: tthhi
+2025-02-27 23:11:49,181 - Predicted language probability: 0.008799988776445389 for word: tthhi
+2025-02-27 23:11:49,181 - Switching to Korean layout
+2025-02-27 23:11:49,183 - Key event detected: i - Event type: down
+2025-02-27 23:11:49,183 - Added 'i' to buffered word. Current buffered word: tthhii
+2025-02-27 23:11:49,184 - Predicted language probability: 0.15600372850894928 for word: tthhii
+2025-02-27 23:11:49,184 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:49,184 - Backspace pressed. Buffered word: tthhi
+2025-02-27 23:11:49,184 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:49,184 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:49,184 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:49,184 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:49,188 - Key event detected: t - Event type: up
+2025-02-27 23:11:49,188 - Key event detected: t - Event type: up
+2025-02-27 23:11:49,244 - Key event detected: h - Event type: up
+2025-02-27 23:11:49,244 - Key event detected: h - Event type: up
+2025-02-27 23:11:49,252 - Key event detected: s - Event type: down
+2025-02-27 23:11:49,252 - Added 's' to buffered word. Current buffered word: tthhis
+2025-02-27 23:11:49,253 - Predicted language probability: 0.06256161630153656 for word: tthhis
+2025-02-27 23:11:49,253 - Key event detected: s - Event type: down
+2025-02-27 23:11:49,253 - Added 's' to buffered word. Current buffered word: tthhiss
+2025-02-27 23:11:49,254 - Predicted language probability: 0.07653452455997467 for word: tthhiss
+2025-02-27 23:11:49,292 - Key event detected: i - Event type: up
+2025-02-27 23:11:49,292 - Key event detected: i - Event type: up
+2025-02-27 23:11:49,372 - Key event detected: s - Event type: up
+2025-02-27 23:11:49,372 - Key event detected: s - Event type: up
+2025-02-27 23:11:50,196 - Key event detected: t - Event type: down
+2025-02-27 23:11:50,196 - Added 't' to buffered word. Current buffered word: tthhisst
+2025-02-27 23:11:50,197 - Predicted language probability: 0.016689350828528404 for word: tthhisst
+2025-02-27 23:11:50,197 - Switching to Korean layout
+2025-02-27 23:11:50,200 - Key event detected: t - Event type: down
+2025-02-27 23:11:50,200 - Added 't' to buffered word. Current buffered word: tthhisstt
+2025-02-27 23:11:50,201 - Predicted language probability: 0.0006636198377236724 for word: tthhisstt
+2025-02-27 23:11:50,201 - Switching to Korean layout
+2025-02-27 23:11:50,205 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,205 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,205 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,205 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,206 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,206 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,206 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,324 - Key event detected: t - Event type: up
+2025-02-27 23:11:50,324 - Key event detected: t - Event type: up
+2025-02-27 23:11:50,771 - Key event detected: t - Event type: down
+2025-02-27 23:11:50,771 - Added 't' to buffered word. Current buffered word: tthhissttt
+2025-02-27 23:11:50,772 - Predicted language probability: 1.3988722457725089e-05 for word: tthhissttt
+2025-02-27 23:11:50,772 - Switching to Korean layout
+2025-02-27 23:11:50,777 - Key event detected: t - Event type: down
+2025-02-27 23:11:50,777 - Added 't' to buffered word. Current buffered word: tthhisstttt
+2025-02-27 23:11:50,778 - Predicted language probability: 4.569314739910624e-07 for word: tthhisstttt
+2025-02-27 23:11:50,778 - Switching to Korean layout
+2025-02-27 23:11:50,782 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,782 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,782 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,782 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,782 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,782 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,782 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,782 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,783 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:50,783 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:50,783 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,783 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:50,900 - Key event detected: t - Event type: up
+2025-02-27 23:11:50,900 - Key event detected: t - Event type: up
+2025-02-27 23:11:51,219 - Key event detected: t - Event type: down
+2025-02-27 23:11:51,219 - Added 't' to buffered word. Current buffered word: tthhissttttt
+2025-02-27 23:11:51,220 - Predicted language probability: 4.689544752523034e-08 for word: tthhissttttt
+2025-02-27 23:11:51,220 - Switching to Korean layout
+2025-02-27 23:11:51,225 - Key event detected: t - Event type: down
+2025-02-27 23:11:51,225 - Added 't' to buffered word. Current buffered word: tthhisstttttt
+2025-02-27 23:11:51,227 - Predicted language probability: 1.4727346453469181e-08 for word: tthhisstttttt
+2025-02-27 23:11:51,227 - Switching to Korean layout
+2025-02-27 23:11:51,232 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,232 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,232 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,232 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,232 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,233 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,233 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,233 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,233 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,233 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,233 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,233 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,364 - Key event detected: t - Event type: up
+2025-02-27 23:11:51,364 - Key event detected: t - Event type: up
+2025-02-27 23:11:51,651 - Key event detected: t - Event type: down
+2025-02-27 23:11:51,652 - Added 't' to buffered word. Current buffered word: tthhissttttttt
+2025-02-27 23:11:51,653 - Predicted language probability: 8.831180231538838e-09 for word: tthhissttttttt
+2025-02-27 23:11:51,653 - Switching to Korean layout
+2025-02-27 23:11:51,658 - Key event detected: t - Event type: down
+2025-02-27 23:11:51,658 - Added 't' to buffered word. Current buffered word: tthhisstttttttt
+2025-02-27 23:11:51,659 - Predicted language probability: 7.0931163165255384e-09 for word: tthhisstttttttt
+2025-02-27 23:11:51,659 - Switching to Korean layout
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,664 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,664 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,664 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:51,664 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,664 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:51,819 - Key event detected: t - Event type: up
+2025-02-27 23:11:51,819 - Key event detected: t - Event type: up
+2025-02-27 23:11:52,148 - Key event detected: t - Event type: down
+2025-02-27 23:11:52,148 - Added 't' to buffered word. Current buffered word: tthhissttttttttt
+2025-02-27 23:11:52,149 - Predicted language probability: 6.457185897090767e-09 for word: tthhissttttttttt
+2025-02-27 23:11:52,149 - Switching to Korean layout
+2025-02-27 23:11:52,155 - Key event detected: t - Event type: down
+2025-02-27 23:11:52,155 - Added 't' to buffered word. Current buffered word: tthhisstttttttttt
+2025-02-27 23:11:52,156 - Predicted language probability: 6.235843397206509e-09 for word: tthhisstttttttttt
+2025-02-27 23:11:52,156 - Switching to Korean layout
+2025-02-27 23:11:52,161 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:52,162 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:52,162 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:52,162 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:52,162 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:52,162 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:52,340 - Key event detected: t - Event type: up
+2025-02-27 23:11:52,340 - Key event detected: t - Event type: up
+2025-02-27 23:11:53,396 - Key event detected: t - Event type: down
+2025-02-27 23:11:53,396 - Added 't' to buffered word. Current buffered word: tthhissttttttttttt
+2025-02-27 23:11:53,397 - Predicted language probability: 6.217340420278106e-09 for word: tthhissttttttttttt
+2025-02-27 23:11:53,398 - Switching to Korean layout
+2025-02-27 23:11:53,404 - Key event detected: t - Event type: down
+2025-02-27 23:11:53,404 - Added 't' to buffered word. Current buffered word: tthhisstttttttttttt
+2025-02-27 23:11:53,405 - Predicted language probability: 6.3135265904179505e-09 for word: tthhisstttttttttttt
+2025-02-27 23:11:53,405 - Switching to Korean layout
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,412 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,412 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,412 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,412 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,412 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,555 - Key event detected: t - Event type: up
+2025-02-27 23:11:53,555 - Key event detected: t - Event type: up
+2025-02-27 23:11:53,836 - Key event detected: e - Event type: down
+2025-02-27 23:11:53,836 - Added 'e' to buffered word. Current buffered word: tthhisstttttttttttte
+2025-02-27 23:11:53,838 - Predicted language probability: 8.214501079351066e-09 for word: tthhisstttttttttttte
+2025-02-27 23:11:53,838 - Switching to Korean layout
+2025-02-27 23:11:53,845 - Key event detected: e - Event type: down
+2025-02-27 23:11:53,845 - Added 'e' to buffered word. Current buffered word: tthhissttttttttttttee
+2025-02-27 23:11:53,847 - Predicted language probability: 9.503829723200852e-09 for word: tthhissttttttttttttee
+2025-02-27 23:11:53,847 - Switching to Korean layout
+2025-02-27 23:11:53,853 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,853 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,853 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,853 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,853 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,853 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,854 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,854 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,854 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:53,854 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:53,854 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:53,854 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,012 - Key event detected: e - Event type: up
+2025-02-27 23:11:54,012 - Key event detected: e - Event type: up
+2025-02-27 23:11:54,364 - Key event detected: r - Event type: down
+2025-02-27 23:11:54,364 - Added 'r' to buffered word. Current buffered word: tthhisstttttttttttteer
+2025-02-27 23:11:54,365 - Predicted language probability: 8.948309648815211e-09 for word: tthhisstttttttttttteer
+2025-02-27 23:11:54,365 - Switching to Korean layout
+2025-02-27 23:11:54,373 - Key event detected: r - Event type: down
+2025-02-27 23:11:54,374 - Added 'r' to buffered word. Current buffered word: tthhisstttttttttttteerr
+2025-02-27 23:11:54,375 - Predicted language probability: 7.051097927757155e-09 for word: tthhisstttttttttttteerr
+2025-02-27 23:11:54,375 - Switching to Korean layout
+2025-02-27 23:11:54,382 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,383 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,383 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,383 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,383 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,383 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,532 - Key event detected: r - Event type: up
+2025-02-27 23:11:54,532 - Key event detected: r - Event type: up
+2025-02-27 23:11:54,972 - Key event detected: w - Event type: down
+2025-02-27 23:11:54,972 - Added 'w' to buffered word. Current buffered word: tthhisstttttttttttteerrw
+2025-02-27 23:11:54,974 - Predicted language probability: 8.888093816494802e-09 for word: tthhisstttttttttttteerrw
+2025-02-27 23:11:54,974 - Switching to Korean layout
+2025-02-27 23:11:54,983 - Key event detected: w - Event type: down
+2025-02-27 23:11:54,983 - Added 'w' to buffered word. Current buffered word: tthhisstttttttttttteerrww
+2025-02-27 23:11:54,985 - Predicted language probability: 8.37774738471353e-09 for word: tthhisstttttttttttteerrww
+2025-02-27 23:11:54,985 - Switching to Korean layout
+2025-02-27 23:11:54,993 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,994 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,994 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,994 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:54,994 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:54,994 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,108 - Key event detected: w - Event type: up
+2025-02-27 23:11:55,108 - Key event detected: w - Event type: up
+2025-02-27 23:11:55,500 - Key event detected: e - Event type: down
+2025-02-27 23:11:55,500 - Added 'e' to buffered word. Current buffered word: tthhisstttttttttttteerrwwe
+2025-02-27 23:11:55,502 - Predicted language probability: 7.439564075895078e-09 for word: tthhisstttttttttttteerrwwe
+2025-02-27 23:11:55,502 - Switching to Korean layout
+2025-02-27 23:11:55,510 - Key event detected: e - Event type: down
+2025-02-27 23:11:55,511 - Added 'e' to buffered word. Current buffered word: tthhisstttttttttttteerrwwee
+2025-02-27 23:11:55,512 - Predicted language probability: 1.0282364293345836e-08 for word: tthhisstttttttttttteerrwwee
+2025-02-27 23:11:55,512 - Switching to Korean layout
+2025-02-27 23:11:55,521 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,521 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,521 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,521 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,522 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,522 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,522 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,644 - Key event detected: e - Event type: up
+2025-02-27 23:11:55,644 - Key event detected: e - Event type: up
+2025-02-27 23:11:55,884 - Key event detected: a - Event type: down
+2025-02-27 23:11:55,884 - Added 'a' to buffered word. Current buffered word: tthhisstttttttttttteerrwweea
+2025-02-27 23:11:55,886 - Predicted language probability: 1.0473573119895718e-08 for word: tthhisstttttttttttteerrwweea
+2025-02-27 23:11:55,886 - Switching to Korean layout
+2025-02-27 23:11:55,897 - Key event detected: a - Event type: down
+2025-02-27 23:11:55,897 - Added 'a' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaa
+2025-02-27 23:11:55,899 - Predicted language probability: 8.832561348981471e-09 for word: tthhisstttttttttttteerrwweeaa
+2025-02-27 23:11:55,899 - Switching to Korean layout
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,910 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,910 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,910 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:55,910 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:55,910 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:56,060 - Key event detected: a - Event type: up
+2025-02-27 23:11:56,060 - Key event detected: a - Event type: up
+2025-02-27 23:11:56,436 - Key event detected: z - Event type: down
+2025-02-27 23:11:56,436 - Added 'z' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaaz
+2025-02-27 23:11:56,438 - Predicted language probability: 1.0104008296707434e-08 for word: tthhisstttttttttttteerrwweeaaz
+2025-02-27 23:11:56,438 - Switching to Korean layout
+2025-02-27 23:11:56,449 - Key event detected: z - Event type: down
+2025-02-27 23:11:56,449 - Added 'z' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazz
+2025-02-27 23:11:56,451 - Predicted language probability: 9.854430160771699e-09 for word: tthhisstttttttttttteerrwweeaazz
+2025-02-27 23:11:56,451 - Switching to Korean layout
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:56,461 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:56,461 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:56,461 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:56,461 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:56,462 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:56,462 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:56,462 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:56,580 - Key event detected: z - Event type: up
+2025-02-27 23:11:56,580 - Key event detected: z - Event type: up
+2025-02-27 23:11:57,012 - Key event detected: x - Event type: down
+2025-02-27 23:11:57,012 - Added 'x' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzx
+2025-02-27 23:11:57,014 - Predicted language probability: 8.568849629853048e-09 for word: tthhisstttttttttttteerrwweeaazzx
+2025-02-27 23:11:57,014 - Switching to Korean layout
+2025-02-27 23:11:57,025 - Key event detected: x - Event type: down
+2025-02-27 23:11:57,025 - Added 'x' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxx
+2025-02-27 23:11:57,027 - Predicted language probability: 8.714370558493556e-09 for word: tthhisstttttttttttteerrwweeaazzxx
+2025-02-27 23:11:57,027 - Switching to Korean layout
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,038 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,038 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,038 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,038 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,038 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,164 - Key event detected: x - Event type: up
+2025-02-27 23:11:57,164 - Key event detected: x - Event type: up
+2025-02-27 23:11:57,484 - Key event detected: c - Event type: down
+2025-02-27 23:11:57,484 - Added 'c' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxc
+2025-02-27 23:11:57,486 - Predicted language probability: 9.460045191644895e-09 for word: tthhisstttttttttttteerrwweeaazzxxc
+2025-02-27 23:11:57,486 - Switching to Korean layout
+2025-02-27 23:11:57,497 - Key event detected: c - Event type: down
+2025-02-27 23:11:57,497 - Added 'c' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxcc
+2025-02-27 23:11:57,500 - Predicted language probability: 8.891484881701217e-09 for word: tthhisstttttttttttteerrwweeaazzxxcc
+2025-02-27 23:11:57,500 - Switching to Korean layout
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,511 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,511 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,511 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,511 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,511 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,644 - Key event detected: c - Event type: up
+2025-02-27 23:11:57,644 - Key event detected: c - Event type: up
+2025-02-27 23:11:57,948 - Key event detected: v - Event type: down
+2025-02-27 23:11:57,948 - Added 'v' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccv
+2025-02-27 23:11:57,950 - Predicted language probability: 7.141784053033007e-09 for word: tthhisstttttttttttteerrwweeaazzxxccv
+2025-02-27 23:11:57,950 - Switching to Korean layout
+2025-02-27 23:11:57,962 - Key event detected: v - Event type: down
+2025-02-27 23:11:57,962 - Added 'v' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvv
+2025-02-27 23:11:57,964 - Predicted language probability: 7.320021033763169e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvv
+2025-02-27 23:11:57,964 - Switching to Korean layout
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,975 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,975 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,975 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:57,975 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:57,975 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:58,092 - Key event detected: v - Event type: up
+2025-02-27 23:11:58,092 - Key event detected: v - Event type: up
+2025-02-27 23:11:58,491 - Key event detected: g - Event type: down
+2025-02-27 23:11:58,491 - Added 'g' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvg
+2025-02-27 23:11:58,494 - Predicted language probability: 8.038121279696497e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvg
+2025-02-27 23:11:58,494 - Switching to Korean layout
+2025-02-27 23:11:58,506 - Key event detected: g - Event type: down
+2025-02-27 23:11:58,506 - Added 'g' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgg
+2025-02-27 23:11:58,508 - Predicted language probability: 8.517683447450963e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgg
+2025-02-27 23:11:58,508 - Switching to Korean layout
+2025-02-27 23:11:58,519 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:58,520 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:58,520 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:58,520 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:58,520 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:58,520 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:58,667 - Key event detected: g - Event type: up
+2025-02-27 23:11:58,667 - Key event detected: g - Event type: up
+2025-02-27 23:11:58,979 - Key event detected: h - Event type: down
+2025-02-27 23:11:58,979 - Added 'h' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvggh
+2025-02-27 23:11:58,981 - Predicted language probability: 8.802255813122883e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvggh
+2025-02-27 23:11:58,981 - Switching to Korean layout
+2025-02-27 23:11:58,993 - Key event detected: h - Event type: down
+2025-02-27 23:11:58,993 - Added 'h' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghh
+2025-02-27 23:11:58,996 - Predicted language probability: 6.674254482419428e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghh
+2025-02-27 23:11:58,996 - Switching to Korean layout
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,007 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,007 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,007 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,007 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,007 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,163 - Key event detected: h - Event type: up
+2025-02-27 23:11:59,163 - Key event detected: h - Event type: up
+2025-02-27 23:11:59,363 - Key event detected: j - Event type: down
+2025-02-27 23:11:59,363 - Added 'j' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhj
+2025-02-27 23:11:59,365 - Predicted language probability: 5.922395462931718e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhj
+2025-02-27 23:11:59,365 - Switching to Korean layout
+2025-02-27 23:11:59,380 - Key event detected: j - Event type: down
+2025-02-27 23:11:59,380 - Added 'j' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjj
+2025-02-27 23:11:59,383 - Predicted language probability: 4.6513974893969134e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjj
+2025-02-27 23:11:59,383 - Switching to Korean layout
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,399 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,399 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,399 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: down
+2025-02-27 23:11:59,399 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,399 - Key event detected: backspace - Event type: up
+2025-02-27 23:11:59,563 - Key event detected: j - Event type: up
+2025-02-27 23:11:59,563 - Key event detected: j - Event type: up
+2025-02-27 23:12:00,003 - Key event detected: l - Event type: down
+2025-02-27 23:12:00,003 - Added 'l' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjl
+2025-02-27 23:12:00,006 - Predicted language probability: 4.71375516397643e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjl
+2025-02-27 23:12:00,006 - Switching to Korean layout
+2025-02-27 23:12:00,020 - Key event detected: l - Event type: down
+2025-02-27 23:12:00,020 - Added 'l' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjll
+2025-02-27 23:12:00,022 - Predicted language probability: 6.228462190449591e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjll
+2025-02-27 23:12:00,023 - Switching to Korean layout
+2025-02-27 23:12:00,035 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,035 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,035 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,035 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,035 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,036 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,036 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,036 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,036 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,036 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,036 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,036 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,203 - Key event detected: l - Event type: up
+2025-02-27 23:12:00,203 - Key event detected: l - Event type: up
+2025-02-27 23:12:00,508 - Key event detected: k - Event type: down
+2025-02-27 23:12:00,508 - Added 'k' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllk
+2025-02-27 23:12:00,511 - Predicted language probability: 6.2133809208830826e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllk
+2025-02-27 23:12:00,511 - Switching to Korean layout
+2025-02-27 23:12:00,524 - Key event detected: k - Event type: down
+2025-02-27 23:12:00,524 - Added 'k' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkk
+2025-02-27 23:12:00,527 - Predicted language probability: 4.8066062241503005e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkk
+2025-02-27 23:12:00,527 - Switching to Korean layout
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,540 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,540 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,540 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:00,540 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,540 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:00,700 - Key event detected: k - Event type: up
+2025-02-27 23:12:00,700 - Key event detected: k - Event type: up
+2025-02-27 23:12:01,604 - Key event detected: k - Event type: down
+2025-02-27 23:12:01,604 - Added 'k' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkk
+2025-02-27 23:12:01,607 - Predicted language probability: 4.672426889840153e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkk
+2025-02-27 23:12:01,607 - Switching to Korean layout
+2025-02-27 23:12:01,620 - Key event detected: k - Event type: down
+2025-02-27 23:12:01,620 - Added 'k' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkk
+2025-02-27 23:12:01,623 - Predicted language probability: 4.616582671701508e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkk
+2025-02-27 23:12:01,623 - Switching to Korean layout
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:01,637 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:01,637 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:01,637 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:01,637 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:01,637 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:01,638 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:01,780 - Key event detected: k - Event type: up
+2025-02-27 23:12:01,780 - Key event detected: k - Event type: up
+2025-02-27 23:12:02,164 - Key event detected: d - Event type: down
+2025-02-27 23:12:02,164 - Added 'd' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkd
+2025-02-27 23:12:02,167 - Predicted language probability: 4.942771969496107e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkd
+2025-02-27 23:12:02,167 - Switching to Korean layout
+2025-02-27 23:12:02,181 - Key event detected: d - Event type: down
+2025-02-27 23:12:02,181 - Added 'd' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkdd
+2025-02-27 23:12:02,184 - Predicted language probability: 7.255523293281385e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkdd
+2025-02-27 23:12:02,184 - Switching to Korean layout
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:02,197 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:02,197 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:02,197 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:02,197 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:02,197 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:02,198 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:02,340 - Key event detected: d - Event type: up
+2025-02-27 23:12:02,340 - Key event detected: d - Event type: up
+2025-02-27 23:12:05,436 - Key event detected: q - Event type: down
+2025-02-27 23:12:05,436 - Added 'q' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddq
+2025-02-27 23:12:05,438 - Predicted language probability: 6.438037658540452e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddq
+2025-02-27 23:12:05,438 - Switching to Korean layout
+2025-02-27 23:12:05,453 - Key event detected: q - Event type: down
+2025-02-27 23:12:05,453 - Added 'q' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddqq
+2025-02-27 23:12:05,456 - Predicted language probability: 5.389718893411555e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddqq
+2025-02-27 23:12:05,456 - Switching to Korean layout
+2025-02-27 23:12:05,470 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:05,471 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:05,471 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:05,471 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:05,471 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:05,471 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:05,564 - Key event detected: q - Event type: up
+2025-02-27 23:12:05,564 - Key event detected: q - Event type: up
+2025-02-27 23:12:10,019 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:10,019 - Added 'ctrl' to buffered word. Current buffered word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddqqctrl
+2025-02-27 23:12:10,022 - Predicted language probability: 6.446847944374667e-09 for word: tthhisstttttttttttteerrwweeaazzxxccvvgghhjjllkkkkddqqctrl
+2025-02-27 23:12:10,022 - Switching to Korean layout
+2025-02-27 23:12:10,038 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:10,039 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:10,039 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:10,039 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:10,039 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:10,039 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:10,039 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:10,039 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:10,075 - Key event detected: s - Event type: down
+2025-02-27 23:12:10,076 - Added 's' to buffered word. Current buffered word: s
+2025-02-27 23:12:10,076 - Predicted language probability: 0.733162522315979 for word: s
+2025-02-27 23:12:10,077 - Key event detected: s - Event type: down
+2025-02-27 23:12:10,077 - Added 's' to buffered word. Current buffered word: ss
+2025-02-27 23:12:10,077 - Predicted language probability: 0.790162980556488 for word: ss
+2025-02-27 23:12:10,187 - Key event detected: s - Event type: up
+2025-02-27 23:12:10,187 - Key event detected: s - Event type: up
+2025-02-27 23:12:10,195 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:10,195 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:25,220 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:25,220 - Added 'ctrl' to buffered word. Current buffered word: ssctrl
+2025-02-27 23:12:25,221 - Predicted language probability: 0.022499481216073036 for word: ssctrl
+2025-02-27 23:12:25,221 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:25,221 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:25,221 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:25,221 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:25,292 - Key event detected: z - Event type: down
+2025-02-27 23:12:25,292 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:25,293 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:25,293 - Key event detected: z - Event type: down
+2025-02-27 23:12:25,293 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:25,293 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:25,293 - Key event detected: z - Event type: down
+2025-02-27 23:12:25,293 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:25,294 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:25,452 - Key event detected: z - Event type: up
+2025-02-27 23:12:25,452 - Key event detected: z - Event type: up
+2025-02-27 23:12:25,452 - Key event detected: z - Event type: up
+2025-02-27 23:12:25,468 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:25,468 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:25,468 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,027 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,027 - Added 'ctrl' to buffered word. Current buffered word: zzzctrl
+2025-02-27 23:12:26,028 - Predicted language probability: 4.7916564653860405e-06 for word: zzzctrl
+2025-02-27 23:12:26,028 - Switching to Korean layout
+2025-02-27 23:12:26,030 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,030 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:26,030 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,031 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,031 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,031 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,031 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,031 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,091 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,091 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:26,092 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:26,092 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,092 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:26,092 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:26,093 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,093 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:26,093 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:26,219 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,219 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,219 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,259 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,259 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,259 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,611 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,611 - Added 'ctrl' to buffered word. Current buffered word: zzzctrl
+2025-02-27 23:12:26,612 - Predicted language probability: 4.7916564653860405e-06 for word: zzzctrl
+2025-02-27 23:12:26,613 - Switching to Korean layout
+2025-02-27 23:12:26,615 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,615 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:26,615 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:26,615 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:26,615 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,615 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,615 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,615 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,616 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:26,616 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:26,616 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,616 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,616 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:26,675 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,675 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:26,676 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:26,676 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,676 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:26,677 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:26,677 - Key event detected: z - Event type: down
+2025-02-27 23:12:26,677 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:26,677 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:26,811 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,811 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,812 - Key event detected: z - Event type: up
+2025-02-27 23:12:26,859 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,859 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:26,860 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:27,419 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:27,419 - Added 'ctrl' to buffered word. Current buffered word: zzzctrl
+2025-02-27 23:12:27,420 - Predicted language probability: 4.7916564653860405e-06 for word: zzzctrl
+2025-02-27 23:12:27,420 - Switching to Korean layout
+2025-02-27 23:12:27,422 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:27,422 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:27,422 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:27,422 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:27,422 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:27,422 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:27,423 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:27,423 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:27,423 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:27,423 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:27,423 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:27,423 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:27,423 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:27,467 - Key event detected: z - Event type: down
+2025-02-27 23:12:27,467 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:27,468 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:27,468 - Key event detected: z - Event type: down
+2025-02-27 23:12:27,468 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:27,468 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:27,469 - Key event detected: z - Event type: down
+2025-02-27 23:12:27,469 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:27,469 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:27,635 - Key event detected: z - Event type: up
+2025-02-27 23:12:27,635 - Key event detected: z - Event type: up
+2025-02-27 23:12:27,635 - Key event detected: z - Event type: up
+2025-02-27 23:12:27,651 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:27,651 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:27,651 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:28,387 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,387 - Added 'ctrl' to buffered word. Current buffered word: zzzctrl
+2025-02-27 23:12:28,388 - Predicted language probability: 4.7916564653860405e-06 for word: zzzctrl
+2025-02-27 23:12:28,388 - Switching to Korean layout
+2025-02-27 23:12:28,391 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,391 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:28,391 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,391 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:28,391 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,391 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,391 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,391 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,391 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,392 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,392 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,392 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,392 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,435 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,435 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:28,436 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:28,436 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,436 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:28,437 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:28,437 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,437 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:28,437 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:28,611 - Key event detected: z - Event type: up
+2025-02-27 23:12:28,611 - Key event detected: z - Event type: up
+2025-02-27 23:12:28,611 - Key event detected: z - Event type: up
+2025-02-27 23:12:28,635 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:28,635 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:28,635 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:28,860 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,860 - Added 'ctrl' to buffered word. Current buffered word: zzzctrl
+2025-02-27 23:12:28,861 - Predicted language probability: 4.7916564653860405e-06 for word: zzzctrl
+2025-02-27 23:12:28,861 - Switching to Korean layout
+2025-02-27 23:12:28,863 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,863 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:28,864 - Key event detected: ctrl - Event type: down
+2025-02-27 23:12:28,864 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,864 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,864 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:28,864 - Backspace pressed. Buffered word: 
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,864 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:28,923 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,923 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:28,924 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:28,924 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,924 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:28,925 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:28,925 - Key event detected: z - Event type: down
+2025-02-27 23:12:28,925 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:28,925 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:29,092 - Key event detected: z - Event type: up
+2025-02-27 23:12:29,092 - Key event detected: z - Event type: up
+2025-02-27 23:12:29,092 - Key event detected: z - Event type: up
+2025-02-27 23:12:29,115 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:29,115 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:29,115 - Key event detected: ctrl - Event type: up
+2025-02-27 23:12:31,635 - Key event detected: alt - Event type: down
+2025-02-27 23:12:31,635 - Added 'alt' to buffered word. Current buffered word: zzzalt
+2025-02-27 23:12:31,636 - Predicted language probability: 0.06268081814050674 for word: zzzalt
+2025-02-27 23:12:31,636 - Key event detected: alt - Event type: down
+2025-02-27 23:12:31,636 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:31,636 - Key event detected: alt - Event type: down
+2025-02-27 23:12:31,636 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:31,707 - Key event detected: tab - Event type: down
+2025-02-27 23:12:31,707 - Added 'tab' to buffered word. Current buffered word: tab
+2025-02-27 23:12:31,708 - Predicted language probability: 0.9289313554763794 for word: tab
+2025-02-27 23:12:31,708 - Key event detected: tab - Event type: down
+2025-02-27 23:12:31,708 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:31,708 - Key event detected: tab - Event type: down
+2025-02-27 23:12:31,708 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:31,803 - Key event detected: alt - Event type: up
+2025-02-27 23:12:31,803 - Key event detected: alt - Event type: up
+2025-02-27 23:12:31,803 - Key event detected: alt - Event type: up
+2025-02-27 23:12:31,827 - Key event detected: tab - Event type: up
+2025-02-27 23:12:31,827 - Key event detected: tab - Event type: up
+2025-02-27 23:12:31,827 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,403 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,403 - Added 'alt' to buffered word. Current buffered word: alt
+2025-02-27 23:12:32,404 - Predicted language probability: 0.9141943454742432 for word: alt
+2025-02-27 23:12:32,404 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,404 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,404 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,404 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,419 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,419 - Added 'tab' to buffered word. Current buffered word: tab
+2025-02-27 23:12:32,420 - Predicted language probability: 0.9289313554763794 for word: tab
+2025-02-27 23:12:32,420 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,420 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,420 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,420 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,459 - Key event detected: alt - Event type: up
+2025-02-27 23:12:32,459 - Key event detected: alt - Event type: up
+2025-02-27 23:12:32,459 - Key event detected: alt - Event type: up
+2025-02-27 23:12:32,531 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,531 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,531 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,619 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,619 - Added 'alt' to buffered word. Current buffered word: alt
+2025-02-27 23:12:32,620 - Predicted language probability: 0.9141943454742432 for word: alt
+2025-02-27 23:12:32,620 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,620 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,620 - Key event detected: alt - Event type: down
+2025-02-27 23:12:32,620 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,691 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,691 - Added 'tab' to buffered word. Current buffered word: tab
+2025-02-27 23:12:32,692 - Predicted language probability: 0.9289313554763794 for word: tab
+2025-02-27 23:12:32,692 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,692 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,692 - Key event detected: tab - Event type: down
+2025-02-27 23:12:32,692 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:32,763 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,763 - Key event detected: tab - Event type: up
+2025-02-27 23:12:32,763 - Key event detected: tab - Event type: up
+2025-02-27 23:12:33,051 - Key event detected: tab - Event type: down
+2025-02-27 23:12:33,051 - Added 'tab' to buffered word. Current buffered word: tab
+2025-02-27 23:12:33,052 - Predicted language probability: 0.9289313554763794 for word: tab
+2025-02-27 23:12:33,052 - Key event detected: tab - Event type: down
+2025-02-27 23:12:33,052 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:33,052 - Key event detected: tab - Event type: down
+2025-02-27 23:12:33,052 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:33,179 - Key event detected: alt - Event type: up
+2025-02-27 23:12:33,179 - Key event detected: alt - Event type: up
+2025-02-27 23:12:33,179 - Key event detected: alt - Event type: up
+2025-02-27 23:12:33,187 - Key event detected: tab - Event type: up
+2025-02-27 23:12:33,187 - Key event detected: tab - Event type: up
+2025-02-27 23:12:33,187 - Key event detected: tab - Event type: up
+2025-02-27 23:12:35,284 - Key event detected: alt - Event type: down
+2025-02-27 23:12:35,284 - Added 'alt' to buffered word. Current buffered word: alt
+2025-02-27 23:12:35,284 - Predicted language probability: 0.9141943454742432 for word: alt
+2025-02-27 23:12:35,284 - Key event detected: alt - Event type: down
+2025-02-27 23:12:35,285 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:35,285 - Key event detected: alt - Event type: down
+2025-02-27 23:12:35,285 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:35,356 - Key event detected: tab - Event type: down
+2025-02-27 23:12:35,356 - Added 'tab' to buffered word. Current buffered word: tab
+2025-02-27 23:12:35,356 - Predicted language probability: 0.9289313554763794 for word: tab
+2025-02-27 23:12:35,357 - Key event detected: tab - Event type: down
+2025-02-27 23:12:35,357 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:35,357 - Key event detected: tab - Event type: down
+2025-02-27 23:12:35,357 - Non-alphabet key pressed. Resetting buffered word: 
+2025-02-27 23:12:35,435 - Key event detected: tab - Event type: up
+2025-02-27 23:12:35,436 - Key event detected: tab - Event type: up
+2025-02-27 23:12:35,436 - Key event detected: tab - Event type: up
+2025-02-27 23:12:35,443 - Key event detected: alt - Event type: up
+2025-02-27 23:12:35,444 - Key event detected: alt - Event type: up
+2025-02-27 23:12:35,444 - Key event detected: alt - Event type: up
+2025-02-27 23:12:43,747 - Key event detected: z - Event type: down
+2025-02-27 23:12:43,747 - Added 'z' to buffered word. Current buffered word: z
+2025-02-27 23:12:43,748 - Predicted language probability: 0.6086185574531555 for word: z
+2025-02-27 23:12:43,748 - Key event detected: z - Event type: down
+2025-02-27 23:12:43,748 - Added 'z' to buffered word. Current buffered word: zz
+2025-02-27 23:12:43,748 - Predicted language probability: 0.5164171457290649 for word: zz
+2025-02-27 23:12:43,748 - Key event detected: z - Event type: down
+2025-02-27 23:12:43,748 - Added 'z' to buffered word. Current buffered word: zzz
+2025-02-27 23:12:43,749 - Predicted language probability: 0.22028282284736633 for word: zzz
+2025-02-27 23:12:43,907 - Key event detected: z - Event type: up
+2025-02-27 23:12:43,907 - Key event detected: z - Event type: up
+2025-02-27 23:12:43,907 - Key event detected: z - Event type: up
+2025-02-27 23:12:44,387 - Key event detected: a - Event type: down
+2025-02-27 23:12:44,387 - Added 'a' to buffered word. Current buffered word: zzza
+2025-02-27 23:12:44,388 - Predicted language probability: 0.056611157953739166 for word: zzza
+2025-02-27 23:12:44,388 - Key event detected: a - Event type: down
+2025-02-27 23:12:44,388 - Added 'a' to buffered word. Current buffered word: zzzaa
+2025-02-27 23:12:44,389 - Predicted language probability: 0.10805018246173859 for word: zzzaa
+2025-02-27 23:12:44,389 - Key event detected: a - Event type: down
+2025-02-27 23:12:44,389 - Added 'a' to buffered word. Current buffered word: zzzaaa
+2025-02-27 23:12:44,390 - Predicted language probability: 0.35805419087409973 for word: zzzaaa
+2025-02-27 23:12:44,547 - Key event detected: a - Event type: up
+2025-02-27 23:12:44,548 - Key event detected: a - Event type: up
+2025-02-27 23:12:44,548 - Key event detected: a - Event type: up
+2025-02-27 23:12:44,907 - Key event detected: s - Event type: down
+2025-02-27 23:12:44,907 - Added 's' to buffered word. Current buffered word: zzzaaas
+2025-02-27 23:12:44,908 - Predicted language probability: 0.6882649064064026 for word: zzzaaas
+2025-02-27 23:12:44,908 - Key event detected: s - Event type: down
+2025-02-27 23:12:44,908 - Added 's' to buffered word. Current buffered word: zzzaaass
+2025-02-27 23:12:44,910 - Predicted language probability: 0.7779068350791931 for word: zzzaaass
+2025-02-27 23:12:44,910 - Key event detected: s - Event type: down
+2025-02-27 23:12:44,910 - Added 's' to buffered word. Current buffered word: zzzaaasss
+2025-02-27 23:12:44,911 - Predicted language probability: 0.7322258949279785 for word: zzzaaasss
+2025-02-27 23:12:45,059 - Key event detected: s - Event type: up
+2025-02-27 23:12:45,059 - Key event detected: s - Event type: up
+2025-02-27 23:12:45,059 - Key event detected: s - Event type: up
+2025-02-27 23:12:45,307 - Key event detected: d - Event type: down
+2025-02-27 23:12:45,307 - Added 'd' to buffered word. Current buffered word: zzzaaasssd
+2025-02-27 23:12:45,309 - Predicted language probability: 0.26189711689949036 for word: zzzaaasssd
+2025-02-27 23:12:45,309 - Key event detected: d - Event type: down
+2025-02-27 23:12:45,309 - Added 'd' to buffered word. Current buffered word: zzzaaasssdd
+2025-02-27 23:12:45,310 - Predicted language probability: 0.031136350706219673 for word: zzzaaasssdd
+2025-02-27 23:12:45,310 - Key event detected: d - Event type: down
+2025-02-27 23:12:45,310 - Added 'd' to buffered word. Current buffered word: zzzaaasssddd
+2025-02-27 23:12:45,311 - Predicted language probability: 0.003347558667883277 for word: zzzaaasssddd
+2025-02-27 23:12:45,311 - Switching to Korean layout
+2025-02-27 23:12:45,315 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:45,315 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:45,315 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:45,315 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:45,315 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:45,315 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:45,316 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:45,316 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:45,316 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:45,467 - Key event detected: d - Event type: up
+2025-02-27 23:12:45,467 - Key event detected: d - Event type: up
+2025-02-27 23:12:45,467 - Key event detected: d - Event type: up
+2025-02-27 23:12:46,195 - Key event detected: d - Event type: down
+2025-02-27 23:12:46,195 - Added 'd' to buffered word. Current buffered word: zzzaaasssdddd
+2025-02-27 23:12:46,196 - Predicted language probability: 0.00029728113440796733 for word: zzzaaasssdddd
+2025-02-27 23:12:46,196 - Switching to Korean layout
+2025-02-27 23:12:46,201 - Key event detected: d - Event type: down
+2025-02-27 23:12:46,201 - Added 'd' to buffered word. Current buffered word: zzzaaasssddddd
+2025-02-27 23:12:46,203 - Predicted language probability: 1.2704671462415718e-05 for word: zzzaaasssddddd
+2025-02-27 23:12:46,203 - Switching to Korean layout
+2025-02-27 23:12:46,207 - Key event detected: d - Event type: down
+2025-02-27 23:12:46,207 - Added 'd' to buffered word. Current buffered word: zzzaaasssdddddd
+2025-02-27 23:12:46,209 - Predicted language probability: 4.0146213109437667e-07 for word: zzzaaasssdddddd
+2025-02-27 23:12:46,209 - Switching to Korean layout
+2025-02-27 23:12:46,214 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,214 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,214 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,215 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,215 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,216 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,216 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:46,216 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:46,216 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,216 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,216 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:46,347 - Key event detected: d - Event type: up
+2025-02-27 23:12:46,347 - Key event detected: d - Event type: up
+2025-02-27 23:12:46,347 - Key event detected: d - Event type: up
+2025-02-27 23:12:47,147 - Key event detected: s - Event type: down
+2025-02-27 23:12:47,147 - Added 's' to buffered word. Current buffered word: zzzaaasssdddddds
+2025-02-27 23:12:47,148 - Predicted language probability: 3.598171360863489e-08 for word: zzzaaasssdddddds
+2025-02-27 23:12:47,148 - Switching to Korean layout
+2025-02-27 23:12:47,153 - Key event detected: s - Event type: down
+2025-02-27 23:12:47,153 - Added 's' to buffered word. Current buffered word: zzzaaasssddddddss
+2025-02-27 23:12:47,155 - Predicted language probability: 1.305509922389092e-08 for word: zzzaaasssddddddss
+2025-02-27 23:12:47,155 - Switching to Korean layout
+2025-02-27 23:12:47,161 - Key event detected: s - Event type: down
+2025-02-27 23:12:47,161 - Added 's' to buffered word. Current buffered word: zzzaaasssddddddsss
+2025-02-27 23:12:47,163 - Predicted language probability: 8.606473755889965e-09 for word: zzzaaasssddddddsss
+2025-02-27 23:12:47,163 - Switching to Korean layout
+2025-02-27 23:12:47,169 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,169 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,169 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,169 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,169 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,169 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,170 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,170 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,170 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,170 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,170 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,170 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:47,171 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:47,171 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,171 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,171 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:47,307 - Key event detected: s - Event type: up
+2025-02-27 23:12:47,307 - Key event detected: s - Event type: up
+2025-02-27 23:12:47,307 - Key event detected: s - Event type: up
+2025-02-27 23:12:51,875 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:51,875 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:51,875 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:51,875 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:51,875 - Key event detected: backspace - Event type: down
+2025-02-27 23:12:51,875 - Backspace pressed, but conversion area is locked.
+2025-02-27 23:12:51,955 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:51,955 - Key event detected: backspace - Event type: up
+2025-02-27 23:12:51,955 - Key event detected: backspace - Event type: up
