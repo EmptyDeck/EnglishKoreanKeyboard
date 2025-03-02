@@ -299,3 +299,106 @@ extension HangulAutomata {
         buffer[buffer.count - 1] = charCode
     }
 }
+
+// 한글 유니코드 완전 분해 (초성, 중성, 종성 기본 자모로 분리)
+func decomposeHangul(_ char: Character) -> [String] {
+    let scalar = char.unicodeScalars.first!.value
+    
+    // 한글 영역이 아닌 경우
+    guard scalar >= 0xAC00 && scalar <= 0xD7A3 else {
+        return [String(char)]
+    }
+    
+    let base = Int(scalar) - 0xAC00
+    let initialIndex = base / (21 * 28)
+    let medialIndex = (base % (21 * 28)) / 28
+    let finalIndex = base % 28
+    
+    // 초성, 중성, 종성 기본 자모
+    let initialJamo = [
+        "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ",
+        "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ",
+        "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
+    ][initialIndex]
+    
+    let medialJamo = [
+        "ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ",
+        "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ",
+        "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"
+    ][medialIndex]
+    
+    let finalJamo = [
+        "", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ",
+        "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ",
+        "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ",
+        "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
+    ][finalIndex]
+    
+    // 복합 자모 분해 규칙
+    let decomposeRules: [String: [String]] = [
+        "ㄲ": ["ㄱ", "ㄱ"],
+        "ㄳ": ["ㄱ", "ㅅ"],
+        "ㄵ": ["ㄴ", "ㅈ"],
+        "ㄶ": ["ㄴ", "ㅎ"],
+        "ㄺ": ["ㄹ", "ㄱ"],
+        "ㄻ": ["ㄹ", "ㅁ"],
+        "ㄼ": ["ㄹ", "ㅂ"],
+        "ㄽ": ["ㄹ", "ㅅ"],
+        "ㄾ": ["ㄹ", "ㅌ"],
+        "ㄿ": ["ㄹ", "ㅍ"],
+        "ㅀ": ["ㄹ", "ㅎ"],
+        "ㅄ": ["ㅂ", "ㅅ"],
+        "ㅘ": ["ㅗ", "ㅏ"],
+        "ㅙ": ["ㅗ", "ㅐ"],
+        "ㅚ": ["ㅗ", "ㅣ"],
+        "ㅝ": ["ㅜ", "ㅓ"],
+        "ㅞ": ["ㅜ", "ㅔ"],
+        "ㅟ": ["ㅜ", "ㅣ"],
+        "ㅢ": ["ㅡ", "ㅣ"],
+        "ㅆ": ["ㅅ", "ㅅ"]
+    ]
+    
+    // 분해 수행
+    func splitJamo(_ jamo: String) -> [String] {
+        return decomposeRules[jamo] ?? [jamo]
+    }
+    
+    let initialSplit = splitJamo(initialJamo)
+    let medialSplit = splitJamo(medialJamo)
+    let finalSplit = splitJamo(finalJamo)
+    
+    return initialSplit + medialSplit + finalSplit
+}
+
+// 2-벌식 키보드 매핑 (물리적 키 위치 기반)
+let qwertyKeyMap: [String: String] = [
+    // 초성
+    "ㄱ": "r", "ㄲ": "R", "ㄴ": "s", "ㄷ": "e", "ㄸ": "E",
+    "ㄹ": "f", "ㅁ": "a", "ㅂ": "q", "ㅃ": "Q", "ㅅ": "t",
+    "ㅆ": "T", "ㅇ": "d", "ㅈ": "w", "ㅉ": "W", "ㅊ": "c",
+    "ㅋ": "z", "ㅌ": "x", "ㅍ": "v", "ㅎ": "g",
+    
+    // 중성
+    "ㅏ": "k", "ㅐ": "o", "ㅑ": "i", "ㅒ": "O",
+    "ㅓ": "j", "ㅔ": "p", "ㅕ": "u", "ㅖ": "P",
+    "ㅗ": "h", "ㅛ": "y", "ㅜ": "n", "ㅠ": "b",
+    "ㅡ": "m", "ㅣ": "l",
+    
+    // 종성 (초성과 다른 경우)
+    "ㄳ": "rt", "ㄵ": "sw", "ㄶ": "sg",
+    "ㄺ": "fr", "ㄻ": "fa", "ㄼ": "fq",
+    "ㄽ": "ft", "ㄾ": "fx", "ㄿ": "fv",
+    "ㅀ": "fg", "ㅄ": "qt"
+]
+
+// 최종 변환 함수
+func convertKo2EN(_ input: String) -> String {
+    return input.reduce("") { result, char in
+        let decomposed = decomposeHangul(char)
+            .compactMap { qwertyKeyMap[$0] ?? $0 }
+            .joined()
+            .lowercased()
+        
+        return result + decomposed
+    }
+}

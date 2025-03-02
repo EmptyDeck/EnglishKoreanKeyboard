@@ -129,11 +129,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         return count
     }
     
-    private func resetAutomata() {
+    private func resetAutomata(stream: Bool = true) {
         hautomata.buffer.removeAll()
         hautomata.inpStack.removeAll()
         hautomata.currentHangulState = nil
-        currentKeyStream = ""
+        if stream == true {
+            currentKeyStream = ""
+        }
     }
     
     // MARK: - 키 입력 처리
@@ -146,7 +148,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
 
         guard let chars = event.charactersIgnoringModifiers else { return }
-
+        
+        // 추가: 이전 버퍼와 같으면 유저 의도가 있다고 판단
         // 공백 키 또는 삭제 키가 눌렸을 때 + 방향키 tab 등등 추가
         if event.keyCode == kVK_Delete {
             resetAutomata()
@@ -154,7 +157,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
         else if event.keyCode == kVK_Space {
             var currentLang : Lang = .en
-            if isKoreanInputSource() { currentLang = .ko }
+            var wordCount: Int = 0
+            if isKoreanInputSource() {
+                currentLang = .ko
+                currentKeyStream = hangulToQwerty(currentKeyStream)
+            }
             
             // model predict
             let prob: Float? = handler.predict(word: currentKeyStream)
@@ -188,12 +195,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
                 }
                 
                 // get word length
-                var wordCount: Int = 0
                 wordCount = currentKeyStream.count
                 
                 // swap string
                 print("======================")
-                print("deleting: ", hautomata, " / ", wordCount)
+                print("deleting: ", " / ", wordCount)
                 print("currentKeyStream: ", currentKeyStream)
                 deleteCharacters(count: wordCount+1)
                 
@@ -201,34 +207,29 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
                 let typeBuffer : String = buffer + " "
                 typeText(typeBuffer)
                 print("======================")
-                
-                // reset buffer
-                resetAutomata()
             }
-            else if currentLang == .ko {
-                var wordCount: Int = 0
-                wordCount = currentKeyStream.count
-                print("hangul",wordCount)
+            else if currentLang == .ko && isEnglish == true {
+                for key in currentKeyStream {
+                    hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+                }
+                let buffer = hautomata.buffer.reduce("") { $0 + $1 }
+                wordCount = buffer.count
+
+                // swap string
+                print("ko2en======================")
+                deleteCharacters(count: wordCount+1)
+                let typeBuffer : String = currentKeyStream + " "
+                typeText(typeBuffer)
+                print("hangul",wordCount, "/", currentKeyStream)
+                print("===========================")
             }
             
-            
-            
+            // reset buffer
+            resetAutomata()
             return
         }
-        
+        print("기본: ", currentKeyStream)
         currentKeyStream += chars
-//        print("변환 결과: ", automata.outputToDisplay)
-//        if isKoreanInputSource() {
-//            // 한글 처리
-//            automata.insert(String(chars))
-////            automata.insert(String(hangulToQwerty(chars)))
-//            print("한글: ", hangulToQwerty(chars))
-//        }
-//        else {
-//            // 영어 처리
-//            automata.insert(String(chars))
-//            print("영어: ", chars)
-//        }
     }
     
     private func checkForSnippetMatch() {

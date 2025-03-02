@@ -27,7 +27,8 @@ func hangulToQwerty(_ input: String) -> String {
         "ㅁ": "a", "ㄴ": "s", "ㅇ": "d", "ㄹ": "f", "ㅎ": "g",
         "ㅗ": "h", "ㅓ": "j", "ㅏ": "k", "ㅣ": "l",
         "ㅋ": "z", "ㅌ": "x", "ㅊ": "c", "ㅍ": "v", "ㅠ": "b",
-        "ㅜ": "n", "ㅡ": "m"
+        "ㅜ": "n", "ㅡ": "m",
+        "ㅃ": "Q", "ㅉ": "W", "ㄸ": "E", "ㄲ": "R", "ㅆ": "T"
     ]
     
     var result = ""
@@ -44,7 +45,8 @@ func qwertyToHangul(_ input: String) -> String {
         "a": "ㅁ", "s": "ㄴ", "d": "ㅇ", "f": "ㄹ", "g": "ㅎ",
         "h": "ㅗ", "j": "ㅓ", "k": "ㅏ", "l": "ㅣ",
         "z": "ㅋ", "x": "ㅌ", "c": "ㅊ", "v": "ㅍ", "b": "ㅠ",
-        "n": "ㅜ", "m": "ㅡ"
+        "n": "ㅜ", "m": "ㅡ",
+        "Q": "ㅃ", "W": "ㅉ", "E": "ㄸ", "R": "ㄲ", "T": "ㅆ"
     ]
     
     var result = ""
@@ -53,6 +55,7 @@ func qwertyToHangul(_ input: String) -> String {
     }
     return result
 }
+
 
 // 한글 여부 판별 함수
 func isHangul(_ char: String) -> Bool {

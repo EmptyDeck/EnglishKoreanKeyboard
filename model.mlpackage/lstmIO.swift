@@ -41,7 +41,7 @@ class LanguageClassifierHandler {
             // 4. 원-핫 인코딩 수정
             for (timeStep, char) in validChars.prefix(maxSequenceLength).enumerated() {
                 guard let idx = charToIndex[char] else { continue }
-                print("timeStep: ", timeStep, " / idx: ", idx)
+//                print("timeStep: ", timeStep, " / idx: ", idx)
                 xArray[[0, timeStep, idx] as [NSNumber]] = 1.0 // Float 값 할당
             }
             
