@@ -13,74 +13,133 @@ struct AutoHangulEnglishApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
-        Settings { EmptyView() } // 빈 설정 창
+        Settings { EmptyView() }
     }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
-    // 상태 바 관련 프로퍼티
+    // Status bar properties
     var statusItem: NSStatusItem!
     let menu = NSMenu()
     
-    // 키보드 모니터링 관련
+    // Mouse click monitor
+    var mouseClickMonitor: Any?
+    var lastCapsLockTime: Date?
+    
+    // Puase hot key doulbe caps time tinerval
+    let doubleClickInterval: TimeInterval = 0.3
+    
+    // Keyboard monitoring properties
     var currentKeyStream = ""
     var snippets = [String: String]()
     var longestShortcutLength = 0
     var monitoringEnabled = false
     var string_count = 0
     var eventMonitor: Any?
+    var isPaused = false
+    var pressedKeys = Set<UInt16>()
+    var keyDownMonitor: Any?
+    var keyUpMonitor: Any?
     
-    // 한글 오토마타
+    // Hangul automata
     var automata = KeyboardAutomata()
     var hautomata = HangulAutomata()
      
-    // 파일 관찰 관련
+    // File observation
     var eventStream: FSEventStreamRef?
     
-    // 모델 관련
+    // Model
     var model: MLModel?
     let handler = LanguageClassifierHandler()
     
-    // MARK: - 앱 라이프사이클
+    // Settings
+    var processOnSpace: Bool {
+        get { UserDefaults.standard.bool(forKey: "processOnSpace") }
+        set { UserDefaults.standard.set(newValue, forKey: "processOnSpace") }
+    }
+    var bufferLengthThreshold: Int {
+        get { UserDefaults.standard.integer(forKey: "bufferLengthThreshold") }
+        set { UserDefaults.standard.set(newValue, forKey: "bufferLengthThreshold") }
+    }
+    var confidenceThreshold: Float {
+        get { UserDefaults.standard.float(forKey: "confidenceThreshold") }
+        set { UserDefaults.standard.set(newValue, forKey: "confidenceThreshold") }
+    }
+    
+    // Conversion history for rollback
+    var lastConversionTime: Date?
+    var lastOriginalText: String?
+    var lastConvertedText: String?
+    var lastSwitchedFromLang: Lang?
+    
+    // MARK: - App Lifecycle
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         checkAccessibilityPermissions()
         setupApplication()
+        setupSettings()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         stopFileMonitoring()
+        if let monitor = keyDownMonitor { NSEvent.removeMonitor(monitor) }
+        if let monitor = keyUpMonitor { NSEvent.removeMonitor(monitor) }
     }
     
-    // MARK: - 초기 설정
+    // MARK: - Initial Setup
     private func setupApplication() {
-        // 모델 로딩 전 검증
         loadModel()
         setupStatusMenu()
         setupFileSystem()
         reloadSnippets()
         startFileMonitoring()
         enableKeyMonitoring()
+        // Observe input source changes for buffer reset and rollback
+        DistributedNotificationCenter.default().addObserver(
+            self,
+            selector: #selector(inputSourceChanged),
+            name: NSNotification.Name("com.apple.Carbon.TISNotifySelectedKeyboardInputSourceChanged"),
+            object: nil
+        )
+    }
+    
+    private func setupSettings() {
+        UserDefaults.standard.register(defaults: [
+            "processOnSpace": true,
+            "bufferLengthThreshold": 10,
+            "confidenceThreshold": 0.95
+        ])
     }
     
     private func setupStatusMenu() {
-        print("settuping")
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        
-        // 메뉴 아이콘 설정
         let icon = NSImage(named: "MenuIcon") ?? NSImage(systemSymbolName: "keyboard", accessibilityDescription: nil)!
         icon.isTemplate = true
         statusItem.button?.image = icon
         
-        // 컨텍스트 메뉴 구성
+        menu.removeAllItems() // Clear existing items
         menu.addItem(withTitle: "활성화 토글", action: #selector(toggleMonitoring), keyEquivalent: "")
-        menu.addItem(withTitle: "스니펫 파일 열기", action: #selector(openSnippetsFile), keyEquivalent: "o")
+        menu.addItem(withTitle: "설정", action: #selector(openSettings), keyEquivalent: "")
         menu.addItem(.separator())
         menu.addItem(withTitle: "종료", action: #selector(quitApp), keyEquivalent: "q")
         
         statusItem.menu = menu
     }
-
-    // MARK: - 접근성 권한 확인
+    
+    // MARK: - Settings Window
+    var settingsWindow: NSWindow?
+    
+    @objc private func openSettings() {
+        if settingsWindow == nil {
+            let hostingController = NSHostingController(rootView: SettingsView())
+            settingsWindow = NSWindow(contentViewController: hostingController)
+            settingsWindow?.title = "Settings"
+            settingsWindow?.styleMask = [.titled, .closable]
+            settingsWindow?.level = .floating
+        }
+        settingsWindow?.makeKeyAndOrderFront(nil)
+    }
+    
+    // MARK: - Accessibility Permissions
     private func checkAccessibilityPermissions() {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
         let isTrusted = AXIsProcessTrustedWithOptions(options as CFDictionary)
@@ -109,7 +168,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             print("Model not found")
             return
         }
-
         do {
             model = try MLModel(contentsOf: modelURL)
             print("Model loaded successfully.")
@@ -120,10 +178,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     func getVisibleCharacterCount(input: String) -> Int {
         var count = 0
-        
         input.enumerateSubstrings(in: input.startIndex..<input.endIndex,
-                                 options: .byComposedCharacterSequences) {
-            _, _, _, _ in
+                                 options: .byComposedCharacterSequences) { _, _, _, _ in
             count += 1
         }
         return count
@@ -133,116 +189,188 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         hautomata.buffer.removeAll()
         hautomata.inpStack.removeAll()
         hautomata.currentHangulState = nil
-        if stream == true {
+        if stream {
             currentKeyStream = ""
         }
     }
     
-    // MARK: - 키 입력 처리
+    // MARK: - Pause Logic
+    @objc private func togglePause() {
+        isPaused.toggle()
+        let iconName = isPaused ? "pause_keyboard" : "MenuIcon"
+        let icon = NSImage(named: iconName) ?? NSImage(systemSymbolName: isPaused ? "pause.fill" : "keyboard", accessibilityDescription: nil)!
+        icon.isTemplate = true
+        statusItem.button?.image = icon
+        
+        if isPaused {
+            disableKeyMonitoring()
+            print("Paused")
+        } else {
+            enableKeyMonitoring()
+            print("Resumed")
+        }
+        updateMenuState()
+    }
+    
+    // MARK: - Key Event Handling
     private func handleKeyEvent(_ event: NSEvent) {
         guard let cgEvent = event.cgEvent else { return }
         let eventPID = cgEvent.getIntegerValueField(.eventSourceUnixProcessID)
         let appPID = Int64(ProcessInfo.processInfo.processIdentifier)
-        if eventPID == appPID {
-            return
-        }
-
-        guard let chars = event.charactersIgnoringModifiers else { return }
+        if eventPID == appPID { return }
         
-        // 추가: 이전 버퍼와 같으면 유저 의도가 있다고 판단
-        // 공백 키 또는 삭제 키가 눌렸을 때 + 방향키 tab 등등 추가
-        if event.keyCode == kVK_Delete {
+        // Check for modifier keys (except Shift)
+        let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+        if modifiers.contains(.command) || modifiers.contains(.option) || modifiers.contains(.control) || modifiers.contains(.function) {
             resetAutomata()
             return
         }
-        else if event.keyCode == kVK_Space {
-            var currentLang : Lang = .en
-            var wordCount: Int = 0
-            if isKoreanInputSource() {
-                currentLang = .ko
-                currentKeyStream = hangulToQwerty(currentKeyStream)
-            }
-            
-            // model predict
-            let prob: Float? = handler.predict(word: currentKeyStream)
-            if prob != nil {
-                print("영어 확률: \(prob! * 100)%")
-            } else {
-                print("처리 불가")
-                resetAutomata()
-                return
-            }
-            
-            // check correct predict
-            var isEnglish: Bool = false
-            let percent: Float = 0.05
-            if prob! < percent {
-                isEnglish = false
-            } else if prob! > 1.0 - percent {
-                isEnglish = true
-            } else {
-                resetAutomata()
-            }
-            
-            // decide whether to convert
-            if (currentLang == .ko && isEnglish == false) && (currentLang == .en && isEnglish == true) {
-                return
-            }
-            else if currentLang == .en && isEnglish == false {
-                // automata insert
-                for key in currentKeyStream {
-                    hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
-                }
-                
-                // get word length
-                wordCount = currentKeyStream.count
-                
-                // swap string
-                print("======================")
-                print("deleting: ", " / ", wordCount)
-                print("currentKeyStream: ", currentKeyStream)
-                deleteCharacters(count: wordCount+1)
-                
-                let buffer = hautomata.buffer.reduce("") { $0 + $1 }
-                let typeBuffer : String = buffer + " "
-                typeText(typeBuffer)
-                print("======================")
-            }
-            else if currentLang == .ko && isEnglish == true {
-                for key in currentKeyStream {
-                    hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
-                }
-                let buffer = hautomata.buffer.reduce("") { $0 + $1 }
-                wordCount = buffer.count
-
-                // swap string
-                print("ko2en======================")
-                deleteCharacters(count: wordCount+1)
-                let typeBuffer : String = currentKeyStream + " "
-                typeText(typeBuffer)
-                print("hangul",wordCount, "/", currentKeyStream)
-                print("===========================")
-            }
-            
-            // reset buffer
+        
+        // Check for non-text keys (e.g., arrow keys, function keys)
+        let nonTextKeyCodes: Set<UInt16> = [
+            UInt16(kVK_UpArrow), UInt16(kVK_DownArrow), UInt16(kVK_LeftArrow), UInt16(kVK_RightArrow),
+            UInt16(kVK_F1), UInt16(kVK_F2), UInt16(kVK_F3), UInt16(kVK_F4), UInt16(kVK_F5), UInt16(kVK_F6),
+            UInt16(kVK_F7), UInt16(kVK_F8), UInt16(kVK_F9), UInt16(kVK_F10), UInt16(kVK_F11), UInt16(kVK_F12),
+            UInt16(kVK_Home), UInt16(kVK_End), UInt16(kVK_PageUp), UInt16(kVK_PageDown)
+        ]
+        if nonTextKeyCodes.contains(event.keyCode) {
             resetAutomata()
             return
         }
-        print("기본: ", currentKeyStream)
+        
+        // Caps Lock double-click handling will be added in Step 4
+        
+        if isPaused { return }
+        
+        guard let chars = event.charactersIgnoringModifiers else { return }
         currentKeyStream += chars
+        
+        if event.keyCode == kVK_Delete { // Reset if Backspace
+            resetAutomata()
+            return
+        } else if processOnSpace && event.keyCode == kVK_Space {
+            processBuffer(isSpaceTriggered: true)
+        } else if !processOnSpace && currentKeyStream.count >= bufferLengthThreshold {
+            processBuffer(isSpaceTriggered: false)
+        }
+        
+        print("기본: ", currentKeyStream)
     }
     
-    private func checkForSnippetMatch() {
-        for (shortcut, text) in snippets {
-            guard currentKeyStream.contains(shortcut) else { continue }
-            
-            currentKeyStream = ""
-            deleteCharacters(count: shortcut.count)
-            typeText(text)
+    private func processBuffer(isSpaceTriggered: Bool) {
+        let currentLang = getCurrentLanguage()
+        let bufferToProcess = currentLang == .ko ? hangulToQwerty(currentKeyStream) : currentKeyStream
+        
+        guard let prob = handler.predict(word: bufferToProcess) else {
+            print("처리 불가")
+            resetAutomata()
+            return
+        }
+        if prob >= 0.5 {
+            let englishProbability = String(format: "%.2f", prob * 100)
+            print("영어 확률: \(englishProbability)%")
+        } else {
+            let koreanProbability = String(format: "%.2f", (1 - prob) * 100)
+            print("한국어 확률: \(koreanProbability)%")
+        }
+        
+        let isEnglish: Bool
+        if prob < (1.0 - confidenceThreshold) {
+            isEnglish = false
+        } else if prob > confidenceThreshold {
+            isEnglish = true
+        } else {
+            resetAutomata()
+            return
+        }
+        if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
+            resetAutomata()
+            return
+        }
+        
+        let bufferLength = getVisibleCharacterCount(input: currentKeyStream)
+        if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
+            if !isSpaceTriggered {
+                deleteCharacters(count: bufferLength)
+                typeText(currentKeyStream)
+            }
+        } else if currentLang == .en && !isEnglish {
+            for key in currentKeyStream {
+                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+            }
+            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
+            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
+            deleteCharacters(count: deleteCount)
+            let typeBuffer = isSpaceTriggered ? buffer + " " : buffer
+            typeText(typeBuffer)
+            switchToLanguage(.ko)
+            lastConversionTime = Date()
+            lastOriginalText = currentKeyStream
+            lastConvertedText = typeBuffer
+            lastSwitchedFromLang = .en
+        } else if currentLang == .ko && isEnglish {
+            for key in currentKeyStream {
+                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+            }
+            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
+            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
+            deleteCharacters(count: deleteCount)
+            let typeBuffer = isSpaceTriggered ? currentKeyStream + " " : currentKeyStream
+            typeText(typeBuffer)
+            switchToLanguage(.en)
+            lastConversionTime = Date()
+            lastOriginalText = buffer
+            lastConvertedText = typeBuffer
+            lastSwitchedFromLang = .ko
+        }
+        resetAutomata()
+    }
+    
+    // MARK: - Language Utilities
+    private func getCurrentLanguage() -> Lang {
+        guard let inputSource = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() else {
+            return .en
+        }
+        let languagesPtr = TISGetInputSourceProperty(inputSource, kTISPropertyInputSourceLanguages)
+        if let languagesPtr = languagesPtr {
+            let languages = Unmanaged<CFArray>.fromOpaque(languagesPtr).takeUnretainedValue() as? [String]
+            return (languages?.first == "ko") ? .ko : .en
+        }
+        return .en
+    }
+
+    private func switchToLanguage(_ lang: Lang) {
+        let targetLang = lang == .en ? "en" : "ko"
+        if let inputSource = getInputSources(forLanguage: targetLang).first {
+            TISSelectInputSource(inputSource)
         }
     }
+
+    private func getInputSources(forLanguage lang: String) -> [TISInputSource] {
+        let inputSources = TISCreateInputSourceList(nil, false).takeUnretainedValue() as? [TISInputSource] ?? []
+        return inputSources.filter { source in
+            let languagesPtr = TISGetInputSourceProperty(source, kTISPropertyInputSourceLanguages)
+            if let languagesPtr = languagesPtr {
+                let languages = Unmanaged<CFArray>.fromOpaque(languagesPtr).takeUnretainedValue() as? [String]
+                return languages?.first == lang
+            }
+            return false
+        }
+    }
+
+    @objc func inputSourceChanged() {
+        let currentLang = getCurrentLanguage()
+        if let lastTime = lastConversionTime, Date().timeIntervalSince(lastTime) < 1.0,
+           let fromLang = lastSwitchedFromLang, currentLang == fromLang,
+           let original = lastOriginalText, let converted = lastConvertedText {
+            let convertedCount = getVisibleCharacterCount(input: converted)
+            deleteCharacters(count: convertedCount)
+            typeText(original)
+        }
+        resetAutomata()
+    }
     
-    // MARK: - 텍스트 입력 유틸리티
+    // MARK: - Text Input Utilities
     private func deleteCharacters(count: Int) {
         (0..<count).forEach { _ in
             postKeyEvent(keyCode: kVK_Delete, keyDown: true)
@@ -251,45 +379,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
     
     private func typeText(_ text: String) {
-        text.utf16.forEach { char in
-//            if char == 10 {
-//                postKeyEvent(keyCode: kVK_Return, keyDown: true)
-//                postKeyEvent(keyCode: kVK_Return, keyDown: false)
-//            } else {
-                postUnicodeChar(char)
-//            }
-        }
+        text.utf16.forEach { postUnicodeChar($0) }
     }
     
     private func postKeyEvent(keyCode: Int, keyDown: Bool) {
         let eventSource = CGEventSource(stateID: .hidSystemState)
         let event = CGEvent(keyboardEventSource: eventSource, virtualKey: CGKeyCode(keyCode), keyDown: keyDown)
         let pid = ProcessInfo.processInfo.processIdentifier
-        event?.setIntegerValueField(.eventSourceUnixProcessID, value: Int64(pid)) // Set PID
+        event?.setIntegerValueField(.eventSourceUnixProcessID, value: Int64(pid))
         event?.post(tap: .cghidEventTap)
     }
-//    private func postKeyEvent(keyCode: Int, keyDown: Bool) {
-//        let eventSource = CGEventSource(stateID: .hidSystemState)
-//        let event = CGEvent(keyboardEventSource: eventSource, virtualKey: CGKeyCode(keyCode), keyDown: keyDown)
-//        event?.post(tap: .cghidEventTap)
-//    }
     
     private func postUnicodeChar(_ char: UniChar) {
         let eventSource = CGEventSource(stateID: .hidSystemState)
         let event = CGEvent(keyboardEventSource: eventSource, virtualKey: 0, keyDown: true)
         let pid = ProcessInfo.processInfo.processIdentifier
-        event?.setIntegerValueField(.eventSourceUnixProcessID, value: Int64(pid)) // Set PID
+        event?.setIntegerValueField(.eventSourceUnixProcessID, value: Int64(pid))
         event?.keyboardSetUnicodeString(stringLength: 1, unicodeString: [char])
         event?.post(tap: .cghidEventTap)
     }
-//    private func postUnicodeChar(_ char: UniChar) {
-//        let eventSource = CGEventSource(stateID: .hidSystemState)
-//        let event = CGEvent(keyboardEventSource: eventSource, virtualKey: 0, keyDown: true)
-//        event?.keyboardSetUnicodeString(stringLength: 1, unicodeString: [char])
-//        event?.post(tap: .cghidEventTap)
-//    }
     
-    // MARK: - 파일 관리
+    // MARK: - File Management (unchanged)
     private func setupFileSystem() {
         let fileManager = FileManager.default
         let appDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -308,7 +418,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
     }
     
-    // MARK: - 스니펫 관리
     private func reloadSnippets() {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("AutoHangulEnglish/snippets.json")
@@ -322,17 +431,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         json.forEach { item in
             guard let shortcut = item["shortcut"], let text = item["text"] else { return }
             snippets[shortcut] = text
-//            longestShortcutLength = max(longestShortcutLength, shortcut.count)
             longestShortcutLength = 20
         }
     }
     
-    // MARK: - 파일 모니터링
     private func startFileMonitoring() {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("AutoHangulEnglish/snippets.json")
         
-        // 컨텍스트 구조체 생성
         var context = FSEventStreamContext(
             version: 0,
             info: Unmanaged.passUnretained(self).toOpaque(),
@@ -342,15 +448,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         )
         
         let paths = [fileURL.path] as CFArray
-        
         eventStream = FSEventStreamCreate(
             nil,
-            { (stream, contextInfo, numEvents, eventPaths, eventFlags, eventIDs) in
+            { (stream, contextInfo, _, _, _, _) in
                 guard let contextInfo = contextInfo else { return }
                 let delegate = Unmanaged<AppDelegate>.fromOpaque(contextInfo).takeUnretainedValue()
                 delegate.reloadSnippets()
             },
-            &context,  // 수정된 부분: 컨텍스트 구조체의 포인터 전달
+            &context,
             paths,
             FSEventStreamEventId(kFSEventStreamEventIdSinceNow),
             0.5,
@@ -369,23 +474,46 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         FSEventStreamRelease(stream)
     }
     
-    // MARK: - 키 모니터링 제어
+    // MARK: - Key Monitoring Control
     private func enableKeyMonitoring() {
-        guard eventMonitor == nil else { return }
-        eventMonitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { [weak self] event in
+        guard keyDownMonitor == nil, keyUpMonitor == nil, mouseClickMonitor == nil else { return }
+        
+        keyDownMonitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { [weak self] event in
             self?.handleKeyEvent(event)
         }
+        
+        keyUpMonitor = NSEvent.addGlobalMonitorForEvents(matching: .keyUp) { [weak self] event in
+            self?.handleKeyUp(event)
+        }
+        
+        mouseClickMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] _ in
+            self?.resetAutomata()
+        }
+        
         monitoringEnabled = true
     }
     
     private func disableKeyMonitoring() {
-        guard let monitor = eventMonitor else { return }
-        NSEvent.removeMonitor(monitor)
-        eventMonitor = nil
+        if let monitor = keyDownMonitor {
+            NSEvent.removeMonitor(monitor)
+            keyDownMonitor = nil
+        }
+        if let monitor = keyUpMonitor {
+            NSEvent.removeMonitor(monitor)
+            keyUpMonitor = nil
+        }
+        if let monitor = mouseClickMonitor {
+            NSEvent.removeMonitor(monitor)
+            mouseClickMonitor = nil
+        }
         monitoringEnabled = false
     }
     
-    // MARK: - 메뉴 액션
+    private func handleKeyUp(_ event: NSEvent) {
+        pressedKeys.remove(event.keyCode)
+    }
+    
+    // MARK: - Menu Actions
     @objc private func toggleMonitoring() {
         monitoringEnabled ? disableKeyMonitoring() : enableKeyMonitoring()
         updateMenuState()
@@ -406,8 +534,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         toggleItem.state = monitoringEnabled ? .on : .off
     }
     
-    // MARK: - 백그라운드 실행 설정
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         return false
+    }
+}
+
+// MARK: - Settings View
+struct SettingsView: View {
+    @AppStorage("processOnSpace") private var processOnSpace = true
+    @AppStorage("bufferLengthThreshold") private var bufferLengthThreshold = 10
+    @AppStorage("confidenceThreshold") private var confidenceThreshold: Double = 0.95
+    
+    var body: some View {
+        Form {
+            Toggle("Process buffer on space", isOn: $processOnSpace)
+            Stepper("Buffer length threshold: \(bufferLengthThreshold)", value: $bufferLengthThreshold, in: 1...50)
+            Slider(value: $confidenceThreshold, in: 0.5...1.0, step: 0.01) {
+                Text("Confidence threshold: \(confidenceThreshold, specifier: "%.2f")")
+            }
+            Button("Reset to default") {
+                processOnSpace = true
+                bufferLengthThreshold = 10
+                confidenceThreshold = 0.95
+            }
+        }
+        .padding()
+        .frame(width: 300, height: 200)
     }
 }
