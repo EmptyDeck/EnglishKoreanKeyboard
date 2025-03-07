@@ -1,8 +1,12 @@
+
+
 import Cocoa
 import CoreML
 import SwiftUI
 import Carbon.HIToolbox
 import Security
+import Foundation
+import Carbon
 
 enum Lang {
     case en, ko
@@ -28,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     // Puase hot key doulbe caps time tinerval
     let doubleClickInterval: TimeInterval = 0.3
+    private var languageToggleOption = 1
     
     // Keyboard monitoring properties
     var currentKeyStream = ""
@@ -116,13 +121,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         icon.isTemplate = true
         statusItem.button?.image = icon
         
-        menu.removeAllItems() // Clear existing items
-        menu.addItem(withTitle: "활성화 토글", action: #selector(toggleMonitoring), keyEquivalent: "")
-        menu.addItem(withTitle: "설정", action: #selector(openSettings), keyEquivalent: "")
-        menu.addItem(.separator())
-        menu.addItem(withTitle: "종료", action: #selector(quitApp), keyEquivalent: "q")
-        
-        statusItem.menu = menu
+        updateMenuState()
     }
     
     // MARK: - Settings Window
@@ -197,55 +196,82 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     // MARK: - Pause Logic
     @objc private func togglePause() {
         isPaused.toggle()
+        
+        // Update icon based on pause state
         let iconName = isPaused ? "pause_keyboard" : "MenuIcon"
         let icon = NSImage(named: iconName) ?? NSImage(systemSymbolName: isPaused ? "pause.fill" : "keyboard", accessibilityDescription: nil)!
         icon.isTemplate = true
         statusItem.button?.image = icon
         
-        if isPaused {
-            disableKeyMonitoring()
-            print("Paused")
-        } else {
-            enableKeyMonitoring()
-            print("Resumed")
-        }
+//        if isPaused {
+//            disableKeyMonitoring()
+//            print("Paused")
+//        } else {
+//            enableKeyMonitoring()
+//            print("Resumed")
+//        }
+        
+        // Update menu state to reflect the new pause status
         updateMenuState()
     }
     
     // MARK: - Key Event Handling
     private func handleKeyEvent(_ event: NSEvent) {
-        guard let cgEvent = event.cgEvent else { return }
+        // 오직 keyDown 이벤트만 처리
+        guard event.type == .keyDown,
+              let cgEvent = event.cgEvent,
+              let chars = event.charactersIgnoringModifiers else { return }
+        
+        // 자신의 프로세스에서 발생한 이벤트는 무시
         let eventPID = cgEvent.getIntegerValueField(.eventSourceUnixProcessID)
         let appPID = Int64(ProcessInfo.processInfo.processIdentifier)
         if eventPID == appPID { return }
         
-        // Check for modifier keys (except Shift)
+        // Pause Hot Key: 1, 2, 3 키가 동시에 눌렸는지 확인
+        pressedKeys.insert(event.keyCode)
+        let pauseKeys: Set<UInt16> = [UInt16(kVK_ANSI_1), UInt16(kVK_ANSI_2), UInt16(kVK_ANSI_3)]
+        if pauseKeys.isSubset(of: pressedKeys) {
+            pressedKeys.remove(event.keyCode)
+            print("Detected simultaneous press of 1, 2, 3 ,Pausing now")
+            togglePause()
+            deleteCharacters(count: 3)
+            return
+        }
+        
+        // Pause 상태이면 더 이상 처리하지 않음
+        if isPaused { return }
+        
+        // Shift를 제외한 modifier 키 체크
         let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
-        if modifiers.contains(.command) || modifiers.contains(.option) || modifiers.contains(.control) || modifiers.contains(.function) {
+        if modifiers.contains(.command) ||
+           modifiers.contains(.option) ||
+           modifiers.contains(.control) ||
+           modifiers.contains(.function) {
             resetAutomata()
             return
         }
         
-        // Check for non-text keys (e.g., arrow keys, function keys)
+        // 텍스트 입력이 아닌 키(화살표, 펑션키 등) 체크
         let nonTextKeyCodes: Set<UInt16> = [
-            UInt16(kVK_UpArrow), UInt16(kVK_DownArrow), UInt16(kVK_LeftArrow), UInt16(kVK_RightArrow),
-            UInt16(kVK_F1), UInt16(kVK_F2), UInt16(kVK_F3), UInt16(kVK_F4), UInt16(kVK_F5), UInt16(kVK_F6),
-            UInt16(kVK_F7), UInt16(kVK_F8), UInt16(kVK_F9), UInt16(kVK_F10), UInt16(kVK_F11), UInt16(kVK_F12),
-            UInt16(kVK_Home), UInt16(kVK_End), UInt16(kVK_PageUp), UInt16(kVK_PageDown)
+            UInt16(kVK_UpArrow), UInt16(kVK_DownArrow),
+            UInt16(kVK_LeftArrow), UInt16(kVK_RightArrow),
+            UInt16(kVK_F1), UInt16(kVK_F2), UInt16(kVK_F3), UInt16(kVK_F4),
+            UInt16(kVK_F5), UInt16(kVK_F6), UInt16(kVK_F7), UInt16(kVK_F8),
+            UInt16(kVK_F9), UInt16(kVK_F10), UInt16(kVK_F11), UInt16(kVK_F12),
+            UInt16(kVK_Home), UInt16(kVK_End),
+            UInt16(kVK_PageUp), UInt16(kVK_PageDown),
+            UInt16(kVK_Return)
         ]
         if nonTextKeyCodes.contains(event.keyCode) {
             resetAutomata()
             return
         }
         
-        // Caps Lock double-click handling will be added in Step 4
-        
-        if isPaused { return }
-        
-        guard let chars = event.charactersIgnoringModifiers else { return }
+        // 입력된 문자들을 누적
         currentKeyStream += chars
         
-        if event.keyCode == kVK_Delete { // Reset if Backspace
+        // 백스페이스(Delete) 입력 시 자동 초기화
+        if event.keyCode == kVK_Delete {
             resetAutomata()
             return
         } else if processOnSpace && event.keyCode == kVK_Space {
@@ -255,10 +281,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
         
         print("기본: ", currentKeyStream)
+
     }
-    
+    // MARK: == MAIN ==
     private func processBuffer(isSpaceTriggered: Bool) {
         let currentLang = getCurrentLanguage()
+        print("current lanauge:",currentLang)
         let bufferToProcess = currentLang == .ko ? hangulToQwerty(currentKeyStream) : currentKeyStream
         
         guard let prob = handler.predict(word: bufferToProcess) else {
@@ -283,18 +311,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             resetAutomata()
             return
         }
-        if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
-            resetAutomata()
-            return
-        }
         
         let bufferLength = getVisibleCharacterCount(input: currentKeyStream)
         if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
-            if !isSpaceTriggered {
-                deleteCharacters(count: bufferLength)
-                typeText(currentKeyStream)
-            }
-        } else if currentLang == .en && !isEnglish {
+            resetAutomata()
+            return
+//          deleteCharacters(count: bufferLength)
+//          typeText(currentKeyStream)
+        }
+        else if currentLang == .en && !isEnglish {
             for key in currentKeyStream {
                 hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
             }
@@ -303,24 +328,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             deleteCharacters(count: deleteCount)
             let typeBuffer = isSpaceTriggered ? buffer + " " : buffer
             typeText(typeBuffer)
-            switchToLanguage(.ko)
+            //switchToLanguage(.ko)
+            toggleLanguage(option: languageToggleOption)
             lastConversionTime = Date()
             lastOriginalText = currentKeyStream
             lastConvertedText = typeBuffer
             lastSwitchedFromLang = .en
         } else if currentLang == .ko && isEnglish {
+            print("in swap ko-> en")
+            print("debugmode")
+            print("Current Key Stream")
+            print(currentKeyStream)
+            var newBuffer = ""
             for key in currentKeyStream {
-                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+                newBuffer.append(hangulToQwerty(String(key)))
             }
-            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
-            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
-            deleteCharacters(count: deleteCount)
-            let typeBuffer = isSpaceTriggered ? currentKeyStream + " " : currentKeyStream
-            typeText(typeBuffer)
-            switchToLanguage(.en)
+            let Kor_Buffer = convEn2Ko(newBuffer)
+            print(Kor_Buffer)
+            
+            deleteCharacters(count: Kor_Buffer.count)
+            print("how many del")
+            print(Kor_Buffer.count)
+            print("newbuffer")
+            print(newBuffer)
+            typeText(newBuffer)
+            //switchToLanguage(.en)
+            toggleLanguage(option: languageToggleOption)
             lastConversionTime = Date()
-            lastOriginalText = buffer
-            lastConvertedText = typeBuffer
+            lastConvertedText = newBuffer
             lastSwitchedFromLang = .ko
         }
         resetAutomata()
@@ -339,19 +374,63 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         return .en
     }
 
-    private func switchToLanguage(_ lang: Lang) {
-        let targetLang = lang == .en ? "en" : "ko"
-        if let inputSource = getInputSources(forLanguage: targetLang).first {
-            TISSelectInputSource(inputSource)
+
+    // MARK: Switch Language
+//        private func switchToLanguage(_ lang: Lang) {
+//            let targetLang = lang == .en ? "en" : "ko"
+//            if let inputSource = getInputSources(forLanguage: targetLang).first {
+//                TISSelectInputSource(inputSource)
+//            }
+//        }
+//    
+    private func toggleLanguage(option: Int) {
+        // Get current language
+        let currentLang = getCurrentLanguage()
+        let targetLang: Lang = currentLang == .en ? .ko : .en
+        
+        switch option {
+        case 1: // Default method - using TIS
+            let targetLangCode = targetLang == .en ? "en" : "ko"
+            if let inputSource = getInputSources(forLanguage: targetLangCode).first {
+                TISSelectInputSource(inputSource)
+            }
+        case 2: // Simulate pressing Caps Lock
+            let source = CGEventSource(stateID: .hidSystemState)
+            let capsLockKeyDown = CGEvent(keyboardEventSource: source, virtualKey: 0x39, keyDown: true)
+            let capsLockKeyUp = CGEvent(keyboardEventSource: source, virtualKey: 0x39, keyDown: false)
+            capsLockKeyDown?.post(tap: .cghidEventTap)
+            capsLockKeyUp?.post(tap: .cghidEventTap)
+        case 3: // Simulate pressing Command+Space
+            let source = CGEventSource(stateID: .hidSystemState)
+            let cmdDown = CGEvent(keyboardEventSource: source, virtualKey: 0x37, keyDown: true)
+            let spaceDown = CGEvent(keyboardEventSource: source, virtualKey: 0x31, keyDown: true)
+            let spaceUp = CGEvent(keyboardEventSource: source, virtualKey: 0x31, keyDown: false)
+            let cmdUp = CGEvent(keyboardEventSource: source, virtualKey: 0x37, keyDown: false)
+            
+            cmdDown?.flags = .maskCommand
+            spaceDown?.flags = .maskCommand
+            spaceUp?.flags = .maskCommand
+            
+            cmdDown?.post(tap: .cghidEventTap)
+            spaceDown?.post(tap: .cghidEventTap)
+            spaceUp?.post(tap: .cghidEventTap)
+            cmdUp?.post(tap: .cghidEventTap)
+        default:
+            // Default to option 1 if invalid option
+            let targetLangCode = targetLang == .en ? "en" : "ko"
+            if let inputSource = getInputSources(forLanguage: targetLangCode).first {
+                TISSelectInputSource(inputSource)
+            }
         }
     }
+
 
     private func getInputSources(forLanguage lang: String) -> [TISInputSource] {
         let inputSources = TISCreateInputSourceList(nil, false).takeUnretainedValue() as? [TISInputSource] ?? []
         return inputSources.filter { source in
             let languagesPtr = TISGetInputSourceProperty(source, kTISPropertyInputSourceLanguages)
             if let languagesPtr = languagesPtr {
-                let languages = Unmanaged<CFArray>.fromOpaque(languagesPtr).takeUnretainedValue() as? [String]
+                let languages =	 Unmanaged<CFArray>.fromOpaque(languagesPtr).takeUnretainedValue() as? [String]
                 return languages?.first == lang
             }
             return false
@@ -372,10 +451,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     // MARK: - Text Input Utilities
     private func deleteCharacters(count: Int) {
+        // Add left arrow key press
+        postKeyEvent(keyCode: kVK_LeftArrow, keyDown: true)
+        postKeyEvent(keyCode: kVK_LeftArrow, keyDown: false)
+        // Add right arrow key press
+        postKeyEvent(keyCode: kVK_RightArrow, keyDown: true)
+        postKeyEvent(keyCode: kVK_RightArrow, keyDown: false)
         (0..<count).forEach { _ in
             postKeyEvent(keyCode: kVK_Delete, keyDown: true)
             postKeyEvent(keyCode: kVK_Delete, keyDown: false)
         }
+
     }
     
     private func typeText(_ text: String) {
@@ -493,21 +579,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         monitoringEnabled = true
     }
     
-    private func disableKeyMonitoring() {
-        if let monitor = keyDownMonitor {
-            NSEvent.removeMonitor(monitor)
-            keyDownMonitor = nil
-        }
-        if let monitor = keyUpMonitor {
-            NSEvent.removeMonitor(monitor)
-            keyUpMonitor = nil
-        }
-        if let monitor = mouseClickMonitor {
-            NSEvent.removeMonitor(monitor)
-            mouseClickMonitor = nil
-        }
-        monitoringEnabled = false
-    }
+//    private func disableKeyMonitoring() {
+//        if let monitor = keyDownMonitor {
+//            NSEvent.removeMonitor(monitor)
+//            keyDownMonitor = nil
+//        }
+//        if let monitor = keyUpMonitor {
+//            NSEvent.removeMonitor(monitor)
+//            keyUpMonitor = nil
+//        }
+//        if let monitor = mouseClickMonitor {
+//            NSEvent.removeMonitor(monitor)
+//            mouseClickMonitor = nil
+//        }
+//        monitoringEnabled = false
+//    }
     
     private func handleKeyUp(_ event: NSEvent) {
         pressedKeys.remove(event.keyCode)
@@ -515,14 +601,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     // MARK: - Menu Actions
     @objc private func toggleMonitoring() {
-        monitoringEnabled ? disableKeyMonitoring() : enableKeyMonitoring()
-        updateMenuState()
-    }
-    
-    @objc private func openSnippetsFile() {
-        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("AutoHangulEnglish/snippets.json")
-        NSWorkspace.shared.open(fileURL)
+        
+//        monitoringEnabled ? disableKeyMonitoring() : enableKeyMonitoring()
+//        updateMenuState()
     }
     
     @objc private func quitApp() {
@@ -530,8 +611,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
     
     private func updateMenuState() {
-        guard let toggleItem = menu.item(at: 0) else { return }
-        toggleItem.state = monitoringEnabled ? .on : .off
+        menu.removeAllItems() // Clear existing items
+        
+        // Add pause/resume toggle with changing text
+        let pauseTitle = isPaused ? "다시실행" : "일시중지"
+        menu.addItem(withTitle: pauseTitle, action: #selector(togglePause), keyEquivalent: "")
+        
+        menu.addItem(withTitle: "설정", action: #selector(openSettings), keyEquivalent: "")
+        menu.addItem(.separator())
+        menu.addItem(withTitle: "종료", action: #selector(quitApp), keyEquivalent: "q")
+        
+        statusItem.menu = menu
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -539,11 +629,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
 }
 
-// MARK: - Settings View
+// MARK: - UI Settings View
 struct SettingsView: View {
     @AppStorage("processOnSpace") private var processOnSpace = true
     @AppStorage("bufferLengthThreshold") private var bufferLengthThreshold = 10
     @AppStorage("confidenceThreshold") private var confidenceThreshold: Double = 0.95
+    @AppStorage("languageToggleOption") private var languageToggleOption = 1
+    
+    @State private var showLanguageHelp = false
     
     var body: some View {
         Form {
@@ -552,13 +645,36 @@ struct SettingsView: View {
             Slider(value: $confidenceThreshold, in: 0.5...1.0, step: 0.01) {
                 Text("Confidence threshold: \(confidenceThreshold, specifier: "%.2f")")
             }
+            
+            HStack {
+                Text("언어 변경 방법")
+                Button(action: {
+                    showLanguageHelp.toggle()
+                }) {
+                    Image(systemName: "questionmark.circle")
+                }
+                .popover(isPresented: $showLanguageHelp) {
+                    Text("이 옵션은 자동으로 언어가 안 변경될 경우, 자신에게 맞는 언어 변경 옵션을 선택합니다")
+                        .padding()
+                        .frame(width: 300)
+                }
+            }
+            
+            Picker("", selection: $languageToggleOption) {
+                Text("기본값").tag(1)
+                Text("캡스락").tag(2)
+                Text("컨트롤+스페이스").tag(3)
+            }
+            .pickerStyle(MenuPickerStyle())
+            
             Button("Reset to default") {
                 processOnSpace = true
                 bufferLengthThreshold = 10
                 confidenceThreshold = 0.95
+                languageToggleOption = 1
             }
         }
         .padding()
-        .frame(width: 300, height: 200)
+        .frame(width: 300, height: 250)
     }
 }
