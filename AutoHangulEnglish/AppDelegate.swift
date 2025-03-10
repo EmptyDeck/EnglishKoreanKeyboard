@@ -84,8 +84,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         return false
     }
     
+<<<<<<< HEAD
     private func setupApplication() {
         handler.loadModel() // Load model through handler
+=======
+    // MARK: - Setup Methods
+    
+    private func setupApplication() {
+        loadModel()
+>>>>>>> parent of f8a1b52 (Last update before new model)
         setupStatusMenu()
         setupFileSystem()
         reloadSnippets()
@@ -183,7 +190,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             resetAutomata()
             return
         }
+<<<<<<< HEAD
         
+=======
+        //If you press these, the buffer resets
+>>>>>>> parent of f8a1b52 (Last update before new model)
         let nonTextKeyCodes: Set<UInt16> = [
             UInt16(kVK_UpArrow), UInt16(kVK_DownArrow),
             UInt16(kVK_LeftArrow), UInt16(kVK_RightArrow),
@@ -192,26 +203,39 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             UInt16(kVK_F9), UInt16(kVK_F10), UInt16(kVK_F11), UInt16(kVK_F12),
             UInt16(kVK_F13), UInt16(kVK_F14), UInt16(kVK_F15), UInt16(kVK_F16),
             UInt16(kVK_Tab), UInt16(kVK_Shift), UInt16(kVK_Control),
-            UInt16(kVK_Option), UInt16(kVK_Command), UInt16(kVK_Return)
+            UInt16(kVK_Option), UInt16(kVK_Command)
         ]
         if nonTextKeyCodes.contains(event.keyCode) {
             resetAutomata()
             return
         }
+<<<<<<< HEAD
         
         if currentKeyStream.isEmpty && chars == " " {
             return
         }
         
         let sentenceEnders: Set<String> = [" ", "!", "?", "\n"]
+=======
+        // First buffer can not be space
+        if currentKeyStream.isEmpty && chars == " " {
+            return
+        }
+>>>>>>> parent of f8a1b52 (Last update before new model)
         currentKeyStream += chars
         
         if event.keyCode == kVK_Delete {
             resetAutomata()
             return
+<<<<<<< HEAD
         } else if sentenceEnders.contains(chars) && currentKeyStream.count >= bufferLengthThreshold {
             processBuffer(isSpaceTriggered: true)
         } else if currentKeyStream.count >= bufferLengthThreshold + 10 {
+=======
+        } else if processOnSpace && event.keyCode == kVK_Space {
+            processBuffer(isSpaceTriggered: true)
+        } else if !processOnSpace && currentKeyStream.count >= bufferLengthThreshold {
+>>>>>>> parent of f8a1b52 (Last update before new model)
             processBuffer(isSpaceTriggered: false)
         }
         
@@ -238,10 +262,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             return
         }
         
+        let bufferLength = getVisibleCharacterCount(input: currentKeyStream)
         if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
             resetAutomata()
             return
         } else if currentLang == .en && !isEnglish {
+<<<<<<< HEAD
             let newBuffer = convEn2Ko(currentKeyStream)
             deleteCharacters(count: currentKeyStream.count)
             typeText(newBuffer)
@@ -249,6 +275,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             lastConversionTime = Date()
             lastOriginalText = currentKeyStream
             lastConvertedText = newBuffer
+=======
+            for key in currentKeyStream {
+                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+            }
+            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
+            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
+            deleteCharacters(count: deleteCount)
+            let typeBuffer = isSpaceTriggered ? buffer + " " : buffer
+            typeText(typeBuffer)
+            toggleLanguage(option: languageToggleOption)
+            lastConversionTime = Date()
+            lastOriginalText = currentKeyStream
+            lastConvertedText = typeBuffer
+>>>>>>> parent of f8a1b52 (Last update before new model)
             lastSwitchedFromLang = .en
         } else if currentLang == .ko && isEnglish {
             let newBuffer = hangulToQwerty(currentKeyStream)
@@ -484,6 +524,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         
         statusItem.menu = menu
     }
+<<<<<<< HEAD
+=======
+        
+    // GORK
+    // MARK: - Settings Window
+>>>>>>> parent of f8a1b52 (Last update before new model)
     
     var settingsWindow: NSWindow?
     
@@ -576,6 +622,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
                 }
                 .buttonStyle(PlainButtonStyle())
                 
+<<<<<<< HEAD
                 Text("💡 Press 1+2+3 simultaneously to pause/resume")
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
@@ -584,6 +631,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
                 Spacer()
             }
             .frame(width: 350, height: 320)
+=======
+                Spacer()
+            }
+            .frame(width: 350, height: 300) // 약간 더 큰 크기로 조정
+>>>>>>> parent of f8a1b52 (Last update before new model)
             .background(Color(NSColor.windowBackgroundColor))
         }
     }
