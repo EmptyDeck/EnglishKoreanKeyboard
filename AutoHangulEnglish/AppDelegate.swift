@@ -194,7 +194,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             pressedKeys.remove(event.keyCode)
             print("Detected simultaneous press of 1, 2, 3 ,Pausing now")
             togglePause()
-            deleteCharacters(count: 3)
+            //deleteCharacters(count: 3)
             return
         }
         
