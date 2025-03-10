@@ -92,20 +92,36 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     // MARK: - Setup Methods
     
-    private func setupApplication() {
-        loadModel()
-        setupStatusMenu()
-        setupFileSystem()
-        reloadSnippets()
-        startFileMonitoring()
-        enableKeyMonitoring()
-        DistributedNotificationCenter.default().addObserver(
-            self,
-            selector: #selector(inputSourceChanged),
-            name: NSNotification.Name("com.apple.Carbon.TISNotifySelectedKeyboardInputSourceChanged"),
-            object: nil
-        )
+    
+    private func loadModel() {
+        guard let modelURL = Bundle.main.url(forResource: "CRF", withExtension: "mlmodel") else {
+            print("Model 'CRF.mlmodel' not found in bundle")
+            return
+        }
+        do {
+            model = try MLModel(contentsOf: modelURL)
+            print("CRF.mlmodel loaded successfully.")
+        } catch {
+            print("Error loading CRF.mlmodel: \(error)")
+        }
     }
+    
+    
+//    Legacy
+//    private func setupApplication() {
+//        loadModel()
+//        setupStatusMenu()
+//        setupFileSystem()
+//        reloadSnippets()
+//        startFileMonitoring()
+//        enableKeyMonitoring()
+//        DistributedNotificationCenter.default().addObserver(
+//            self,
+//            selector: #selector(inputSourceChanged),
+//            name: NSNotification.Name("com.apple.Carbon.TISNotifySelectedKeyboardInputSourceChanged"),
+//            object: nil
+//        )
+//    }
     
     private func setupSettings() {
         UserDefaults.standard.register(defaults: [
@@ -178,7 +194,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     private func handleKeyUp(_ event: NSEvent) {
         pressedKeys.remove(event.keyCode)
     }
-    
+    // MARK: Handel Key Event
     private func handleKeyEvent(_ event: NSEvent) {
         guard event.type == .keyDown,
               let cgEvent = event.cgEvent,
@@ -208,7 +224,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             resetAutomata()
             return
         }
-        //If you press these, the buffer resets
+        
+        // Reset buffer on non-text keys
         let nonTextKeyCodes: Set<UInt16> = [
             UInt16(kVK_UpArrow), UInt16(kVK_DownArrow),
             UInt16(kVK_LeftArrow), UInt16(kVK_RightArrow),
@@ -217,24 +234,35 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             UInt16(kVK_F9), UInt16(kVK_F10), UInt16(kVK_F11), UInt16(kVK_F12),
             UInt16(kVK_F13), UInt16(kVK_F14), UInt16(kVK_F15), UInt16(kVK_F16),
             UInt16(kVK_Tab), UInt16(kVK_Shift), UInt16(kVK_Control),
-            UInt16(kVK_Option), UInt16(kVK_Command)
+            UInt16(kVK_Option), UInt16(kVK_Command), UInt16(kVK_Return)
         ]
         if nonTextKeyCodes.contains(event.keyCode) {
             resetAutomata()
             return
         }
-        // First buffer can not be space
+        
+        // First buffer cannot be space
         if currentKeyStream.isEmpty && chars == " " {
             return
         }
+        
+        // Define sentence-ending characters
+        let sentenceEnders: Set<String> = [" ", "!", "?", "\n"]  // Enter is "\n"
+        
+        // Add character to buffer
         currentKeyStream += chars
         
+        // Process buffer if Delete is pressed
         if event.keyCode == kVK_Delete {
             resetAutomata()
             return
-        } else if processOnSpace && event.keyCode == kVK_Space {
+        }
+        // Process if it's a sentence-ender and buffer is long enough
+        else if sentenceEnders.contains(chars) && currentKeyStream.count >= bufferLengthThreshold {
             processBuffer(isSpaceTriggered: true)
-        } else if !processOnSpace && currentKeyStream.count >= bufferLengthThreshold {
+        }
+        // Process if buffer exceeds max length (bufferLengthThreshold + 10)
+        else if currentKeyStream.count >= bufferLengthThreshold + 10 {
             processBuffer(isSpaceTriggered: false)
         }
         
@@ -271,24 +299,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             return
         }
         
-        let bufferLength = getVisibleCharacterCount(input: currentKeyStream)
         if (currentLang == .en && isEnglish) || (currentLang == .ko && !isEnglish) {
             resetAutomata()
             return
         } else if currentLang == .en && !isEnglish {
-            for key in currentKeyStream {
-                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
-            }
-            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
-            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
-            deleteCharacters(count: deleteCount)
-            let typeBuffer = isSpaceTriggered ? buffer + " " : buffer
-            typeText(typeBuffer)
+            let newBuffer = convEn2Ko(currentKeyStream)
+            print("newBuffer",newBuffer)
+            print("delete", currentKeyStream.count)
+            deleteCharacters(count: currentKeyStream.count)
+            typeText(newBuffer)
             toggleLanguage(option: languageToggleOption)
-            lastConversionTime = Date()
-            lastOriginalText = currentKeyStream
-            lastConvertedText = typeBuffer
-            lastSwitchedFromLang = .en
+            //
+            //            for key in currentKeyStream {
+            //                hautomata.hangulAutomata(key: qwertyToHangul(String(key)))
+            //            }
+            //            let buffer = hautomata.buffer.reduce("") { $0 + $1 }
+            //            let deleteCount = isSpaceTriggered ? bufferLength + 1 : bufferLength
+            //            deleteCharacters(count: deleteCount)
+            //            let typeBuffer = isSpaceTriggered ? buffer + " " : buffer
+            //            typeText(typeBuffer)
+            //            toggleLanguage(option: languageToggleOption)
+            //            lastConversionTime = Date()
+            //            lastOriginalText = currentKeyStream
+            //            lastConvertedText = typeBuffer
+            //            lastSwitchedFromLang = .en
         } else if currentLang == .ko && isEnglish {
             print("in swap ko-> en")
             print("debugmode")
@@ -550,7 +584,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         // 상태 바에 메뉴 연결
         statusItem.menu = menu
     }
-        
+    
     // GORK
     // MARK: - Settings Window
     
@@ -654,9 +688,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
                 }
                 .buttonStyle(PlainButtonStyle())
                 
+                // Tip for pause shortcut
+                Text("💡 1,2,3을 동시에 누르면 일시정지 됩니다")
+                    .font(.system(size: 12))
+                    .foregroundColor(.gray)
+                    .padding(.bottom, 15)
+                
                 Spacer()
             }
-            .frame(width: 350, height: 300) // 약간 더 큰 크기로 조정
+            .frame(width: 350, height: 320) // 팁 추가로 높이를 약간 늘림
             .background(Color(NSColor.windowBackgroundColor))
         }
     }
