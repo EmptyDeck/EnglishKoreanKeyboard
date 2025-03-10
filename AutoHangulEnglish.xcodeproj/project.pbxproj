@@ -19,7 +19,6 @@
 		E93042A92D71C73400A9D65D /* Exceptions for "AutoHangulEnglish" folder in "AutoHangulEnglish" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AppDelegate_legacy_swift.zip,
 				Info.plist,
 				wrongHangulChecker.mlpackage,
 			);
@@ -27,22 +26,11 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		F42F39A92D7E92090057E07E /* Exceptions for "AutoHangulEnglish" folder in "Compile Sources" phase from "AutoHangulEnglish" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = E93042732D71C6DD00A9D65D /* Sources */;
-			membershipExceptions = (
-				AppDelegate_legacy_swift.zip,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E93042792D71C6DD00A9D65D /* AutoHangulEnglish */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				E93042A92D71C73400A9D65D /* Exceptions for "AutoHangulEnglish" folder in "AutoHangulEnglish" target */,
-				F42F39A92D7E92090057E07E /* Exceptions for "AutoHangulEnglish" folder in "Compile Sources" phase from "AutoHangulEnglish" target */,
 			);
 			path = AutoHangulEnglish;
 			sourceTree = "<group>";
