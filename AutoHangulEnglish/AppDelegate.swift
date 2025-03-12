@@ -288,7 +288,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             return
         } else if currentLang == .en && !isEnglish {
             let newBuffer = convEn2Ko(currentKeyStream)
-            print("newBuffer",newBuffer)
+            
+            print(newBuffer)
             print("delete", currentKeyStream.count)
             deleteCharacters(count: currentKeyStream.count)
             typeText(newBuffer)
@@ -309,16 +310,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             //            lastSwitchedFromLang = .en
         } else if currentLang == .ko && isEnglish {
             print("in swap ko-> en")
-            print("debugmode")
             print("Current Key Stream")
             print(currentKeyStream)
             var newBuffer = ""
+            var Kor_Buffer = ""
             for key in currentKeyStream {
                 newBuffer.append(hangulToQwerty(String(key)))
             }
-            let Kor_Buffer = convEn2Ko(newBuffer)
+            for key in currentKeyStream {
+                Kor_Buffer.append((String(key)))
+            }
+            Kor_Buffer = composeHangul(input : Kor_Buffer)
             print(Kor_Buffer)
-            deleteCharacters(count: Kor_Buffer.count)
+            deleteCharacters(count: Kor_Buffer.count+1)
             print("how many del")
             print(Kor_Buffer.count)
             print("newbuffer")
@@ -333,9 +337,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
     
     private func resetAutomata(stream: Bool = true) {
-        hautomata.buffer.removeAll()
-        hautomata.inpStack.removeAll()
-        hautomata.currentHangulState = nil
+//        hautomata.buffer.removeAll()
+//        hautomata.inpStack.removeAll()
+//        hautomata.currentHangulState = nil
         if stream {
             currentKeyStream = ""
         }

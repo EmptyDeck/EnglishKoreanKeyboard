@@ -5,404 +5,619 @@
     //  Created by 김정우 on 3/2/25.
     //
 
-    import Foundation
 
-    //오토마타의 상태를 정의
-    enum HangulStatus {
-        case start //s0
-        case chosung //s1
-        case joongsung, dJoongsung //s2,s3
-        case jongsung, dJongsung //s4, s5
-        case endOne, endTwo //s6,s7
+class HangulAutomata {
+    enum HangulState {
+        case start, chosung, joongsung, dJoongsung, jongsung, dJongsung, endOne, endTwo
     }
-
-    //입력된 키의 종류 판별 정의
-    enum HangulCHKind {
-        case consonant //자음
-        case vowel  //모음
+    
+    private var currentHangulState: HangulState? = .start
+    private var oldKey: UInt32 = 0
+    private var keyCode: UInt32 = 0
+    private var charCode: String = ""
+    private var oldChKind: CharacterKind = .none
+    private var chKind: CharacterKind = .none
+    
+    var buffer: [String] = [""]
+    private var inpStack: [(curhanst: HangulState?, key: UInt32, charCode: String, chKind: CharacterKind)] = []
+    
+    private enum CharacterKind {
+        case consonant, vowel, none
     }
-
-    //키 입력마다 쌓이는 입력 스택 정의
-    struct InpStack {
-        var curhanst: HangulStatus //상태
-        var key: UInt32 //방금 입력된 키 코드
-        var charCode: String //조합된 코드
-        var chKind: HangulCHKind // 입력된 키가 자음인지 모임인지
+    
+    private let chosungTable: [String] = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+    private let joongsungTable: [String] = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"]
+    private let jongsungTable: [String] = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+    private let dJoongTable: [[String]] = [
+        ["ㅗ", "ㅏ", "ㅘ"], ["ㅗ", "ㅐ", "ㅙ"], ["ㅗ", "ㅣ", "ㅚ"],
+        ["ㅜ", "ㅓ", "ㅝ"], ["ㅜ", "ㅔ", "ㅞ"], ["ㅜ", "ㅣ", "ㅟ"],
+        ["ㅡ", "ㅣ", "ㅢ"], ["ㅏ", "ㅣ", "ㅐ"], ["ㅓ", "ㅣ", "ㅔ"],
+        ["ㅕ", "ㅣ", "ㅖ"], ["ㅑ", "ㅣ", "ㅒ"], ["ㅘ", "ㅣ", "ㅙ"]
+    ]
+    private let dJongTable: [[String]] = [
+        ["ㄱ", "ㅅ", "ㄳ"], ["ㄴ", "ㅈ", "ㄵ"], ["ㄴ", "ㅎ", "ㄶ"],
+        ["ㄹ", "ㄱ", "ㄺ"], ["ㄹ", "ㅁ", "ㄻ"], ["ㄹ", "ㅂ", "ㄼ"],
+        ["ㄹ", "ㅅ", "ㄽ"], ["ㄹ", "ㅌ", "ㄾ"], ["ㄹ", "ㅍ", "ㄿ"],
+        ["ㄹ", "ㅎ", "ㅀ"], ["ㅂ", "ㅅ", "ㅄ"]
+    ]
+    
+    private func combinationHangul(chosung: UInt32, joongsung: UInt32, jongsung: UInt32 = 0) -> UInt32 {
+        return 44032 + (chosung * 21 * 28) + (joongsung * 28) + jongsung
     }
-
-    final class HangulAutomata {
-        
-        var buffer: [String] = []
-        
-        var inpStack: [InpStack] = []
-        
-        var currentHangulState: HangulStatus?
-        
-        private var chKind = HangulCHKind.vowel
-        
-        private var charCode: String = ""
-        private var oldKey: UInt32 = 0
-        private var oldChKind: HangulCHKind?
-        private var keyCode: UInt32 = 0
-        
-        private var chosungTable: [String] = ["ㄱ","ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
-        
-        private var joongsungTable: [String] = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"]
-        
-        private var jongsungTable: [String] = [" ", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ","ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
-        
-        private var dJoongTable: [[String]] = [
-            ["ㅗ","ㅏ","ㅘ"],
-            ["ㅗ","ㅐ","ㅙ"],
-            ["ㅗ","ㅣ","ㅚ"],
-            ["ㅜ","ㅓ","ㅝ"],
-            ["ㅜ","ㅔ","ㅞ"],
-            ["ㅜ","ㅣ","ㅟ"],
-            ["ㅡ","ㅣ","ㅢ"],
-            ["ㅏ","ㅣ","ㅐ"],
-            ["ㅓ","ㅣ","ㅔ"],
-            ["ㅕ","ㅣ","ㅖ"],
-            ["ㅑ","ㅣ","ㅒ"],
-            ["ㅘ","ㅣ","ㅙ"]
-        ]
-        
-        private var dJongTable: [[String]] = [
-            ["ㄱ","ㅅ","ㄳ"],
-            ["ㄴ","ㅈ","ㄵ"],
-            ["ㄴ","ㅎ","ㄶ"],
-            ["ㄹ","ㄱ","ㄺ"],
-            ["ㄹ","ㅁ","ㄻ"],
-            ["ㄹ","ㅂ","ㄼ"],
-            ["ㄹ","ㅅ","ㄽ"],
-            ["ㄹ","ㅌ","ㄾ"],
-            ["ㄹ","ㅍ","ㄿ"],
-            ["ㄹ","ㅎ","ㅀ"],
-            ["ㅂ","ㅅ","ㅄ"]
-        ]
-        
-        private func joongsungPair() -> Bool {
-            for i in 0..<dJoongTable.count {
-                if dJoongTable[i][0] == joongsungTable[Int(oldKey)] && dJoongTable[i][1] == joongsungTable[Int(keyCode)] {
-                    keyCode = UInt32(joongsungTable.firstIndex(of: dJoongTable[i][2]) ?? 0)
-                    return true
-                }
+    
+    private func decompositionChosungJoongsung(charCode: UInt32) -> UInt32 {
+        let uniCode = charCode - 44032
+        let jongIdx = uniCode % 28
+        let joongIdx = ((uniCode - jongIdx) / 28) % 21
+        let choIdx = (((uniCode - jongIdx) / 28) - joongIdx) / 21
+        return combinationHangul(chosung: choIdx, joongsung: joongIdx)
+    }
+    
+    private func joongsungPair() -> Bool {
+        for i in 0..<dJoongTable.count {
+            if dJoongTable[i][0] == joongsungTable[Int(oldKey)] && dJoongTable[i][1] == joongsungTable[Int(keyCode)] {
+                keyCode = UInt32(joongsungTable.firstIndex(of: dJoongTable[i][2]) ?? 0)
+                return true
             }
-            return false
         }
-        
-        private func jongsungPair() -> Bool {
-            for i in 0..<dJongTable.count {
-                if dJongTable[i][0] == jongsungTable[Int(oldKey)] && dJongTable[i][1] == chosungTable[Int(keyCode)] {
-                    keyCode = UInt32(jongsungTable.firstIndex(of: dJongTable[i][2]) ?? 0)
-                    return true
-                }
+        return false
+    }
+    
+    private func jongsungPair() -> Bool {
+        for i in 0..<dJongTable.count {
+            if dJongTable[i][0] == jongsungTable[Int(oldKey)] && dJongTable[i][1] == chosungTable[Int(keyCode)] {
+                keyCode = UInt32(jongsungTable.firstIndex(of: dJongTable[i][2]) ?? 0)
+                return true
             }
-            return false
+        }
+        return false
+    }
+    
+    func hangulAutomata(key: String) {
+        if chosungTable.contains(key) {
+            keyCode = UInt32(chosungTable.firstIndex(of: key) ?? 0)
+            chKind = .consonant
+        } else if joongsungTable.contains(key) {
+            keyCode = UInt32(joongsungTable.firstIndex(of: key) ?? 0)
+            chKind = .vowel
         }
         
-        private func isJoongSungPair(first: String, result: String) -> Bool {
-            for i in 0..<dJoongTable.count {
-                if dJoongTable[i][0] == first && dJoongTable[i][2] == result {
-                    return true
-                }
-            }
-            return false
-        }
-        
-        private func decompositionChosung(charCode: UInt32) -> UInt32 {
-            let unicodeHangul = charCode - 0xAC00
-            let jongsung = (unicodeHangul) % 28
-            let joongsung = ((unicodeHangul - jongsung) / 28) % 21
-            let chosung = (((unicodeHangul - jongsung) / 28) - joongsung) / 21
-            return chosung
-        }
-        
-        private func decompositionChosungJoongsung(charCode: UInt32) -> UInt32 {
-            let unicodeHangul = charCode - 0xAC00
-            let jongsung = (unicodeHangul) % 28
-            let joongsung = ((unicodeHangul - jongsung) / 28) % 21
-            let chosung = (((unicodeHangul - jongsung) / 28) - joongsung) / 21
-            return combinationHangul(chosung: chosung, joongsung: joongsung, jongsung: keyCode)
-        }
-        
-        private func combinationHangul(chosung: UInt32 = 0, joongsung: UInt32, jongsung: UInt32 = 0) -> UInt32 {
-            return (((chosung * 21) + joongsung) * 28) + jongsung + 0xAC00
-        }
-        
-        func deleteBuffer() {
-            if inpStack.count == 0 {
-                if buffer.count > 0 {
-                    buffer.removeLast()
-                }
+        switch currentHangulState {
+        case .start:
+            if chKind == .consonant {
+                currentHangulState = .chosung
             } else {
-                if let popHanguel = inpStack.popLast() {
-                    if popHanguel.curhanst == .chosung {
-                        buffer.removeLast()
-                    } else if popHanguel.curhanst == .joongsung || popHanguel.curhanst == .dJoongsung {
-                        if inpStack[inpStack.count - 1].curhanst == .jongsung || inpStack[inpStack.count - 1].curhanst == .dJongsung {
-                            buffer.removeLast()
-                        }
-                            buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
-                    } else {
-                        if inpStack.isEmpty {
-                            buffer.removeLast()
-                        } else if popHanguel.chKind == .vowel {
-                            if inpStack[inpStack.count - 1].curhanst == .jongsung {
-                                if inpStack[inpStack.count - 1].chKind == .vowel {
-                                    if isJoongSungPair(first: joongsungTable[Int(inpStack[inpStack.count - 1].key)] , result: joongsungTable[Int(popHanguel.key)]) {
-                                        buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
-                                    } else {
-                                        buffer.removeLast()
-                                    }
-                                }
-                            } else {
-                                buffer.removeLast()
-                            }
-                        } else {
-                            buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
-                        }
-                    }
-                    if inpStack.isEmpty {
-                        currentHangulState = nil
-                    } else {
-                        currentHangulState = inpStack[inpStack.count - 1].curhanst
-                        oldKey = inpStack[inpStack.count - 1].key
-                        oldChKind = inpStack[inpStack.count - 1].chKind
-                        charCode = inpStack[inpStack.count - 1].charCode
-                    }
-                }
+                currentHangulState = .jongsung
+            }
+        case .chosung:
+            if chKind == .vowel {
+                currentHangulState = .joongsung
+            } else {
+                currentHangulState = .endOne
+            }
+        case .joongsung:
+            if chKind == .consonant {
+                currentHangulState = .jongsung
+            } else if joongsungPair() {
+                currentHangulState = .dJoongsung
+            } else {
+                currentHangulState = .endOne
+            }
+        case .jongsung:
+            if (chKind == .consonant) && jongsungPair() {
+                currentHangulState = .dJongsung
+            } else if chKind == .vowel {
+                currentHangulState = .endTwo
+            } else {
+                currentHangulState = .endOne
+            }
+        case .dJoongsung:
+            if chKind == .consonant {
+                currentHangulState = .jongsung
+            } else {
+                currentHangulState = .endOne
+            }
+        case .dJongsung, .endOne, .endTwo, .none:
+            currentHangulState = nil
+            if chKind == .consonant {
+                currentHangulState = .chosung
+            } else {
+                currentHangulState = .jongsung
             }
         }
-    }
-
-    extension HangulAutomata {
-        func hangulAutomata(key: String) {
-            
-            var canBeJongsung: Bool = false
-            
-            if joongsungTable.contains(key) {
-                chKind = .vowel
-                keyCode = UInt32(joongsungTable.firstIndex(of: key) ?? 0)
-            } else {
-                chKind = .consonant
-                keyCode = UInt32(chosungTable.firstIndex(of: key) ?? 0)
-                if !((key == "ㄸ") || (key == "ㅉ") || (key == "ㅃ")) {
-                    canBeJongsung = true
-                }
-            }
-            if currentHangulState != nil {
-                oldKey = inpStack[inpStack.count - 1].key
-                oldChKind = inpStack[inpStack.count - 1].chKind
-            } else {
-                currentHangulState = .start
-                buffer.append("")
-            }
-            
-            //MARK: - 오토마타 전이 알고리즘
-            switch currentHangulState {
-            case .start:
-                if chKind == .consonant {
-                    currentHangulState = .chosung
-                } else {
-                    currentHangulState = .jongsung
-                }
-            case .chosung:
-                if chKind == .vowel {
-                    currentHangulState = .joongsung
-                } else {
-                    currentHangulState = .endOne
-                }
-            case .joongsung:
-                if canBeJongsung {
-                    currentHangulState = .jongsung
-                } else if joongsungPair() {
-                    currentHangulState = .dJoongsung
-                } else {
-                    currentHangulState = .endOne
-                }
-            case .dJoongsung:
-                //추가
-                if joongsungPair() {
-                    currentHangulState = .dJoongsung
-                } else if canBeJongsung {
-                    currentHangulState = .jongsung
-                } else {
-                    currentHangulState = .endOne
-                }
-            case .jongsung:
-                if (chKind == .consonant) && jongsungPair() {
-                    currentHangulState = .dJongsung
-                } else if chKind == .vowel {
-                    currentHangulState = .endTwo
-                } else {
-                    currentHangulState = .endOne
-                }
-            case .dJongsung:
-                if chKind == .vowel {
-                    currentHangulState = .endTwo
-                } else {
-                    currentHangulState = .endOne
-                }
-            default:
-                break
-            }
-            //MARK: - 오토마타 상태 별 작업 알고리즘
-            
-            switch currentHangulState {
-            case .chosung:
-                charCode = chosungTable[Int(keyCode)]
-            case .joongsung:
-                charCode = String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
-            case .dJoongsung:
-                let currentChosung = decompositionChosung(charCode: Unicode.Scalar(charCode)?.value ?? 0)
-                charCode = String(Unicode.Scalar(combinationHangul(chosung: currentChosung, joongsung: keyCode)) ?? Unicode.Scalar(0))
-            case .jongsung:
-                if canBeJongsung {
-                    keyCode = UInt32(jongsungTable.firstIndex(of: key) ?? 0)
-                    let currentCharCode =  Unicode.Scalar(charCode)?.value ?? 0
-                    charCode = String(Unicode.Scalar(decompositionChosungJoongsung(charCode: currentCharCode)) ?? Unicode.Scalar(0))
-                } else {
-                    charCode = key
-                }
-            case .dJongsung:
+        
+        let canBeJongsung = chKind == .consonant && jongsungTable.contains(chosungTable[Int(keyCode)])
+        
+        switch currentHangulState {
+        case .chosung:
+            charCode = chosungTable[Int(keyCode)]
+        case .joongsung:
+            oldKey = UInt32(chosungTable.firstIndex(of: charCode) ?? 0)
+            charCode = String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
+        case .dJoongsung:
+            oldKey = UInt32(chosungTable.firstIndex(of: String(Unicode.Scalar(decompositionChosungJoongsung(charCode: Unicode.Scalar(charCode)?.value ?? 0))!)) ?? 0)
+            charCode = String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
+        case .jongsung:
+            if canBeJongsung {
+                keyCode = UInt32(jongsungTable.firstIndex(of: key) ?? 0)
                 let currentCharCode = Unicode.Scalar(charCode)?.value ?? 0
                 charCode = String(Unicode.Scalar(decompositionChosungJoongsung(charCode: currentCharCode)) ?? Unicode.Scalar(0))
-                keyCode = UInt32(jongsungTable.firstIndex(of: key) ?? 0)
-            case .endOne:
-                if chKind == .consonant {
-                    charCode = chosungTable[Int(keyCode)]
-                    currentHangulState = .chosung
-                } else {
-                    charCode = joongsungTable[Int(keyCode)]
-                    currentHangulState = .jongsung
-                }
-                buffer.append("")
-            case .endTwo:
-                if oldChKind == .consonant {
-                    oldKey = UInt32(chosungTable.firstIndex(of: jongsungTable[Int(oldKey)]) ?? 0)
-                    charCode =  String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
-                    currentHangulState = .joongsung
-                    buffer[buffer.count - 1] = inpStack[inpStack.count - 2].charCode
-                    buffer.append("")
-                } else {
-                    if !joongsungPair() {
-                        buffer.append("")
-                    }
-                    charCode = joongsungTable[Int(keyCode)]
-                    currentHangulState = nil
-                    currentHangulState = .jongsung
-                }
-            default:
-                break
+            } else {
+                charCode = key
             }
-            inpStack.append(InpStack(curhanst: currentHangulState ?? .start, key: keyCode, charCode: String(Unicode.Scalar(charCode) ?? Unicode.Scalar(0)), chKind: chKind))
-    //        print("charCode:", charCode, " / buffer: ", buffer)
-            buffer[buffer.count - 1] = charCode
+        case .dJongsung:
+            let currentCharCode = Unicode.Scalar(charCode)?.value ?? 0
+            let choJongCode = decompositionChosungJoongsung(charCode: currentCharCode)
+            charCode = String(Unicode.Scalar(combinationHangul(chosung: UInt32(choJongCode / 588), joongsung: UInt32((choJongCode % 588) / 28), jongsung: keyCode)) ?? Unicode.Scalar(0))
+        case .endOne:
+            if chKind == .consonant {
+                charCode = chosungTable[Int(keyCode)]
+                currentHangulState = .chosung
+            } else {
+                charCode = joongsungTable[Int(keyCode)]
+                currentHangulState = .jongsung
+            }
+            buffer.append("")
+        case .endTwo:
+            if oldChKind == .consonant {
+                oldKey = UInt32(chosungTable.firstIndex(of: jongsungTable[Int(oldKey)]) ?? 0)
+                charCode = String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
+                currentHangulState = .joongsung
+                buffer[buffer.count - 1] = inpStack[inpStack.count - 2].charCode
+                buffer.append("")
+            } else {
+                if !joongsungPair() {
+                    buffer.append("")
+                }
+                charCode = joongsungTable[Int(keyCode)]
+                currentHangulState = nil
+                currentHangulState = .jongsung
+            }
+        case .start, .none:
+            break
         }
+        
+        inpStack.append((curhanst: currentHangulState, key: keyCode, charCode: charCode, chKind: chKind))
+        oldKey = keyCode
+        oldChKind = chKind
+        
+        buffer[buffer.count - 1] = charCode
     }
+}
 
-    // 한글 유니코드 완전 분해 (초성, 중성, 종성 기본 자모로 분리)
-    func decomposeHangul(_ char: Character) -> [String] {
-        let scalar = char.unicodeScalars.first!.value
-        
-        // 한글 영역이 아닌 경우
-        guard scalar >= 0xAC00 && scalar <= 0xD7A3 else {
-            return [String(char)]
+func composeHangul(input: String) -> String {
+    let groups = input.split(separator: " ")
+    var results: [String] = []
+    
+    for group in groups {
+        let automata = HangulAutomata()
+        for jamo in group {
+            automata.hangulAutomata(key: String(jamo))
         }
-        
-        let base = Int(scalar) - 0xAC00
-        let initialIndex = base / (21 * 28)
-        let medialIndex = (base % (21 * 28)) / 28
-        let finalIndex = base % 28
-        
-        // 초성, 중성, 종성 기본 자모
-        let initialJamo = [
-            "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ",
-            "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ",
-            "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
-        ][initialIndex]
-        
-        let medialJamo = [
-            "ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ",
-            "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ",
-            "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"
-        ][medialIndex]
-        
-        let finalJamo = [
-            "", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ",
-            "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ",
-            "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ",
-            "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
-        ][finalIndex]
-        
-        // 복합 자모 분해 규칙
-        let decomposeRules: [String: [String]] = [
-            "ㄲ": ["ㄱ", "ㄱ"],
-            "ㄳ": ["ㄱ", "ㅅ"],
-            "ㄵ": ["ㄴ", "ㅈ"],
-            "ㄶ": ["ㄴ", "ㅎ"],
-            "ㄺ": ["ㄹ", "ㄱ"],
-            "ㄻ": ["ㄹ", "ㅁ"],
-            "ㄼ": ["ㄹ", "ㅂ"],
-            "ㄽ": ["ㄹ", "ㅅ"],
-            "ㄾ": ["ㄹ", "ㅌ"],
-            "ㄿ": ["ㄹ", "ㅍ"],
-            "ㅀ": ["ㄹ", "ㅎ"],
-            "ㅄ": ["ㅂ", "ㅅ"],
-            "ㅘ": ["ㅗ", "ㅏ"],
-            "ㅙ": ["ㅗ", "ㅐ"],
-            "ㅚ": ["ㅗ", "ㅣ"],
-            "ㅝ": ["ㅜ", "ㅓ"],
-            "ㅞ": ["ㅜ", "ㅔ"],
-            "ㅟ": ["ㅜ", "ㅣ"],
-            "ㅢ": ["ㅡ", "ㅣ"],
-            "ㅆ": ["ㅅ", "ㅅ"]
-        ]
-        
-        // 분해 수행
-        func splitJamo(_ jamo: String) -> [String] {
-            return decomposeRules[jamo] ?? [jamo]
-        }
-        
-        let initialSplit = splitJamo(initialJamo)
-        let medialSplit = splitJamo(medialJamo)
-        let finalSplit = splitJamo(finalJamo)
-        
-        return initialSplit + medialSplit + finalSplit
+        let composed = automata.buffer.joined()
+        results.append(composed)
     }
+    
+    return results.joined(separator: " ")
+}
 
-    // 2-벌식 키보드 매핑 (물리적 키 위치 기반)
-    let qwertyKeyMap: [String: String] = [
-        // 초성
-        "ㄱ": "r", "ㄲ": "R", "ㄴ": "s", "ㄷ": "e", "ㄸ": "E",
-        "ㄹ": "f", "ㅁ": "a", "ㅂ": "q", "ㅃ": "Q", "ㅅ": "t",
-        "ㅆ": "T", "ㅇ": "d", "ㅈ": "w", "ㅉ": "W", "ㅊ": "c",
-        "ㅋ": "z", "ㅌ": "x", "ㅍ": "v", "ㅎ": "g",
-        
-        // 중성
-        "ㅏ": "k", "ㅐ": "o", "ㅑ": "i", "ㅒ": "O",
-        "ㅓ": "j", "ㅔ": "p", "ㅕ": "u", "ㅖ": "P",
-        "ㅗ": "h", "ㅛ": "y", "ㅜ": "n", "ㅠ": "b",
-        "ㅡ": "m", "ㅣ": "l",
-        
-        // 종성 (초성과 다른 경우)
-        "ㄳ": "rt", "ㄵ": "sw", "ㄶ": "sg",
-        "ㄺ": "fr", "ㄻ": "fa", "ㄼ": "fq",
-        "ㄽ": "ft", "ㄾ": "fx", "ㄿ": "fv",
-        "ㅀ": "fg", "ㅄ": "qt"
-    ]
 
-    // 최종 변환 함수
-    func convertKo2EN(_ input: String) -> String {
-        return input.reduce("") { result, char in
-            let decomposed = decomposeHangul(char)
-                .compactMap { qwertyKeyMap[$0] ?? $0 }
-                .joined()
-                .lowercased()
-            
-            return result + decomposed
-        }
-    }
+
+//Legacy
+//    import Foundation
+//
+//    //오토마타의 상태를 정의
+//    enum HangulStatus {
+//        case start //s0
+//        case chosung //s1
+//        case joongsung, dJoongsung //s2,s3
+//        case jongsung, dJongsung //s4, s5
+//        case endOne, endTwo //s6,s7
+//    }
+//
+//    //입력된 키의 종류 판별 정의
+//    enum HangulCHKind {
+//        case consonant //자음
+//        case vowel  //모음
+//    }
+//
+//    //키 입력마다 쌓이는 입력 스택 정의
+//    struct InpStack {
+//        var curhanst: HangulStatus //상태
+//        var key: UInt32 //방금 입력된 키 코드
+//        var charCode: String //조합된 코드
+//        var chKind: HangulCHKind // 입력된 키가 자음인지 모임인지
+//    }
+//
+//    final class HangulAutomata {
+//        
+//        var buffer: [String] = []
+//        
+//        var inpStack: [InpStack] = []
+//        
+//        var currentHangulState: HangulStatus?
+//        
+//        private var chKind = HangulCHKind.vowel
+//        
+//        private var charCode: String = ""
+//        private var oldKey: UInt32 = 0
+//        private var oldChKind: HangulCHKind?
+//        private var keyCode: UInt32 = 0
+//        
+//        private var chosungTable: [String] = ["ㄱ","ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+//        
+//        private var joongsungTable: [String] = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"]
+//        
+//        private var jongsungTable: [String] = [" ", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ","ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+//        
+//        private var dJoongTable: [[String]] = [
+//            ["ㅗ","ㅏ","ㅘ"],
+//            ["ㅗ","ㅐ","ㅙ"],
+//            ["ㅗ","ㅣ","ㅚ"],
+//            ["ㅜ","ㅓ","ㅝ"],
+//            ["ㅜ","ㅔ","ㅞ"],
+//            ["ㅜ","ㅣ","ㅟ"],
+//            ["ㅡ","ㅣ","ㅢ"],
+//            ["ㅏ","ㅣ","ㅐ"],
+//            ["ㅓ","ㅣ","ㅔ"],
+//            ["ㅕ","ㅣ","ㅖ"],
+//            ["ㅑ","ㅣ","ㅒ"],
+//            ["ㅘ","ㅣ","ㅙ"]
+//        ]
+//        
+//        private var dJongTable: [[String]] = [
+//            ["ㄱ","ㅅ","ㄳ"],
+//            ["ㄴ","ㅈ","ㄵ"],
+//            ["ㄴ","ㅎ","ㄶ"],
+//            ["ㄹ","ㄱ","ㄺ"],
+//            ["ㄹ","ㅁ","ㄻ"],
+//            ["ㄹ","ㅂ","ㄼ"],
+//            ["ㄹ","ㅅ","ㄽ"],
+//            ["ㄹ","ㅌ","ㄾ"],
+//            ["ㄹ","ㅍ","ㄿ"],
+//            ["ㄹ","ㅎ","ㅀ"],
+//            ["ㅂ","ㅅ","ㅄ"]
+//        ]
+//        
+//        private func joongsungPair() -> Bool {
+//            for i in 0..<dJoongTable.count {
+//                if dJoongTable[i][0] == joongsungTable[Int(oldKey)] && dJoongTable[i][1] == joongsungTable[Int(keyCode)] {
+//                    keyCode = UInt32(joongsungTable.firstIndex(of: dJoongTable[i][2]) ?? 0)
+//                    return true
+//                }
+//            }
+//            return false
+//        }
+//        
+//        private func jongsungPair() -> Bool {
+//            for i in 0..<dJongTable.count {
+//                if dJongTable[i][0] == jongsungTable[Int(oldKey)] && dJongTable[i][1] == chosungTable[Int(keyCode)] {
+//                    keyCode = UInt32(jongsungTable.firstIndex(of: dJongTable[i][2]) ?? 0)
+//                    return true
+//                }
+//            }
+//            return false
+//        }
+//        
+//        private func isJoongSungPair(first: String, result: String) -> Bool {
+//            for i in 0..<dJoongTable.count {
+//                if dJoongTable[i][0] == first && dJoongTable[i][2] == result {
+//                    return true
+//                }
+//            }
+//            return false
+//        }
+//        
+//        private func decompositionChosung(charCode: UInt32) -> UInt32 {
+//            let unicodeHangul = charCode - 0xAC00
+//            let jongsung = (unicodeHangul) % 28
+//            let joongsung = ((unicodeHangul - jongsung) / 28) % 21
+//            let chosung = (((unicodeHangul - jongsung) / 28) - joongsung) / 21
+//            return chosung
+//        }
+//        
+//        private func decompositionChosungJoongsung(charCode: UInt32) -> UInt32 {
+//            let unicodeHangul = charCode - 0xAC00
+//            let jongsung = (unicodeHangul) % 28
+//            let joongsung = ((unicodeHangul - jongsung) / 28) % 21
+//            let chosung = (((unicodeHangul - jongsung) / 28) - joongsung) / 21
+//            return combinationHangul(chosung: chosung, joongsung: joongsung, jongsung: keyCode)
+//        }
+//        
+//        private func combinationHangul(chosung: UInt32 = 0, joongsung: UInt32, jongsung: UInt32 = 0) -> UInt32 {
+//            return (((chosung * 21) + joongsung) * 28) + jongsung + 0xAC00
+//        }
+//        
+//        func deleteBuffer() {
+//            if inpStack.count == 0 {
+//                if buffer.count > 0 {
+//                    buffer.removeLast()
+//                }
+//            } else {
+//                if let popHanguel = inpStack.popLast() {
+//                    if popHanguel.curhanst == .chosung {
+//                        buffer.removeLast()
+//                    } else if popHanguel.curhanst == .joongsung || popHanguel.curhanst == .dJoongsung {
+//                        if inpStack[inpStack.count - 1].curhanst == .jongsung || inpStack[inpStack.count - 1].curhanst == .dJongsung {
+//                            buffer.removeLast()
+//                        }
+//                            buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
+//                    } else {
+//                        if inpStack.isEmpty {
+//                            buffer.removeLast()
+//                        } else if popHanguel.chKind == .vowel {
+//                            if inpStack[inpStack.count - 1].curhanst == .jongsung {
+//                                if inpStack[inpStack.count - 1].chKind == .vowel {
+//                                    if isJoongSungPair(first: joongsungTable[Int(inpStack[inpStack.count - 1].key)] , result: joongsungTable[Int(popHanguel.key)]) {
+//                                        buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
+//                                    } else {
+//                                        buffer.removeLast()
+//                                    }
+//                                }
+//                            } else {
+//                                buffer.removeLast()
+//                            }
+//                        } else {
+//                            buffer[buffer.count - 1] = inpStack[inpStack.count - 1].charCode
+//                        }
+//                    }
+//                    if inpStack.isEmpty {
+//                        currentHangulState = nil
+//                    } else {
+//                        currentHangulState = inpStack[inpStack.count - 1].curhanst
+//                        oldKey = inpStack[inpStack.count - 1].key
+//                        oldChKind = inpStack[inpStack.count - 1].chKind
+//                        charCode = inpStack[inpStack.count - 1].charCode
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    extension HangulAutomata {
+//        func hangulAutomata(key: String) {
+//            
+//            var canBeJongsung: Bool = false
+//            
+//            if joongsungTable.contains(key) {
+//                chKind = .vowel
+//                keyCode = UInt32(joongsungTable.firstIndex(of: key) ?? 0)
+//            } else {
+//                chKind = .consonant
+//                keyCode = UInt32(chosungTable.firstIndex(of: key) ?? 0)
+//                if !((key == "ㄸ") || (key == "ㅉ") || (key == "ㅃ")) {
+//                    canBeJongsung = true
+//                }
+//            }
+//            if currentHangulState != nil {
+//                oldKey = inpStack[inpStack.count - 1].key
+//                oldChKind = inpStack[inpStack.count - 1].chKind
+//            } else {
+//                currentHangulState = .start
+//                buffer.append("")
+//            }
+//            
+//            //MARK: - 오토마타 전이 알고리즘
+//            switch currentHangulState {
+//            case .start:
+//                if chKind == .consonant {
+//                    currentHangulState = .chosung
+//                } else {
+//                    currentHangulState = .jongsung
+//                }
+//            case .chosung:
+//                if chKind == .vowel {
+//                    currentHangulState = .joongsung
+//                } else {
+//                    currentHangulState = .endOne
+//                }
+//            case .joongsung:
+//                if canBeJongsung {
+//                    currentHangulState = .jongsung
+//                } else if joongsungPair() {
+//                    currentHangulState = .dJoongsung
+//                } else {
+//                    currentHangulState = .endOne
+//                }
+//            case .dJoongsung:
+//                //추가
+//                if joongsungPair() {
+//                    currentHangulState = .dJoongsung
+//                } else if canBeJongsung {
+//                    currentHangulState = .jongsung
+//                } else {
+//                    currentHangulState = .endOne
+//                }
+//            case .jongsung:
+//                if (chKind == .consonant) && jongsungPair() {
+//                    currentHangulState = .dJongsung
+//                } else if chKind == .vowel {
+//                    currentHangulState = .endTwo
+//                } else {
+//                    currentHangulState = .endOne
+//                }
+//            case .dJongsung:
+//                if chKind == .vowel {
+//                    currentHangulState = .endTwo
+//                } else {
+//                    currentHangulState = .endOne
+//                }
+//            default:
+//                break
+//            }
+//            //MARK: - 오토마타 상태 별 작업 알고리즘
+//            
+//            switch currentHangulState {
+//            case .chosung:
+//                charCode = chosungTable[Int(keyCode)]
+//            case .joongsung:
+//                charCode = String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
+//            case .dJoongsung:
+//                let currentChosung = decompositionChosung(charCode: Unicode.Scalar(charCode)?.value ?? 0)
+//                charCode = String(Unicode.Scalar(combinationHangul(chosung: currentChosung, joongsung: keyCode)) ?? Unicode.Scalar(0))
+//            case .jongsung:
+//                if canBeJongsung {
+//                    keyCode = UInt32(jongsungTable.firstIndex(of: key) ?? 0)
+//                    let currentCharCode =  Unicode.Scalar(charCode)?.value ?? 0
+//                    charCode = String(Unicode.Scalar(decompositionChosungJoongsung(charCode: currentCharCode)) ?? Unicode.Scalar(0))
+//                } else {
+//                    charCode = key
+//                }
+//            case .dJongsung:
+//                let currentCharCode = Unicode.Scalar(charCode)?.value ?? 0
+//                charCode = String(Unicode.Scalar(decompositionChosungJoongsung(charCode: currentCharCode)) ?? Unicode.Scalar(0))
+//                keyCode = UInt32(jongsungTable.firstIndex(of: key) ?? 0)
+//            case .endOne:
+//                if chKind == .consonant {
+//                    charCode = chosungTable[Int(keyCode)]
+//                    currentHangulState = .chosung
+//                } else {
+//                    charCode = joongsungTable[Int(keyCode)]
+//                    currentHangulState = .jongsung
+//                }
+//                buffer.append("")
+//            case .endTwo:
+//                if oldChKind == .consonant {
+//                    oldKey = UInt32(chosungTable.firstIndex(of: jongsungTable[Int(oldKey)]) ?? 0)
+//                    charCode =  String(Unicode.Scalar(combinationHangul(chosung: oldKey, joongsung: keyCode)) ?? Unicode.Scalar(0))
+//                    currentHangulState = .joongsung
+//                    buffer[buffer.count - 1] = inpStack[inpStack.count - 2].charCode
+//                    buffer.append("")
+//                } else {
+//                    if !joongsungPair() {
+//                        buffer.append("")
+//                    }
+//                    charCode = joongsungTable[Int(keyCode)]
+//                    currentHangulState = nil
+//                    currentHangulState = .jongsung
+//                }
+//            default:
+//                break
+//            }
+//            inpStack.append(InpStack(curhanst: currentHangulState ?? .start, key: keyCode, charCode: String(Unicode.Scalar(charCode) ?? Unicode.Scalar(0)), chKind: chKind))
+//    //        print("charCode:", charCode, " / buffer: ", buffer)
+//            buffer[buffer.count - 1] = charCode
+//        }
+//    }
+//
+//    // 한글 유니코드 완전 분해 (초성, 중성, 종성 기본 자모로 분리)
+//    func decomposeHangul(_ char: Character) -> [String] {
+//        let scalar = char.unicodeScalars.first!.value
+//        
+//        // 한글 영역이 아닌 경우
+//        guard scalar >= 0xAC00 && scalar <= 0xD7A3 else {
+//            return [String(char)]
+//        }
+//        
+//        let base = Int(scalar) - 0xAC00
+//        let initialIndex = base / (21 * 28)
+//        let medialIndex = (base % (21 * 28)) / 28
+//        let finalIndex = base % 28
+//        
+//        // 초성, 중성, 종성 기본 자모
+//        let initialJamo = [
+//            "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ",
+//            "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ",
+//            "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
+//        ][initialIndex]
+//        
+//        let medialJamo = [
+//            "ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ",
+//            "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ",
+//            "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"
+//        ][medialIndex]
+//        
+//        let finalJamo = [
+//            "", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ",
+//            "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ",
+//            "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ",
+//            "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
+//        ][finalIndex]
+//        
+//        // 복합 자모 분해 규칙
+//        let decomposeRules: [String: [String]] = [
+//            "ㄲ": ["ㄱ", "ㄱ"],
+//            "ㄳ": ["ㄱ", "ㅅ"],
+//            "ㄵ": ["ㄴ", "ㅈ"],
+//            "ㄶ": ["ㄴ", "ㅎ"],
+//            "ㄺ": ["ㄹ", "ㄱ"],
+//            "ㄻ": ["ㄹ", "ㅁ"],
+//            "ㄼ": ["ㄹ", "ㅂ"],
+//            "ㄽ": ["ㄹ", "ㅅ"],
+//            "ㄾ": ["ㄹ", "ㅌ"],
+//            "ㄿ": ["ㄹ", "ㅍ"],
+//            "ㅀ": ["ㄹ", "ㅎ"],
+//            "ㅄ": ["ㅂ", "ㅅ"],
+//            "ㅘ": ["ㅗ", "ㅏ"],
+//            "ㅙ": ["ㅗ", "ㅐ"],
+//            "ㅚ": ["ㅗ", "ㅣ"],
+//            "ㅝ": ["ㅜ", "ㅓ"],
+//            "ㅞ": ["ㅜ", "ㅔ"],
+//            "ㅟ": ["ㅜ", "ㅣ"],
+//            "ㅢ": ["ㅡ", "ㅣ"],
+//            "ㅆ": ["ㅅ", "ㅅ"]
+//        ]
+//        
+//        // 분해 수행
+//        func splitJamo(_ jamo: String) -> [String] {
+//            return decomposeRules[jamo] ?? [jamo]
+//        }
+//        
+//        let initialSplit = splitJamo(initialJamo)
+//        let medialSplit = splitJamo(medialJamo)
+//        let finalSplit = splitJamo(finalJamo)
+//        
+//        return initialSplit + medialSplit + finalSplit
+//    }
+//
+//    // 2-벌식 키보드 매핑 (물리적 키 위치 기반)
+//    let qwertyKeyMap: [String: String] = [
+//        // 초성
+//        "ㄱ": "r", "ㄲ": "R", "ㄴ": "s", "ㄷ": "e", "ㄸ": "E",
+//        "ㄹ": "f", "ㅁ": "a", "ㅂ": "q", "ㅃ": "Q", "ㅅ": "t",
+//        "ㅆ": "T", "ㅇ": "d", "ㅈ": "w", "ㅉ": "W", "ㅊ": "c",
+//        "ㅋ": "z", "ㅌ": "x", "ㅍ": "v", "ㅎ": "g",
+//        
+//        // 중성
+//        "ㅏ": "k", "ㅐ": "o", "ㅑ": "i", "ㅒ": "O",
+//        "ㅓ": "j", "ㅔ": "p", "ㅕ": "u", "ㅖ": "P",
+//        "ㅗ": "h", "ㅛ": "y", "ㅜ": "n", "ㅠ": "b",
+//        "ㅡ": "m", "ㅣ": "l",
+//        
+//        // 종성 (초성과 다른 경우)
+//        "ㄳ": "rt", "ㄵ": "sw", "ㄶ": "sg",
+//        "ㄺ": "fr", "ㄻ": "fa", "ㄼ": "fq",
+//        "ㄽ": "ft", "ㄾ": "fx", "ㄿ": "fv",
+//        "ㅀ": "fg", "ㅄ": "qt"
+//    ]
+//
+//    // 최종 변환 함수
+//    func convertKo2EN(_ input: String) -> String {
+//        return input.reduce("") { result, char in
+//            let decomposed = decomposeHangul(char)
+//                .compactMap { qwertyKeyMap[$0] ?? $0 }
+//                .joined()
+//                .lowercased()
+//            
+//            return result + decomposed
+//        }
+//    }
+//
+//
+//func composeHangul(input: String) -> String {
+//    let groups = input.split(separator: " ")
+//    var results: [String] = []
+//    for group in groups {
+//        let automata = HangulAutomata()
+//        for jamo in group {
+//            automata.hangulAutomata(key: String(jamo))
+//        }
+//        if let composed = automata.buffer.last {
+//            results.append(composed)
+//        }
+//    }
+//    return results.joined(separator: " ")
+//}
 
 // MARK: HOW TO USE
 
