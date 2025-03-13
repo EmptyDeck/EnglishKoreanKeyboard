@@ -1,6 +1,6 @@
 ### README.md (Korean)
 
-`![Use Demo Gif](readme/demo.gif)`
+![Use Demo Gif](readme/demo.gif)
 
 # AutoHangulEnglish 🌟 자동 한영 변환기
 
