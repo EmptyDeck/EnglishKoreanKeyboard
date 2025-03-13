@@ -39,7 +39,7 @@
     - "Process on Space" 체크박스로 스페이스바 처리 여부를 설정하고, 버퍼 길이나 자신감 임계값을 조정할 수 있어요.
 
 > **설정**: "hello"를 쳤다가 한글 "안녕"으로 바뀌는 과정을 GIF로 보여주세요!  
-> 예: ![Demo GIF](readme/settings.png)
+> ![Demo GIF](readme/settings.png)
 
 4. 잠시 멈추고 싶을 땐? `1+2+3`을 동시에 눌러보세요! ⏸️
 
